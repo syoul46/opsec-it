@@ -12,7 +12,7 @@ export default function Footer() {
               <span className="font-bold text-base">OPSEC<span className="text-blue">-IT</span></span>
             </div>
             <p className="text-sm text-ink-dim leading-relaxed max-w-xs">
-              Sécurisation et administration d&apos;infrastructures pour les entreprises. Sylvestre MIGNOT, AIS.
+              Sécurisation et administration d&apos;infrastructures pour les associations et les PME. Sylvestre MIGNOT, AIS.
             </p>
           </div>
           <div>

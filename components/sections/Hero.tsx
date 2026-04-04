@@ -1,15 +1,16 @@
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 
 const stats = [
-  { value: "8+",   label: "ans d'expérience" },
-  { value: "50+",  label: "audits réalisés" },
-  { value: "100%", label: "disponibilité SLA" },
+  { value: "7 ans", label: "d'expérience terrain" },
+  { value: "AIS",   label: "titre obtenu — IPSSI" },
+  { value: "48h",   label: "délai de réponse" },
 ];
 
 const checks = [
   "Réduction des risques cyber",
   "Conformité RGPD & ANSSI",
   "Continuité d'activité garantie",
+  "Tarifs adaptés aux asso et PME",
 ];
 
 export default function Hero() {
@@ -39,9 +40,9 @@ export default function Hero() {
 
             {/* Sous-titre */}
             <p className="text-lg text-ink-soft leading-relaxed mb-8 max-w-md">
-              Sylvestre MIGNOT, expert certifié AIS, prend en charge
-              l&apos;audit, l&apos;administration et la sécurisation
-              de vos systèmes d&apos;information.
+              Sylvestre MIGNOT, titulaire du titre AIS (IPSSI), accompagne
+              les associations et les PME dans la sécurisation et
+              l&apos;administration de leurs systèmes d&apos;information.
             </p>
 
             {/* Check list */}

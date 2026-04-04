@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OPSEC-IT — Sylvestre MIGNOT, AIS | Sécurité des Infrastructures",
+  title: "OPSEC-IT — Sylvestre MIGNOT, AIS | Sécurité & Infra pour Asso et PME",
   description:
-    "Expert en sécurisation d'infrastructures (AIS). Audit, administration systèmes & réseaux, cloud et continuité d'activité pour les entreprises.",
+    "Titulaire AIS (IPSSI), Sylvestre MIGNOT accompagne les associations et PME dans l'audit, l'administration et la sécurisation de leurs infrastructures.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

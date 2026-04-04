@@ -10,7 +10,7 @@ const services = [
   { Icon: Lock,        title: "Sécurisation d'infrastructures", description: "Durcissement des systèmes, segmentation réseau, chiffrement des données et gestion des accès (IAM) selon les référentiels ANSSI.",    tags: ["Hardening", "IAM", "Chiffrement"] },
   { Icon: Cloud,       title: "Cloud & virtualisation",       description: "Déploiement et sécurisation de vos environnements cloud (AWS, OVH) et on-premise (Proxmox, VMware). Infrastructure as Code.",            tags: ["Cloud", "Proxmox", "Terraform"] },
   { Icon: RefreshCw,   title: "Continuité d'activité",        description: "Conception de votre PRA/PCA, stratégie de sauvegarde 3-2-1, procédures de reprise et tests réguliers en conditions réelles.",            tags: ["PRA", "PCA", "Backup"] },
-  { Icon: Headphones,  title: "Support & accompagnement B2B", description: "Externalisation de DSI, interlocuteur unique, SLA définis contractuellement, formation de vos équipes et documentation complète.",       tags: ["DSI externalisée", "SLA", "Formation"] },
+  { Icon: Headphones,  title: "Support & accompagnement", description: "Interlocuteur technique unique pour les structures sans DSI. Suivi régulier, réponse aux incidents, documentation et accompagnement de vos équipes.", tags: ["DSI externalisée", "Associations", "PME"] },
 ];
 
 export default function Services() {
@@ -22,11 +22,13 @@ export default function Services() {
             Expertise & Services
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-ink mb-4 leading-tight">
-            Ce que j&apos;apporte à votre entreprise
+            Ce que j&apos;apporte à votre structure
           </h2>
           <p className="text-ink-soft max-w-lg leading-relaxed">
-            Des prestations techniques ciblées pour protéger, administrer et faire
-            évoluer vos systèmes d&apos;information en toute sérénité.
+            Des prestations adaptées aux associations et PME : pragmatiques,
+            documentées, sans jargon. Vous n&apos;avez pas besoin d&apos;un DSI
+            à plein temps — vous avez besoin d&apos;un interlocuteur technique
+            de confiance.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

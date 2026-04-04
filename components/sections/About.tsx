@@ -11,9 +11,9 @@ const certs = [
 ];
 
 const experience = [
-  { period: "2023 — présent", role: "Consultant indépendant", company: "OPSEC-IT",                    desc: "Audit, sécurisation et administration d'infrastructures pour des PME et ETI françaises." },
-  { period: "2021 — 2023",    role: "Administrateur systèmes & réseaux", company: "[À compléter]",     desc: "Gestion d'un parc de 200+ postes, migration cloud, mise en conformité RGPD." },
-  { period: "2019 — 2021",    role: "Technicien infrastructure",          company: "[À compléter]",     desc: "Déploiement et maintenance d'infrastructures hybrides, support N2/N3." },
+  { period: "2025 — 2026", role: "Étudiant AIS", company: "IPSSI Paris", desc: "Formation Administrateur d'Infrastructures Sécurisées. Titre obtenu. Spécialisation : audit, sécurisation et administration d'infrastructures." },
+  { period: "2018 — 2024", role: "Technicien réseau, systèmes & DevOps", company: "SAS ANUANUA", desc: "Administration systèmes Linux/Windows, gestion d'infrastructure réseau, déploiements cloud, automatisation DevOps. Environnement multi-projets." },
+  { period: "2008 — 2017", role: "Technicien interfaces MIDI", company: "Spectacle vivant", desc: "Conception et mise en place de systèmes d'interfaçage MIDI pour le spectacle. Contraintes de fiabilité temps réel, matériel sur-mesure, autonomie technique totale." },
 ];
 
 const values = [
