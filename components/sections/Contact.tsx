@@ -44,7 +44,7 @@ export default function Contact() {
   };
 
   return (
-    <SectionWrapper id="contact" className="py-24 bg-white">
+    <SectionWrapper id="contact" className="pt-32 pb-28 bg-white">
       <div className="wrap">
         <div className="mb-14">
           <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">Contact</span>
@@ -110,7 +110,7 @@ export default function Contact() {
                 )}
                 <div className="flex items-center gap-4 pt-1">
                   <button type="submit" disabled={status === "loading"}
-                          className="flex items-center gap-2 px-6 py-3 rounded-xl bg-blue text-white font-semibold text-sm hover:bg-blue/90 disabled:opacity-60 transition-all shadow-md hover:shadow-lg hover:shadow-blue/20">
+                          className="flex items-center gap-2 rounded-xl bg-blue text-white font-semibold text-sm hover:bg-blue/90 disabled:opacity-60 transition-all shadow-md hover:shadow-lg hover:shadow-blue/20" style={{ padding: "5px 14px" }}>
                     {status === "loading"
                       ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Envoi...</>
                       : <><Send className="w-4 h-4" />Envoyer</>}

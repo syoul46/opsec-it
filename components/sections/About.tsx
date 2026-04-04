@@ -25,15 +25,22 @@ const values = [
 
 export default function About() {
   return (
-    <SectionWrapper id="parcours" className="py-24 bg-white">
+    <SectionWrapper id="parcours" className="pt-32 pb-28 bg-white">
       <div className="wrap">
-        <div className="mb-14">
-          <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
-            Parcours & Crédibilité
-          </span>
-          <h2 className="text-3xl md:text-4xl font-black text-ink leading-tight">
-            Expertise forgée sur le terrain
-          </h2>
+        <div className="mb-14 flex items-center gap-6">
+          <img
+            src="/sylvestre.jpg"
+            alt="Sylvestre MIGNOT"
+            className="w-20 h-20 rounded-full object-cover border-2 border-blue/20 shadow-md flex-shrink-0"
+          />
+          <div>
+            <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
+              Parcours & Crédibilité
+            </span>
+            <h2 className="text-3xl md:text-4xl font-black text-ink leading-tight">
+              Expertise forgée sur le terrain
+            </h2>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">

@@ -14,9 +14,13 @@ export default function Home() {
       <div className="h-20" aria-hidden="true" />
       <main>
         <Hero />
+        <div style={{ height: "30px" }} aria-hidden="true" />
         <Services />
+        <div style={{ height: "30px" }} aria-hidden="true" />
         <About />
+        <div style={{ height: "30px" }} aria-hidden="true" />
         <Methodology />
+        <div style={{ height: "30px" }} aria-hidden="true" />
         <Contact />
       </main>
       <Footer />

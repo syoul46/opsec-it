@@ -15,7 +15,7 @@ const checks = [
 
 export default function Hero() {
   return (
-    <section className="relative bg-white pt-16 pb-20 overflow-hidden">
+    <section className="relative bg-white pt-28 pb-36 overflow-hidden">
       {/* Blob décoratif */}
       <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-blue-soft opacity-60 blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 -right-16 w-72 h-72 rounded-full bg-blue-mid opacity-30 blur-2xl pointer-events-none" />
@@ -58,12 +58,12 @@ export default function Hero() {
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#contact"
-                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-blue text-white font-semibold text-sm hover:bg-blue/90 transition-all shadow-md hover:shadow-lg hover:shadow-blue/25 hover:-translate-y-0.5">
+                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue text-white font-semibold text-sm hover:bg-blue/90 transition-all shadow-md hover:shadow-lg hover:shadow-blue/25 hover:-translate-y-0.5" style={{ padding: "5px 14px" }}>
                 Prendre contact
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a href="#services"
-                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border border-border text-ink text-sm font-semibold hover:bg-surf hover:border-ink/20 transition-all">
+                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border text-ink text-sm font-semibold hover:bg-surf hover:border-ink/20 transition-all" style={{ padding: "5px 14px" }}>
                 Voir les services
               </a>
             </div>
@@ -72,7 +72,7 @@ export default function Hero() {
           {/* Carte illustration */}
           <div className="relative hidden lg:block lg:col-span-2">
             {/* Card principale */}
-            <div className="bg-white rounded-2xl shadow-card-lg border border-border p-8">
+            <div className="bg-white rounded-2xl shadow-card-lg border border-border" style={{ padding: "20px" }}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-blue flex items-center justify-center">
                   <Shield className="w-5 h-5 text-white" />
