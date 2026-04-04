@@ -1,13 +1,14 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { CheckCircle, Award } from "lucide-react";
 
-const certs = [
-  { label: "AIS", sub: "Administrateur d'Infrastructures Sécurisées", highlight: true },
-  { label: "Linux / Systèmes",    sub: "Administration avancée" },
-  { label: "Réseaux & Sécurité",  sub: "TCP/IP, Firewall, VPN" },
-  { label: "Cloud & IaC",         sub: "AWS, OVH, Terraform, Ansible" },
-  { label: "Virtualisation",      sub: "Proxmox, VMware, Docker" },
-  { label: "RGPD & Conformité",   sub: "Protection des données" },
+const certification = { label: "AIS", sub: "Administrateur d'Infrastructures Sécurisées — IPSSI Paris, 2026" };
+
+const skills = [
+  { label: "Linux / Systèmes",   sub: "Administration serveurs, durcissement OS" },
+  { label: "Réseaux & Sécurité", sub: "TCP/IP, Firewall, VPN, segmentation" },
+  { label: "Cloud & DevOps",     sub: "OVH, AWS, Docker, Ansible, Terraform" },
+  { label: "Virtualisation",     sub: "Proxmox, VMware" },
+  { label: "RGPD & Conformité",  sub: "Protection des données, référentiels ANSSI" },
 ];
 
 const experience = [
@@ -65,25 +66,32 @@ export default function About() {
             </div>
           </div>
 
-          {/* Certifications */}
+          {/* Certification + Compétences */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-8">Certifications</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-4">Certification</h3>
+            <div className="mb-8">
+              <div className="flex items-center gap-4 p-4 rounded-xl border bg-blue/8 border-blue/30 shadow-sm">
+                <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue">
+                  <Award className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <p className="text-sm font-bold text-blue">{certification.label}</p>
+                  <p className="text-xs text-ink-soft">{certification.sub}</p>
+                </div>
+              </div>
+            </div>
+
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-4">Compétences techniques</h3>
             <div className="space-y-3">
-              {certs.map(c => (
-                <div key={c.label}
-                     className={`flex items-center gap-4 p-4 rounded-xl border transition-all ${
-                       c.highlight
-                         ? "bg-blue/8 border-blue/30 shadow-sm"
-                         : "bg-surf border-border hover:border-blue-mid hover:bg-blue/5"
-                     }`}>
-                  <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                    c.highlight ? "bg-blue" : "bg-blue/5 border border-blue/15"
-                  }`}>
-                    <Award className={`w-4 h-4 ${c.highlight ? "text-white" : "text-blue"}`} />
+              {skills.map(s => (
+                <div key={s.label}
+                     className="flex items-center gap-4 p-4 rounded-xl border bg-surf border-border hover:border-blue-mid hover:bg-blue/5 transition-all">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue/5 border border-blue/15">
+                    <Award className="w-4 h-4 text-blue" />
                   </div>
                   <div>
-                    <p className={`text-sm font-bold ${c.highlight ? "text-blue" : "text-ink"}`}>{c.label}</p>
-                    <p className="text-xs text-ink-soft">{c.sub}</p>
+                    <p className="text-sm font-bold text-ink">{s.label}</p>
+                    <p className="text-xs text-ink-soft">{s.sub}</p>
                   </div>
                 </div>
               ))}
