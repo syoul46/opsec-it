@@ -1,0 +1,30 @@
+name: opsec-it-prod
+
+services:
+  app:
+    image: opsec-it:${TAG:-latest}
+    container_name: opsec-it-prod-app
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 512M
+    environment:
+      - NODE_ENV=production
+      - APP_DOMAIN=opsec-it.fr
+      - NEXT_PUBLIC_SITE_URL=https://opsec-it.fr
+    labels:
+      - "SERVICE_3000_NAME=opsec-it-prod-app-3000"
+      - "SERVICE_3000_TAGS=urlprefix-opsec-it.fr/*"
+      - "SERVICE_3000_CHECK_TCP=true"
+      - "LETSENCRYPT_HOST=opsec-it.fr"
+    networks:
+      - app-net
+      - sonic
+
+networks:
+  app-net:
+    driver: bridge
+  sonic:
+    external: true
