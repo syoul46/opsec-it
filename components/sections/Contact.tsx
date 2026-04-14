@@ -138,7 +138,7 @@ export default function Contact() {
               </div>
             </a>
 
-            <a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/sylvestre-mignot-261a7461/" target="_blank" rel="noopener noreferrer"
                className="flex items-center gap-4 p-4 rounded-xl border border-border bg-white hover:border-blue/30 hover:shadow-card transition-all group">
               <div className="w-10 h-10 rounded-xl bg-blue/10 border border-blue/25 flex items-center justify-center flex-shrink-0">
                 <ExternalLink className="w-4 h-4 text-blue" />

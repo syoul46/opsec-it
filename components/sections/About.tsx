@@ -4,11 +4,12 @@ import { CheckCircle, Award } from "lucide-react";
 const certification = { label: "AIS", sub: "Administrateur d'Infrastructures Sécurisées — IPSSI Paris, 2026" };
 
 const skills = [
-  { label: "Linux / Systèmes",   sub: "Administration serveurs, durcissement OS" },
-  { label: "Réseaux & Sécurité", sub: "TCP/IP, Firewall, VPN, segmentation" },
-  { label: "Cloud & DevOps",     sub: "OVH, AWS, Docker, Ansible, Terraform" },
-  { label: "Virtualisation",     sub: "Proxmox, VMware" },
-  { label: "RGPD & Conformité",  sub: "Protection des données, référentiels ANSSI" },
+  { label: "Linux / Systèmes",        sub: "Administration serveurs, gestion de services, maintenance" },
+  { label: "Réseaux & Sécurité",      sub: "TCP/IP, Firewall, VPN, segmentation" },
+  { label: "Supervision",             sub: "Zabbix, monitoring infrastructure" },
+  { label: "Virtualisation",          sub: "Environnements virtualisés : Proxmox, VMware" },
+  { label: "Conteneurisation",        sub: "Docker, Docker Compose" },
+  { label: "Protection des données",  sub: "Sensibilisation RGPD, bonnes pratiques de sécurité" },
 ];
 
 const experience = [
@@ -59,7 +60,7 @@ export default function About() {
               ))}
             </ol>
 
-            <div className="mt-12 space-y-4">
+            <div style={{ marginTop: "10px" }} className="space-y-4">
               <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-6">Mon approche</h3>
               {values.map(v => (
                 <div key={v.t} className="flex gap-3">

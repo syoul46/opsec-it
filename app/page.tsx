@@ -22,6 +22,7 @@ export default function Home() {
         <Methodology />
         <div style={{ height: "30px" }} aria-hidden="true" />
         <Contact />
+        <div style={{ height: "30px" }} aria-hidden="true" />
       </main>
       <Footer />
     </>

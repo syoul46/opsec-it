@@ -12,7 +12,7 @@ export default function Methodology() {
   return (
     <SectionWrapper id="methodologie" className="pt-32 pb-28 bg-surf">
       <div className="wrap">
-        <div className="mb-14">
+        <div style={{ marginBottom: "20px" }}>
           <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
             Méthodologie OPSEC
           </span>
@@ -25,7 +25,7 @@ export default function Methodology() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ marginBottom: "60px" }}>
           {steps.map(s => (
             <div key={s.num}
                  className="group bg-white rounded-2xl border border-border p-7 shadow-card hover:shadow-card-md hover:-translate-y-0.5 transition-all duration-200">
