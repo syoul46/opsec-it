@@ -18,7 +18,7 @@ export default function Services() {
     <SectionWrapper id="services" className="pt-32 pb-28 bg-surf-mid">
       <div className="wrap">
         <div style={{ marginBottom: "20px" }}>
-          <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
+          <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
             Expertise & Services
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-ink mb-4 leading-tight">

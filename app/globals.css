@@ -6,8 +6,8 @@
   --color-ink:        #0F172A;
   --color-ink-soft:   #475569;
   --color-ink-dim:    #94A3B8;
-  --color-surf:       #F8FAFC;
-  --color-surf-mid:   #F1F5F9;
+  --color-surf:       #FAFAF8;
+  --color-surf-mid:   #F5F3EF;
   --color-blue:       #2563EB;
   --color-blue-soft:  #EFF6FF;
   --color-blue-mid:   #DBEAFE;
@@ -52,7 +52,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #F8FAFC;
+  background-color: #FAFAF8;
   color: #0F172A;
   font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -79,5 +79,5 @@ body {
 ::selection { background: #DBEAFE; color: #1D4ED8; }
 
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-track { background: #F5F3EF; }
 ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 9999px; }

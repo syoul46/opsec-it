@@ -48,7 +48,7 @@ export default function Contact() {
     <SectionWrapper id="contact" className="pt-32 pb-28 bg-white">
       <div className="wrap">
         <div className="mb-14">
-          <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">Contact</span>
+          <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">Contact</span>
           <h2 className="text-3xl md:text-4xl font-black text-ink mb-4 leading-tight">Discutons de vos besoins</h2>
           <p className="text-ink-soft max-w-lg leading-relaxed">
             Réponse sous 24h. Pour les urgences (incident en cours), précisez-le dans l&apos;objet.

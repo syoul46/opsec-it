@@ -106,7 +106,7 @@ export default function CreationWeb() {
       <div className="wrap">
 
         <div style={{ marginBottom: "20px" }}>
-          <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
+          <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
             Création web
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-ink mb-4 leading-tight">
@@ -124,7 +124,7 @@ export default function CreationWeb() {
 
         {/* Tarifs */}
         <div style={{ marginBottom: "20px" }}>
-          <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
+          <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
             Tarifs
           </span>
           <h3 className="text-2xl md:text-3xl font-black text-ink mb-2 leading-tight">

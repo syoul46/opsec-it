@@ -35,7 +35,7 @@ export default function About() {
             className="w-20 h-20 rounded-full object-cover border-2 border-blue/20 shadow-md flex-shrink-0"
           />
           <div>
-            <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
+            <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
               Parcours
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-ink leading-tight">
