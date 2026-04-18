@@ -46,7 +46,7 @@ export default function Hero() {
             </p>
 
             {/* Check list */}
-            <ul className="space-y-3 mb-10">
+            <ul className="space-y-3 mb-14">
               {checks.map(c => (
                 <li key={c} className="flex items-center gap-3 text-sm font-medium text-ink-soft">
                   <CheckCircle className="w-4 h-4 text-green flex-shrink-0" />
