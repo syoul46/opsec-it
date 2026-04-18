@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "OPSEC-IT <noreply@opsec-it.fr>",
+          from: "OPSEC-IT <onboarding@resend.dev>",
           to: ["sioulmig@gmail.com"],
           reply_to: email,
           subject: `[OPSEC-IT] Nouveau contact — ${objet}`,
