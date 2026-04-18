@@ -57,7 +57,7 @@ export default async function Image() {
             height="44"
             viewBox="0 0 24 24"
             fill="none"
-            stroke="#2563EB"
+            stroke="#4F46E5"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -66,7 +66,7 @@ export default async function Image() {
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           </svg>
           <span style={{ color: "white", fontSize: 34, fontWeight: 700 }}>OPSEC</span>
-          <span style={{ color: "#2563EB", fontSize: 34, fontWeight: 700 }}>-IT</span>
+          <span style={{ color: "#4F46E5", fontSize: 34, fontWeight: 700 }}>-IT</span>
         </div>
 
         {/* Nom */}
@@ -86,7 +86,7 @@ export default async function Image() {
         {/* Titre */}
         <div
           style={{
-            color: "#2563EB",
+            color: "#4F46E5",
             fontSize: 26,
             fontWeight: 700,
             marginBottom: 8,
