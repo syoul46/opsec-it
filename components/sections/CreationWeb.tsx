@@ -142,7 +142,7 @@ export default function CreationWeb() {
               key={tier.name}
               className={`rounded-2xl border p-8 flex flex-col shadow-card transition-all duration-200 hover:shadow-card-md hover:-translate-y-1 ${
                 tier.highlight
-                  ? "bg-blue border-blue text-white"
+                  ? "bg-amber border-amber text-white"
                   : "bg-white border-border"
               }`}
             >
@@ -172,8 +172,8 @@ export default function CreationWeb() {
                 href="#contact"
                 className={`mt-8 inline-flex items-center justify-center rounded-xl text-sm font-semibold transition-all hover:shadow-md ${
                   tier.highlight
-                    ? "bg-white text-blue hover:bg-white/90"
-                    : "bg-blue text-white hover:bg-blue/90 hover:shadow-blue/20"
+                    ? "bg-white text-amber hover:bg-white/90"
+                    : "bg-amber text-white hover:bg-amber/90 hover:shadow-amber/20"
                 }`}
                 style={{ padding: "10px 20px" }}
               >

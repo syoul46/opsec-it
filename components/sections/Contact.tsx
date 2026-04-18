@@ -111,7 +111,7 @@ export default function Contact() {
                 )}
                 <div className="flex items-center gap-4 pt-1">
                   <button type="submit" disabled={status === "loading"}
-                          className="flex items-center gap-2 rounded-xl bg-blue text-white font-semibold text-sm hover:bg-blue/90 disabled:opacity-60 transition-all shadow-md hover:shadow-lg hover:shadow-blue/20" style={{ padding: "5px 14px" }}>
+                          className="flex items-center gap-2 rounded-xl bg-amber text-white font-semibold text-sm hover:bg-amber/90 disabled:opacity-60 transition-all shadow-md hover:shadow-lg hover:shadow-amber/20" style={{ padding: "5px 14px" }}>
                     {status === "loading"
                       ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Envoi...</>
                       : <><Send className="w-4 h-4" />Envoyer</>}

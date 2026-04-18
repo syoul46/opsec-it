@@ -16,9 +16,10 @@ const checks = [
 export default function Hero() {
   return (
     <section className="relative bg-white pt-28 pb-36 overflow-hidden">
-      {/* Blob décoratif */}
+      {/* Blobs décoratifs */}
       <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-blue-soft opacity-60 blur-3xl pointer-events-none" />
       <div className="absolute top-1/2 -right-16 w-72 h-72 rounded-full bg-blue-mid opacity-30 blur-2xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-amber-soft opacity-70 blur-3xl pointer-events-none" />
 
       <div className="relative wrap">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
@@ -58,7 +59,7 @@ export default function Hero() {
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#contact"
-                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue text-white font-semibold text-sm hover:bg-blue/90 transition-all shadow-md hover:shadow-lg hover:shadow-blue/25 hover:-translate-y-0.5" style={{ padding: "5px 14px" }}>
+                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber text-white font-semibold text-sm hover:bg-amber/90 transition-all shadow-md hover:shadow-lg hover:shadow-amber/30 hover:-translate-y-0.5" style={{ padding: "5px 14px" }}>
                 Prendre contact
                 <ArrowRight className="w-4 h-4" />
               </a>
