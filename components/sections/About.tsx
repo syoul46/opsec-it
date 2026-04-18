@@ -1,19 +1,19 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import { CheckCircle, Award } from "lucide-react";
+import { CheckCircle, Award, Terminal, Network, Activity, Layers, Package, Lock, LucideIcon } from "lucide-react";
 
 const certification = { label: "AIS", sub: "Administrateur d'Infrastructures Sécurisées — IPSSI Paris, 2026" };
 
-const skills = [
-  { label: "Linux / Systèmes",        sub: "Administration serveurs, gestion de services, maintenance" },
-  { label: "Réseaux & Sécurité",      sub: "TCP/IP, Firewall, VPN, segmentation" },
-  { label: "Supervision",             sub: "Zabbix, monitoring infrastructure" },
-  { label: "Virtualisation",          sub: "Environnements virtualisés : Proxmox, VMware" },
-  { label: "Conteneurisation",        sub: "Docker, Docker Compose" },
-  { label: "Protection des données",  sub: "Sensibilisation RGPD, bonnes pratiques de sécurité" },
+const skills: { label: string; sub: string; Icon: LucideIcon }[] = [
+  { label: "Linux / Systèmes",        sub: "Administration serveurs, gestion de services, maintenance",  Icon: Terminal },
+  { label: "Réseaux & Sécurité",      sub: "TCP/IP, Firewall, VPN, segmentation",                        Icon: Network  },
+  { label: "Supervision",             sub: "Zabbix, monitoring infrastructure",                           Icon: Activity },
+  { label: "Virtualisation",          sub: "Environnements virtualisés : Proxmox, VMware",                Icon: Layers   },
+  { label: "Conteneurisation",        sub: "Docker, Docker Compose",                                      Icon: Package  },
+  { label: "Protection des données",  sub: "Conformité RGPD, chiffrement, contrôle des accès",             Icon: Lock     },
 ];
 
 const experience = [
-  { period: "2025 — 2026", role: "Étudiant AIS", company: "IPSSI Paris", desc: "Formation Administrateur d'Infrastructures Sécurisées. Titre obtenu. Spécialisation : audit, sécurisation et administration d'infrastructures." },
+  { period: "2025 — 2026", role: "Formation AIS", company: "IPSSI Paris", desc: "Administrateur d'Infrastructures Sécurisées — titre obtenu. Spécialisation : audit, sécurisation et administration d'infrastructures." },
   { period: "2018 — 2024", role: "Technicien réseau, systèmes & DevOps", company: "SAS ANUANUA", desc: "Administration systèmes Linux/Windows, gestion d'infrastructure réseau, déploiements cloud, automatisation DevOps. Environnement multi-projets." },
   { period: "2008 — 2017", role: "Technicien interfaces MIDI", company: "Spectacle vivant", desc: "Conception et mise en place de systèmes d'interfaçage MIDI pour le spectacle. Contraintes de fiabilité temps réel, matériel sur-mesure, autonomie technique totale." },
 ];
@@ -26,7 +26,7 @@ const values = [
 
 export default function About() {
   return (
-    <SectionWrapper id="parcours" className="pt-32 pb-28 bg-white">
+    <SectionWrapper id="parcours" className="pt-32 pb-28 bg-surf-mid">
       <div className="wrap">
         <div className="mb-14 flex items-center gap-6">
           <img
@@ -36,7 +36,7 @@ export default function About() {
           />
           <div>
             <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
-              Parcours & Crédibilité
+              Parcours
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-ink leading-tight">
               Expertise forgée sur le terrain
@@ -95,7 +95,7 @@ export default function About() {
                 <div key={s.label}
                      className="flex items-center gap-4 p-4 rounded-xl border bg-surf border-border hover:border-blue-mid hover:bg-blue/5 transition-all">
                   <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue/5 border border-blue/15">
-                    <Award className="w-4 h-4 text-blue" />
+                    <s.Icon className="w-4 h-4 text-blue" />
                   </div>
                   <div>
                     <p className="text-sm font-bold text-ink">{s.label}</p>

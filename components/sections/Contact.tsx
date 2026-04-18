@@ -9,9 +9,9 @@ import { Send, ExternalLink, Mail, CheckCircle, AlertCircle, Clock } from "lucid
 
 const schema = z.object({
   nom:     z.string().min(2, "Nom requis"),
-  societe: z.string().min(2, "Société requise"),
+  societe: z.string().min(2, "Organisation requise"),
   email:   z.string().email("Email invalide"),
-  objet:   z.enum(["audit", "administration", "cloud", "urgence", "autre"]),
+  objet:   z.enum(["audit", "administration", "cloud", "creation-web", "urgence", "autre"]),
   message: z.string().min(20, "Message trop court (20 caractères minimum)"),
 });
 type FormData = z.infer<typeof schema>;
@@ -20,6 +20,7 @@ const subjects = [
   { value: "audit",          label: "Audit de sécurité" },
   { value: "administration", label: "Administration systèmes & réseaux" },
   { value: "cloud",          label: "Cloud & virtualisation" },
+  { value: "creation-web",   label: "Création de site web" },
   { value: "urgence",        label: "Urgence / Incident en cours" },
   { value: "autre",          label: "Autre demande" },
 ];
@@ -79,7 +80,7 @@ export default function Contact() {
                     {errors.nom && <p className="text-xs text-red-500 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.nom.message}</p>}
                   </div>
                   <div>
-                    <label className={labelBase}>Société *</label>
+                    <label className={labelBase}>Organisation / Société *</label>
                     <input {...register("societe")} placeholder="ACME SAS" className={inputBase} />
                     {errors.societe && <p className="text-xs text-red-500 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.societe.message}</p>}
                   </div>

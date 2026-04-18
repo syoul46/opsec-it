@@ -3,13 +3,13 @@ import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 const stats = [
   { value: "7 ans", label: "d'expérience terrain" },
   { value: "AIS",   label: "titre obtenu — IPSSI" },
-  { value: "48h",   label: "délai de réponse" },
+  { value: "24h",   label: "délai de réponse" },
 ];
 
 const checks = [
   "Réduction des risques cyber",
   "Conformité RGPD & ANSSI",
-  "Continuité d'activité garantie",
+  "Continuité d'activité assurée",
   "Tarifs adaptés aux asso et PME",
 ];
 
@@ -40,9 +40,9 @@ export default function Hero() {
 
             {/* Sous-titre */}
             <p className="text-lg text-ink-soft leading-relaxed mb-8 max-w-md">
-              Sylvestre MIGNOT, titulaire du titre AIS (IPSSI), accompagne
-              les associations et les PME dans la sécurisation et
-              l&apos;administration de leurs systèmes d&apos;information.
+              Sylvestre MIGNOT, titulaire du titre AIS (IPSSI), sécurise et
+              administre les systèmes d&apos;information des associations
+              et des PME.
             </p>
 
             {/* Check list */}
@@ -109,7 +109,7 @@ export default function Hero() {
               <div className="mt-6 pt-5 border-t border-border grid grid-cols-3 gap-4 text-center">
                 {[
                   { v: "0",   l: "Incidents" },
-                  { v: "12",  l: "Audits/an" },
+                  { v: "24h", l: "Réponse" },
                   { v: "99.9%", l: "Uptime" },
                 ].map(m => (
                   <div key={m.l}>

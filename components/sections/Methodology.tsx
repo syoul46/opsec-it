@@ -10,7 +10,7 @@ const steps = [
 
 export default function Methodology() {
   return (
-    <SectionWrapper id="methodologie" className="pt-32 pb-28 bg-surf">
+    <SectionWrapper id="methodologie" className="pt-32 pb-28 bg-white">
       <div className="wrap">
         <div style={{ marginBottom: "20px" }}>
           <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">
@@ -21,7 +21,7 @@ export default function Methodology() {
           </h2>
           <p className="text-ink-soft max-w-lg leading-relaxed">
             Une approche structurée en quatre phases, adaptée à la réalité opérationnelle
-            de votre entreprise.
+            de votre structure.
           </p>
         </div>
 
@@ -50,14 +50,12 @@ export default function Methodology() {
           ))}
         </div>
 
-        {/* Citation */}
-        <blockquote className="bg-blue-soft border-l-4 border-blue rounded-r-xl px-8 py-6 max-w-2xl">
-          <p className="text-ink italic leading-relaxed mb-3">
-            &ldquo;La sécurité opérationnelle n&apos;est pas un état final mais un processus
-            continu d&apos;adaptation aux menaces et aux évolutions de votre organisation.&rdquo;
+        <div className="bg-blue-soft border-l-4 border-blue rounded-r-xl px-8 py-6 max-w-2xl">
+          <p className="text-ink leading-relaxed">
+            La sécurité opérationnelle n&apos;est pas un état final — c&apos;est un processus
+            continu d&apos;adaptation aux menaces et aux évolutions de votre structure.
           </p>
-          <cite className="text-sm font-bold text-blue not-italic">— Sylvestre MIGNOT, AIS</cite>
-        </blockquote>
+        </div>
       </div>
     </SectionWrapper>
   );

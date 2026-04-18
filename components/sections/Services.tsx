@@ -15,7 +15,7 @@ const services = [
 
 export default function Services() {
   return (
-    <SectionWrapper id="services" className="pt-32 pb-28 bg-surf">
+    <SectionWrapper id="services" className="pt-32 pb-28 bg-surf-mid">
       <div className="wrap">
         <div style={{ marginBottom: "20px" }}>
           <span className="inline-block text-blue text-sm font-semibold uppercase tracking-widest mb-3">

@@ -14,17 +14,20 @@ services:
       - NODE_ENV=production
       - APP_DOMAIN=opsec-it.fr
       - NEXT_PUBLIC_SITE_URL=https://opsec-it.fr
+      - RESEND_API_KEY=${RESEND_API_KEY}
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
     labels:
-      - "SERVICE_3000_NAME=opsec-it-prod-app-3000"
-      - "SERVICE_3000_TAGS=urlprefix-opsec-it.fr/*"
-      - "SERVICE_3000_CHECK_TCP=true"
-      - "LETSENCRYPT_HOST=opsec-it.fr"
+      - SERVICE_3000_NAME=opsec-it-prod-app-3000
+      - SERVICE_3000_TAGS=urlprefix-opsec-it.fr/*
+      - SERVICE_3000_CHECK_TCP=true
     networks:
-      - app-net
       - sonic
 
 networks:
-  app-net:
-    driver: bridge
   sonic:
     external: true

@@ -12,16 +12,16 @@ export default function Footer() {
               <span className="font-bold text-base">OPSEC<span className="text-blue">-IT</span></span>
             </div>
             <p className="text-sm text-ink-dim leading-relaxed max-w-xs">
-              Sécurisation et administration d&apos;infrastructures pour les associations et les PME. Sylvestre MIGNOT, AIS.
+              Sécurisation, administration d&apos;infrastructures et création web pour les associations et les PME. Sylvestre MIGNOT, AIS.
             </p>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-ink-dim mb-4">Navigation</p>
             <ul className="space-y-2">
-              {["#services", "#parcours", "#methodologie", "#contact"].map((h, i) => (
+              {["#services", "#creation-web", "#parcours", "#methodologie", "#contact"].map((h, i) => (
                 <li key={h}>
                   <a href={h} className="text-sm text-white/70 hover:text-white transition-colors">
-                    {["Services", "Parcours", "Méthodologie", "Contact"][i]}
+                    {["Services", "Création web", "Parcours", "Méthodologie", "Contact"][i]}
                   </a>
                 </li>
               ))}
@@ -31,7 +31,7 @@ export default function Footer() {
             <p className="text-xs font-semibold uppercase tracking-widest text-ink-dim mb-4">Contact</p>
             <ul className="space-y-2">
               <li><a href="mailto:contact@opsec-it.fr" className="text-sm text-white/70 hover:text-white transition-colors">contact@opsec-it.fr</a></li>
-              <li><a href="https://linkedin.com/in/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.linkedin.com/in/sylvestre-mignot-261a7461/" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">LinkedIn</a></li>
             </ul>
           </div>
         </div>
