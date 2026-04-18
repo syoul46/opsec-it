@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
         },
         body: JSON.stringify({
           from: "OPSEC-IT <noreply@opsec-it.fr>",
-          to: ["contact@opsec-it.fr"],
+          to: ["sioulmig@gmail.com"],
           reply_to: email,
           subject: `[OPSEC-IT] Nouveau contact — ${objet}`,
           html: `
