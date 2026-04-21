@@ -48,14 +48,21 @@ export default function About() {
           {/* Timeline */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-8">Expérience</h3>
-            <ol className="relative pl-5 border-l-2 border-blue-mid space-y-10">
+            <ol className="space-y-0">
               {experience.map((e, i) => (
-                <li key={i} className="relative">
-                  <span className="absolute -left-[21px] top-0.5 w-4 h-4 rounded-full bg-blue border-2 border-white ring-2 ring-blue-mid" />
-                  <p className="text-xs font-semibold text-blue uppercase tracking-wider mb-1">{e.period}</p>
-                  <p className="text-base font-bold text-ink">{e.role}</p>
-                  <p className="text-sm text-blue font-medium mb-1.5">{e.company}</p>
-                  <p className="text-sm text-ink-soft leading-relaxed">{e.desc}</p>
+                <li key={i} className="flex gap-5">
+                  <div className="flex flex-col items-center flex-shrink-0">
+                    <span className="w-4 h-4 rounded-full bg-blue border-2 border-white ring-2 ring-blue-mid mt-0.5 flex-shrink-0" />
+                    {i < experience.length - 1 && (
+                      <div className="w-0.5 bg-blue-mid flex-1 mt-1.5 mb-0" />
+                    )}
+                  </div>
+                  <div className="pb-10">
+                    <p className="text-xs font-semibold text-blue uppercase tracking-wider mb-1">{e.period}</p>
+                    <p className="text-base font-bold text-ink">{e.role}</p>
+                    <p className="text-sm text-blue font-medium mb-1.5">{e.company}</p>
+                    <p className="text-sm text-ink-soft leading-relaxed">{e.desc}</p>
+                  </div>
                 </li>
               ))}
             </ol>
