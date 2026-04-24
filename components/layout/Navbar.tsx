@@ -44,7 +44,7 @@ export default function Navbar() {
         </nav>
 
         <a href="#contact"
-           className="hidden md:inline-flex items-center rounded-xl bg-blue text-white text-sm font-semibold hover:bg-blue/90 transition-all shadow-sm hover:shadow-md hover:shadow-blue/20" style={{ padding: "5px 14px" }}>
+           className="hidden md:inline-flex items-center rounded-xl bg-blue text-white text-sm font-semibold hover:bg-blue/90 transition-all shadow-sm hover:shadow-md hover:shadow-blue/20 min-h-11 px-5 py-2.5">
           Prendre contact
         </a>
 

@@ -109,7 +109,7 @@ export default function CreationWeb() {
     <SectionWrapper id="creation-web" className="pt-32 pb-28 bg-white">
       <div className="wrap">
 
-        <div style={{ marginBottom: "20px" }}>
+        <div className="mb-5">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
             Création web
           </span>
@@ -122,12 +122,12 @@ export default function CreationWeb() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" style={{ marginBottom: "56px" }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
           {webServices.map(s => <ServiceCard key={s.title} {...s} />)}
         </div>
 
         {/* Tarifs */}
-        <div style={{ marginBottom: "20px" }}>
+        <div className="mb-5">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
             Tarifs
           </span>
@@ -146,45 +146,44 @@ export default function CreationWeb() {
               key={tier.name}
               className={`rounded-2xl border p-8 flex flex-col shadow-card transition-all duration-200 hover:shadow-card-md hover:-translate-y-1 ${
                 tier.highlight
-                  ? "bg-amber border-amber text-white"
+                  ? "bg-amber border-amber text-ink"
                   : "bg-white border-border"
               }`}
             >
-              <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${tier.highlight ? "text-white/70" : "text-blue"}`}>
+              <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${tier.highlight ? "text-ink/80" : "text-blue"}`}>
                 {tier.name}
               </p>
               {tier.from && (
-                <p className={`text-xs font-medium mb-1 ${tier.highlight ? "text-white/70" : "text-ink-soft"}`}>
+                <p className={`text-xs font-medium mb-1 ${tier.highlight ? "text-ink/70" : "text-ink-soft"}`}>
                   À partir de
                 </p>
               )}
               <div className="flex items-baseline gap-1 mb-1">
-                <span className={`text-4xl font-black ${tier.highlight ? "text-white" : "text-ink"}`}>
+                <span className="text-4xl font-black text-ink">
                   {tier.price}
                 </span>
-                <span className={`text-sm font-medium ${tier.highlight ? "text-white/70" : "text-ink-soft"}`}>
+                <span className={`text-sm font-medium ${tier.highlight ? "text-ink/70" : "text-ink-soft"}`}>
                   {tier.sub}
                 </span>
               </div>
-              <p className={`text-sm mb-6 leading-relaxed ${tier.highlight ? "text-white/80" : "text-ink-soft"}`}>
+              <p className={`text-sm mb-6 leading-relaxed ${tier.highlight ? "text-ink/85" : "text-ink-soft"}`}>
                 {tier.description}
               </p>
               <ul className="flex flex-col gap-3 flex-1">
                 {tier.features.map(f => (
                   <li key={f} className="flex items-start gap-2">
-                    <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${tier.highlight ? "text-white/80" : "text-blue"}`} />
-                    <span className={`text-sm ${tier.highlight ? "text-white/90" : "text-ink-soft"}`}>{f}</span>
+                    <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${tier.highlight ? "text-ink" : "text-blue"}`} />
+                    <span className={`text-sm ${tier.highlight ? "text-ink/90" : "text-ink-soft"}`}>{f}</span>
                   </li>
                 ))}
               </ul>
               <a
                 href="#contact"
-                className={`mt-8 inline-flex items-center justify-center rounded-xl text-sm font-semibold transition-all hover:shadow-md ${
+                className={`mt-8 inline-flex items-center justify-center rounded-xl text-sm font-semibold transition-all hover:shadow-md min-h-11 px-5 py-2.5 ${
                   tier.highlight
-                    ? "bg-white text-amber hover:bg-white/90"
-                    : "bg-amber text-white hover:bg-amber/90 hover:shadow-amber/20"
+                    ? "bg-ink text-white hover:bg-ink/90"
+                    : "bg-amber text-ink hover:bg-amber/90 hover:shadow-amber/20"
                 }`}
-                style={{ padding: "10px 20px" }}
               >
                 Demander un devis
               </a>

@@ -1,7 +1,7 @@
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 
 const stats = [
-  { value: "7 ans", label: "d'expérience terrain" },
+  { value: "6 ans", label: "d'expérience terrain" },
   { value: "AIS",   label: "titre obtenu — IPSSI" },
   { value: "24h",   label: "délai de réponse" },
 ];
@@ -33,17 +33,15 @@ export default function Hero() {
             </div>
 
             {/* H1 */}
-            <h1 className="text-5xl lg:text-6xl font-black text-ink leading-[1.08] tracking-tight mb-6">
-              Sécurisez votre<br />
-              <span className="text-blue">infrastructure.</span><br />
-              Protégez votre<br />activité.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink leading-[1.1] tracking-tight mb-6 text-balance">
+              Sécurisez votre <span className="text-blue">infrastructure</span>. Protégez votre activité.
             </h1>
 
             {/* Sous-titre */}
-            <p className="text-lg text-ink-soft leading-relaxed mb-8 max-w-md">
+            <p className="text-lg text-ink-soft leading-relaxed mb-8 max-w-xl">
               Sylvestre MIGNOT, titulaire du titre AIS (IPSSI), sécurise et
-              administre les systèmes d&apos;information des associations
-              et des PME.
+              administre les systèmes d&apos;information des associations et
+              des PME — et conçoit leurs sites web sur mesure.
             </p>
 
             {/* Check list */}
@@ -59,12 +57,12 @@ export default function Hero() {
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#contact"
-                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber text-white font-semibold text-sm hover:bg-amber/90 transition-all shadow-md hover:shadow-lg hover:shadow-amber/30 hover:-translate-y-0.5" style={{ padding: "5px 14px" }}>
+                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber text-ink font-semibold text-sm hover:bg-amber/90 transition-all shadow-md hover:shadow-lg hover:shadow-amber/30 hover:-translate-y-0.5 min-h-11 px-5 py-2.5">
                 Prendre contact
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a href="#services"
-                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border text-ink text-sm font-semibold hover:bg-surf hover:border-ink/20 transition-all" style={{ padding: "5px 14px" }}>
+                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border text-ink text-sm font-semibold hover:bg-surf hover:border-ink/20 transition-all min-h-11 px-5 py-2.5">
                 Voir les services
               </a>
             </div>
@@ -73,14 +71,17 @@ export default function Hero() {
           {/* Carte illustration */}
           <div className="relative hidden lg:block lg:col-span-2">
             {/* Card principale */}
-            <div className="bg-white rounded-2xl shadow-card-lg border border-border" style={{ padding: "20px" }}>
+            <div className="bg-white rounded-2xl shadow-card-lg border border-border relative p-5" aria-label="Exemple illustratif de tableau de bord sécurité">
+              <span className="absolute -top-3 right-4 bg-blue text-white text-[10px] font-bold uppercase tracking-widest rounded-full px-3 py-1 shadow-card">
+                Exemple
+              </span>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-blue flex items-center justify-center">
                   <Shield className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-ink">OPSEC-IT</p>
-                  <p className="text-xs text-ink-dim">Tableau de bord sécurité</p>
+                  <p className="text-xs text-ink-dim">Tableau de bord sécurité — illustration</p>
                 </div>
                 <div className="ml-auto flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-green" />
