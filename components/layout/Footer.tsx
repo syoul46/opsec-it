@@ -37,7 +37,19 @@ export default function Footer() {
         </div>
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-ink-dim">&copy; {year} OPSEC-IT — Sylvestre MIGNOT. Tous droits réservés.</p>
-          <p className="text-xs text-ink-dim">AIS — Administrateur d&apos;Infrastructures Sécurisées</p>
+          <ul className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <li>
+              <a href="/mentions-legales" className="text-xs text-ink-dim hover:text-white transition-colors">
+                Mentions légales
+              </a>
+            </li>
+            <li aria-hidden="true" className="text-xs text-ink-dim">·</li>
+            <li>
+              <a href="/politique-confidentialite" className="text-xs text-ink-dim hover:text-white transition-colors">
+                Confidentialité
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
     </footer>

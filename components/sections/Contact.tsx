@@ -8,11 +8,12 @@ import SectionWrapper from "@/components/ui/SectionWrapper";
 import { Send, ExternalLink, Mail, CheckCircle, AlertCircle, Clock } from "lucide-react";
 
 const schema = z.object({
-  nom:     z.string().min(2, "Nom requis"),
-  societe: z.string().min(2, "Organisation requise"),
-  email:   z.string().email("Email invalide"),
+  nom:     z.string().min(2, "Nom requis").max(100),
+  societe: z.string().min(2, "Organisation requise").max(150),
+  email:   z.string().email("Email invalide").max(200),
   objet:   z.enum(["audit", "administration", "cloud", "creation-web", "urgence", "autre"]),
-  message: z.string().min(20, "Message trop court (20 caractères minimum)"),
+  message: z.string().min(20, "Message trop court (20 caractères minimum)").max(5000),
+  website: z.string().max(0).optional(),
 });
 type FormData = z.infer<typeof schema>;
 
@@ -72,36 +73,88 @@ export default function Contact() {
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+                {/* Honeypot — invisible pour l'humain, piège à bots */}
+                <div aria-hidden="true" className="absolute left-[-9999px] top-auto w-px h-px overflow-hidden">
+                  <label htmlFor="website">Ne pas remplir</label>
+                  <input
+                    id="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    {...register("website")}
+                  />
+                </div>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className={labelBase}>Nom *</label>
-                    <input {...register("nom")} placeholder="Sylvestre MIGNOT" className={inputBase} />
-                    {errors.nom && <p className="text-xs text-red-500 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.nom.message}</p>}
+                    <label htmlFor="contact-nom" className={labelBase}>Nom *</label>
+                    <input
+                      id="contact-nom"
+                      autoComplete="name"
+                      aria-invalid={!!errors.nom}
+                      aria-describedby={errors.nom ? "err-nom" : undefined}
+                      placeholder="Jean Dupont"
+                      className={inputBase}
+                      {...register("nom")}
+                    />
+                    {errors.nom && <p id="err-nom" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.nom.message}</p>}
                   </div>
                   <div>
-                    <label className={labelBase}>Organisation / Société *</label>
-                    <input {...register("societe")} placeholder="ACME SAS" className={inputBase} />
-                    {errors.societe && <p className="text-xs text-red-500 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.societe.message}</p>}
+                    <label htmlFor="contact-societe" className={labelBase}>Organisation / Société *</label>
+                    <input
+                      id="contact-societe"
+                      autoComplete="organization"
+                      aria-invalid={!!errors.societe}
+                      aria-describedby={errors.societe ? "err-societe" : undefined}
+                      placeholder="ACME SAS"
+                      className={inputBase}
+                      {...register("societe")}
+                    />
+                    {errors.societe && <p id="err-societe" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.societe.message}</p>}
                   </div>
                 </div>
                 <div>
-                  <label className={labelBase}>Email *</label>
-                  <input {...register("email")} type="email" placeholder="contact@entreprise.fr" className={inputBase} />
-                  {errors.email && <p className="text-xs text-red-500 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.email.message}</p>}
+                  <label htmlFor="contact-email" className={labelBase}>Email *</label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    autoComplete="email"
+                    aria-invalid={!!errors.email}
+                    aria-describedby={errors.email ? "err-email" : undefined}
+                    placeholder="contact@entreprise.fr"
+                    className={inputBase}
+                    {...register("email")}
+                  />
+                  {errors.email && <p id="err-email" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.email.message}</p>}
                 </div>
                 <div>
-                  <label className={labelBase}>Objet *</label>
-                  <select {...register("objet")} className={inputBase} defaultValue="">
+                  <label htmlFor="contact-objet" className={labelBase}>Objet *</label>
+                  <select
+                    id="contact-objet"
+                    aria-invalid={!!errors.objet}
+                    aria-describedby={errors.objet ? "err-objet" : undefined}
+                    defaultValue=""
+                    className={inputBase}
+                    {...register("objet")}
+                  >
                     <option value="" disabled>Sélectionner un objet</option>
                     {subjects.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
                   </select>
-                  {errors.objet && <p className="text-xs text-red-500 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.objet.message}</p>}
+                  {errors.objet && <p id="err-objet" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.objet.message}</p>}
                 </div>
                 <div>
-                  <label className={labelBase}>Message *</label>
-                  <textarea {...register("message")} rows={5} placeholder="Décrivez votre besoin, votre contexte..." className={inputBase + " resize-none"} />
-                  {errors.message && <p className="text-xs text-red-500 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.message.message}</p>}
+                  <label htmlFor="contact-message" className={labelBase}>Message *</label>
+                  <textarea
+                    id="contact-message"
+                    rows={5}
+                    aria-invalid={!!errors.message}
+                    aria-describedby={errors.message ? "err-message" : undefined}
+                    placeholder="Décrivez votre besoin, votre contexte..."
+                    className={inputBase + " resize-none"}
+                    {...register("message")}
+                  />
+                  {errors.message && <p id="err-message" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.message.message}</p>}
                 </div>
                 {status === "error" && (
                   <div className="flex items-center gap-2 text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl p-3">
@@ -111,9 +164,9 @@ export default function Contact() {
                 )}
                 <div className="flex items-center gap-4 pt-1">
                   <button type="submit" disabled={status === "loading"}
-                          className="flex items-center gap-2 rounded-xl bg-amber text-white font-semibold text-sm hover:bg-amber/90 disabled:opacity-60 transition-all shadow-md hover:shadow-lg hover:shadow-amber/20" style={{ padding: "5px 14px" }}>
+                          className="flex items-center gap-2 rounded-xl bg-amber text-ink font-semibold text-sm hover:bg-amber/90 disabled:opacity-60 transition-all shadow-md hover:shadow-lg hover:shadow-amber/20 min-h-11 px-5 py-2.5">
                     {status === "loading"
-                      ? <><div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />Envoi...</>
+                      ? <><div className="w-4 h-4 border-2 border-ink/30 border-t-ink rounded-full animate-spin" />Envoi...</>
                       : <><Send className="w-4 h-4" />Envoyer</>}
                   </button>
                   <p className="text-xs text-ink-dim flex items-center gap-1.5">
@@ -160,7 +213,8 @@ export default function Contact() {
                 <p className="text-sm font-bold text-ink">Disponible</p>
               </div>
               <p className="text-xs text-ink-soft leading-relaxed">
-                Nouvelles missions acceptées<br />Délai d&apos;intervention : 48-72h
+                Nouvelles missions acceptées.<br />
+                Réponse sous 24h ouvrées — première intervention planifiée sous 48-72h.
               </p>
             </div>
           </div>
