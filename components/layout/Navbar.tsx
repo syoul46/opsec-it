@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 import { Shield, Menu, X } from "lucide-react";
 
 const links = [
-  { href: "#services",      label: "Services" },
-  { href: "#creation-web",  label: "Création web" },
-  { href: "#parcours",      label: "Parcours" },
-  { href: "#methodologie",  label: "Méthodologie" },
-  { href: "#contact",       label: "Contact" },
+  { href: "/#services",      label: "Services" },
+  { href: "/#creation-web",  label: "Création web" },
+  { href: "/#parcours",      label: "Parcours" },
+  { href: "/#methodologie",  label: "Méthodologie" },
+  { href: "/#contact",       label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -27,7 +27,7 @@ export default function Navbar() {
     }`}>
       <div className="wrap h-20 flex items-center justify-between">
 
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="/" className="flex items-center gap-2 group">
           <Shield className="w-6 h-6 text-blue" />
           <span className="font-bold text-xl tracking-tight">
             <span className="text-ink">OPSEC</span><span className="text-blue">-IT</span>
@@ -43,7 +43,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="#contact"
+        <a href="/#contact"
            className="hidden md:inline-flex items-center rounded-xl bg-blue text-white text-sm font-semibold hover:bg-blue/90 transition-all shadow-sm hover:shadow-md hover:shadow-blue/20 min-h-11 px-5 py-2.5">
           Prendre contact
         </a>
@@ -59,7 +59,7 @@ export default function Navbar() {
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}
                className="block text-sm font-medium text-ink-soft hover:text-ink">{l.label}</a>
           ))}
-          <a href="#contact" onClick={() => setOpen(false)}
+          <a href="/#contact" onClick={() => setOpen(false)}
              className="block text-center px-4 py-2 rounded-lg bg-blue text-white text-sm font-semibold">
             Prendre contact
           </a>

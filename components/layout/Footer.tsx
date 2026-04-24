@@ -18,7 +18,7 @@ export default function Footer() {
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-ink-dim mb-4">Navigation</p>
             <ul className="space-y-2">
-              {["#services", "#creation-web", "#parcours", "#methodologie", "#contact"].map((h, i) => (
+              {["/#services", "/#creation-web", "/#parcours", "/#methodologie", "/#contact"].map((h, i) => (
                 <li key={h}>
                   <a href={h} className="text-sm text-white/70 hover:text-white transition-colors">
                     {["Services", "Création web", "Parcours", "Méthodologie", "Contact"][i]}
