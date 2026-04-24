@@ -1,5 +1,5 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import { CheckCircle, Award, Terminal, Network, Activity, Layers, Package, Lock, LucideIcon } from "lucide-react";
+import { CheckCircle, Award, Terminal, Network, Activity, Layers, Package, Lock, Quote, LucideIcon } from "lucide-react";
 
 const certification = { label: "AIS", sub: "Administrateur d'Infrastructures Sécurisées — IPSSI Paris, 2026" };
 
@@ -22,6 +22,25 @@ const values = [
   { t: "Sécurité by design",    d: "La sécurité intégrée dès la conception, pas ajoutée après coup." },
   { t: "Pragmatisme technique", d: "Des solutions adaptées à votre contexte, sans sur-ingénierie." },
   { t: "Communication claire",  d: "Des rapports compréhensibles pour les décideurs, pas seulement les techniciens." },
+];
+
+const testimonials = [
+  {
+    quote: "Nous avions besoin d'un site à la hauteur de notre cadre et de notre accueil. Sylvestre a su traduire l'esprit du Clos en un site clair, élégant et efficace. Les réservations ont suivi très vite, et son suivi reste d'une grande réactivité.",
+    author: "Christelle & David Bernadou",
+    initials: "CB",
+    structure: "Le Clos de Gamel",
+    url: "https://closdegamel.com",
+    display: "closdegamel.com",
+  },
+  {
+    quote: "Sylvestre a entièrement repensé notre site et modernisé notre infrastructure. Rigueur technique, sens du détail et vraie compréhension de nos enjeux : un partenaire de confiance sur la durée, toujours force de proposition.",
+    author: "Fred Bordier",
+    initials: "FB",
+    structure: "Anuanua — Gravure & découpe laser",
+    url: "https://anuanua.fr",
+    display: "anuanua.fr",
+  },
 ];
 
 export default function About() {
@@ -112,13 +131,31 @@ export default function About() {
               ))}
             </div>
 
-            {/* Placeholder témoignages */}
-            <div className="mt-8 p-5 rounded-xl border border-dashed border-border bg-surf">
-              <p className="text-xs font-semibold uppercase tracking-widest text-ink-dim mb-4">Témoignages clients</p>
-              <div className="space-y-2">
-                {[1, 2].map(i => (
-                  <div key={i} className="h-14 rounded-lg bg-blue/5 border border-blue/15 flex items-center justify-center">
-                    <p className="text-xs text-ink-dim">Témoignage client {i} — à venir</p>
+            {/* Témoignages clients */}
+            <div className="mt-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-blue mb-4">Témoignages clients</p>
+              <div className="space-y-4">
+                {testimonials.map(t => (
+                  <div key={t.author} className="p-6 rounded-xl border border-border bg-surf">
+                    <div className="relative">
+                      <Quote className="w-6 h-6 text-amber/40 absolute -top-1 -left-1" />
+                      <blockquote className="pl-8">
+                        <p className="text-sm text-ink-soft leading-relaxed italic mb-4">
+                          « {t.quote} »
+                        </p>
+                        <footer className="flex items-center gap-3">
+                          <div className="w-10 h-10 rounded-full bg-blue/10 border border-blue/20 flex items-center justify-center flex-shrink-0">
+                            <span className="text-xs font-bold text-blue">{t.initials}</span>
+                          </div>
+                          <div>
+                            <p className="text-sm font-bold text-ink">{t.author}</p>
+                            <a href={t.url} target="_blank" rel="noopener noreferrer" className="text-xs text-ink-soft hover:text-blue transition-colors">
+                              {t.structure} — {t.display}
+                            </a>
+                          </div>
+                        </footer>
+                      </blockquote>
+                    </div>
                   </div>
                 ))}
               </div>
