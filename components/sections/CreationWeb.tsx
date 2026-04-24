@@ -44,8 +44,9 @@ const webServices = [
 const pricingTiers = [
   {
     name: "Site vitrine",
-    price: "1 200 €",
-    sub: "forfait",
+    price: "800 €",
+    sub: "",
+    from: true,
     description: "Une page responsive, design soigné, formulaire de contact.",
     features: [
       "Design sur mesure",
@@ -58,8 +59,9 @@ const pricingTiers = [
   },
   {
     name: "Site multi-pages",
-    price: "2 500 €",
-    sub: "forfait",
+    price: "1 800 €",
+    sub: "",
+    from: true,
     description: "3 à 5 pages structurées, sans CMS. Contenu stable, site rapide.",
     features: [
       "3 à 5 pages sur mesure",
@@ -72,8 +74,9 @@ const pricingTiers = [
   },
   {
     name: "Site + CMS",
-    price: "3 900 €",
-    sub: "forfait",
+    price: "2 800 €",
+    sub: "",
+    from: true,
     description: "Jusqu'à 5 pages + back-office pour gérer vos contenus en autonomie.",
     features: [
       "Jusqu'à 5 pages",
@@ -86,8 +89,9 @@ const pricingTiers = [
   },
   {
     name: "Maintenance",
-    price: "100 €",
+    price: "60 €",
     sub: "/ mois",
+    from: true,
     description: "Tranquillité d'esprit : mises à jour, sauvegardes, support.",
     features: [
       "Hébergement inclus",
@@ -149,6 +153,11 @@ export default function CreationWeb() {
               <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${tier.highlight ? "text-white/70" : "text-blue"}`}>
                 {tier.name}
               </p>
+              {tier.from && (
+                <p className={`text-xs font-medium mb-1 ${tier.highlight ? "text-white/70" : "text-ink-soft"}`}>
+                  À partir de
+                </p>
+              )}
               <div className="flex items-baseline gap-1 mb-1">
                 <span className={`text-4xl font-black ${tier.highlight ? "text-white" : "text-ink"}`}>
                   {tier.price}
