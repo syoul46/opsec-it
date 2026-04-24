@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# opsec-it.fr
 
-## Getting Started
+Site vitrine de Sylvestre MIGNOT — **OPSEC-IT**.
+Sécurité, administration d'infrastructures et création web pour associations et PME.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) — React 19
+- TypeScript 5
+- Tailwind CSS 4
+- react-hook-form + zod (formulaire contact)
+- Resend (envoi email du formulaire)
+
+## Développement
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site est accessible sur [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Variables d'environnement
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable         | Rôle                                           | Obligatoire      |
+|------------------|------------------------------------------------|------------------|
+| `RESEND_API_KEY` | Clé API Resend pour l'envoi des emails contact | Oui en production |
 
-## Learn More
+Sans clé, le formulaire loggue simplement les soumissions en console (mode dev).
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+  api/contact          — endpoint POST avec anti-spam (honeypot + rate-limit)
+  api/health           — ping /api/health → { ok: true }
+  mentions-legales     — page légale
+  politique-confidentialite — RGPD
+  layout.tsx           — metadata + JSON-LD + police Inter (next/font)
+  page.tsx             — landing one-page
+components/
+  layout/              — Navbar, Footer
+  sections/            — Hero, Services, CreationWeb, About, Methodology, Contact
+  ui/                  — ServiceCard, SectionWrapper, Badge, TerminalLine
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Déploiement
 
-## Deploy on Vercel
+Build production :
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm run build
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Ou via Docker (`docker-compose.prod.yml`).
+
+## Contact
+
+<contact@opsec-it.fr>

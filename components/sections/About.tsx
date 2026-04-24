@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { CheckCircle, Award, Terminal, Network, Activity, Layers, Package, Lock, Quote, LucideIcon } from "lucide-react";
 
@@ -48,9 +49,12 @@ export default function About() {
     <SectionWrapper id="parcours" className="pt-32 pb-28 bg-surf-mid">
       <div className="wrap">
         <div className="mb-14 flex items-center gap-6">
-          <img
+          <Image
             src="/sylvestre.jpg"
-            alt="Sylvestre MIGNOT"
+            alt="Portrait de Sylvestre MIGNOT"
+            width={80}
+            height={80}
+            priority={false}
             className="w-20 h-20 rounded-full object-cover border-2 border-blue/20 shadow-md flex-shrink-0"
           />
           <div>
@@ -86,7 +90,7 @@ export default function About() {
               ))}
             </ol>
 
-            <div style={{ marginTop: "10px" }} className="space-y-4">
+            <div className="mt-2.5 space-y-4">
               <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-6">Mon approche</h3>
               {values.map(v => (
                 <div key={v.t} className="flex gap-3">
