@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 
 const stats = [
@@ -15,11 +16,20 @@ const checks = [
 
 export default function Hero() {
   return (
-    <section className="relative bg-white pt-28 pb-36 overflow-hidden">
-      {/* Blobs décoratifs */}
-      <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-blue-soft opacity-60 blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -right-16 w-72 h-72 rounded-full bg-blue-mid opacity-30 blur-2xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-amber-soft opacity-70 blur-3xl pointer-events-none" />
+    <section className="relative bg-surf pt-28 pb-36 overflow-hidden">
+      {/* Image de fond polynésienne */}
+      <Image
+        src="/bg/hero-sunset.png"
+        alt=""
+        aria-hidden="true"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center pointer-events-none select-none"
+      />
+      {/* Overlay sombre — texte lisible à gauche, photo visible à droite */}
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-surf/95 via-surf/70 to-surf/10 pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-surf pointer-events-none" />
 
       <div className="relative wrap">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
@@ -34,7 +44,8 @@ export default function Hero() {
 
             {/* H1 */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink leading-[1.1] tracking-tight mb-6 text-balance">
-              Sécurisez votre <span className="text-blue">infrastructure</span>. Protégez votre activité.
+              Des sites web <span className="text-blue">sécurisés</span>,<br />
+              pensés pour <span className="text-blue">durer</span>.
             </h1>
 
             {/* Sous-titre */}
@@ -48,7 +59,7 @@ export default function Hero() {
             <ul className="space-y-3 mb-14">
               {checks.map(c => (
                 <li key={c} className="flex items-center gap-3 text-sm font-medium text-ink-soft">
-                  <CheckCircle className="w-4 h-4 text-green flex-shrink-0" />
+                  <CheckCircle className="w-4 h-4 text-blue flex-shrink-0" />
                   {c}
                 </li>
               ))}
@@ -57,79 +68,38 @@ export default function Hero() {
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#contact"
-                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber text-ink font-semibold text-sm hover:bg-amber/90 transition-all shadow-md hover:shadow-lg hover:shadow-amber/30 hover:-translate-y-0.5 min-h-11 px-5 py-2.5">
+                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue text-surf font-semibold text-sm hover:bg-blue/90 transition-all shadow-md hover:shadow-lg hover:shadow-blue/40 hover:-translate-y-0.5 min-h-11 px-5 py-2.5">
                 Prendre contact
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a href="#services"
-                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border text-ink text-sm font-semibold hover:bg-surf hover:border-ink/20 transition-all min-h-11 px-5 py-2.5">
+                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-border text-ink text-sm font-semibold hover:bg-surf-mid hover:border-blue/40 transition-all min-h-11 px-5 py-2.5">
                 Voir les services
               </a>
             </div>
           </div>
 
-          {/* Carte illustration */}
-          <div className="relative hidden lg:block lg:col-span-2">
-            {/* Card principale */}
-            <div className="bg-white rounded-2xl shadow-card-lg border border-border relative p-5" aria-label="Exemple illustratif de tableau de bord sécurité">
-              <span className="absolute -top-3 right-4 bg-blue text-white text-[10px] font-bold uppercase tracking-widest rounded-full px-3 py-1 shadow-card">
-                Exemple
-              </span>
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-blue flex items-center justify-center">
-                  <Shield className="w-5 h-5 text-white" />
+          {/* Logo transparent — flotte sur l'image polynésienne */}
+          <div className="relative hidden lg:flex lg:col-span-2 justify-center items-center">
+            <div className="relative w-full max-w-[340px]">
+              <Image
+                src="/logo.png"
+                alt="Logo OPSEC-IT — Sécurité & Innovation Web"
+                width={760}
+                height={520}
+                priority
+                className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
+              />
+
+              {/* Badge flottant — disponible */}
+              <div className="absolute -bottom-2 -left-2 bg-surf-mid/90 backdrop-blur-sm rounded-xl shadow-card-md border border-border px-4 py-3 flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-green/15 border border-green/30 flex items-center justify-center">
+                  <CheckCircle className="w-4 h-4 text-green" />
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-ink">OPSEC-IT</p>
-                  <p className="text-xs text-ink-dim">Tableau de bord sécurité — illustration</p>
+                  <p className="text-xs font-bold text-ink">Disponible</p>
+                  <p className="text-xs text-ink-dim">Réponse 24h ouvrées</p>
                 </div>
-                <div className="ml-auto flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-green" />
-                  <span className="text-xs font-medium text-green">Opérationnel</span>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                {[
-                  { label: "Posture sécurité",        value: "94/100",      color: "bg-green",  width: "w-[94%]" },
-                  { label: "Vulnérabilités ouvertes",  value: "2 mineures",  color: "bg-blue",   width: "w-[12%]" },
-                  { label: "Sauvegardes",              value: "100% OK",     color: "bg-green",  width: "w-full"  },
-                  { label: "Conformité RGPD",          value: "Conforme",    color: "bg-blue",   width: "w-[88%]" },
-                ].map(row => (
-                  <div key={row.label}>
-                    <div className="flex justify-between text-xs mb-2">
-                      <span className="text-ink-soft font-medium">{row.label}</span>
-                      <span className="text-ink font-bold">{row.value}</span>
-                    </div>
-                    <div className="h-2 bg-blue-mid/50 rounded-full overflow-hidden">
-                      <div className={`h-full ${row.color} ${row.width} rounded-full`} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-6 pt-5 border-t border-border grid grid-cols-3 gap-4 text-center">
-                {[
-                  { v: "0",   l: "Incidents" },
-                  { v: "24h", l: "Réponse" },
-                  { v: "99.9%", l: "Uptime" },
-                ].map(m => (
-                  <div key={m.l}>
-                    <p className="text-xl font-black text-ink">{m.v}</p>
-                    <p className="text-xs text-ink-dim mt-0.5">{m.l}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Badge flottant */}
-            <div className="absolute -bottom-4 -left-6 bg-white rounded-xl shadow-card-md border border-border px-4 py-3 flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-green-soft flex items-center justify-center">
-                <CheckCircle className="w-4 h-4 text-green" />
-              </div>
-              <div>
-                <p className="text-xs font-bold text-ink">Audit terminé</p>
-                <p className="text-xs text-ink-dim">Rapport disponible</p>
               </div>
             </div>
           </div>

@@ -46,8 +46,18 @@ const testimonials = [
 
 export default function About() {
   return (
-    <SectionWrapper id="parcours" className="pt-32 pb-28 bg-surf-mid">
-      <div className="wrap">
+    <SectionWrapper id="parcours" className="relative pt-32 pb-28 bg-surf-mid overflow-hidden">
+      <Image
+        src="/bg/about-sunset.png"
+        alt=""
+        aria-hidden="true"
+        fill
+        sizes="100vw"
+        className="object-cover object-center pointer-events-none select-none opacity-60"
+      />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-surf-mid via-surf-mid/40 to-surf-mid pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 bg-surf-mid/35 pointer-events-none" />
+      <div className="relative wrap">
         <div className="mb-14 flex items-center gap-6">
           <Image
             src="/sylvestre.jpg"
@@ -55,7 +65,7 @@ export default function About() {
             width={80}
             height={80}
             priority={false}
-            className="w-20 h-20 rounded-full object-cover border-2 border-blue/20 shadow-md flex-shrink-0"
+            className="w-20 h-20 rounded-full object-cover border-2 border-blue/40 shadow-md flex-shrink-0"
           />
           <div>
             <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
@@ -75,7 +85,7 @@ export default function About() {
               {experience.map((e, i) => (
                 <li key={i} className="flex gap-5">
                   <div className="flex flex-col items-center flex-shrink-0">
-                    <span className="w-4 h-4 rounded-full bg-blue border-2 border-white ring-2 ring-blue-mid mt-0.5 flex-shrink-0" />
+                    <span className="w-4 h-4 rounded-full bg-blue border-2 border-surf-mid ring-2 ring-blue/40 mt-0.5 flex-shrink-0" />
                     {i < experience.length - 1 && (
                       <div className="w-0.5 bg-blue-mid flex-1 mt-1.5 mb-0" />
                     )}
@@ -108,9 +118,9 @@ export default function About() {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-4">Certification</h3>
             <div className="mb-8">
-              <div className="flex items-center gap-4 p-4 rounded-xl border bg-blue/8 border-blue/30 shadow-sm">
+              <div className="flex items-center gap-4 p-4 rounded-xl border bg-blue/10 border-blue/30 shadow-sm">
                 <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue">
-                  <Award className="w-4 h-4 text-white" />
+                  <Award className="w-4 h-4 text-surf" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-blue">{certification.label}</p>
@@ -123,8 +133,8 @@ export default function About() {
             <div className="space-y-3">
               {skills.map(s => (
                 <div key={s.label}
-                     className="flex items-center gap-4 p-4 rounded-xl border bg-surf border-border hover:border-blue-mid hover:bg-blue/5 transition-all">
-                  <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue/5 border border-blue/15">
+                     className="flex items-center gap-4 p-4 rounded-xl border bg-surf border-border hover:border-blue/40 hover:bg-blue/5 transition-all">
+                  <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue/10 border border-blue/25">
                     <s.Icon className="w-4 h-4 text-blue" />
                   </div>
                   <div>

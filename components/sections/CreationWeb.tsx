@@ -106,7 +106,7 @@ const pricingTiers = [
 
 export default function CreationWeb() {
   return (
-    <SectionWrapper id="creation-web" className="pt-32 pb-28 bg-white">
+    <SectionWrapper id="creation-web" className="pt-32 pb-28 bg-surf">
       <div className="wrap">
 
         <div className="mb-5">
@@ -146,34 +146,34 @@ export default function CreationWeb() {
               key={tier.name}
               className={`rounded-2xl border p-8 flex flex-col shadow-card transition-all duration-200 hover:shadow-card-md hover:-translate-y-1 ${
                 tier.highlight
-                  ? "bg-amber border-amber text-ink"
-                  : "bg-white border-border"
+                  ? "bg-blue border-blue text-surf shadow-blue/20"
+                  : "bg-surf-mid border-border hover:border-blue/40"
               }`}
             >
-              <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${tier.highlight ? "text-ink/80" : "text-blue"}`}>
+              <p className={`text-xs font-semibold uppercase tracking-widest mb-3 ${tier.highlight ? "text-surf/80" : "text-blue"}`}>
                 {tier.name}
               </p>
               {tier.from && (
-                <p className={`text-xs font-medium mb-1 ${tier.highlight ? "text-ink/70" : "text-ink-soft"}`}>
+                <p className={`text-xs font-medium mb-1 ${tier.highlight ? "text-surf/75" : "text-ink-soft"}`}>
                   À partir de
                 </p>
               )}
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-4xl font-black text-ink">
+                <span className={`text-4xl font-black ${tier.highlight ? "text-surf" : "text-ink"}`}>
                   {tier.price}
                 </span>
-                <span className={`text-sm font-medium ${tier.highlight ? "text-ink/70" : "text-ink-soft"}`}>
+                <span className={`text-sm font-medium ${tier.highlight ? "text-surf/75" : "text-ink-soft"}`}>
                   {tier.sub}
                 </span>
               </div>
-              <p className={`text-sm mb-6 leading-relaxed ${tier.highlight ? "text-ink/85" : "text-ink-soft"}`}>
+              <p className={`text-sm mb-6 leading-relaxed ${tier.highlight ? "text-surf/90" : "text-ink-soft"}`}>
                 {tier.description}
               </p>
               <ul className="flex flex-col gap-3 flex-1">
                 {tier.features.map(f => (
                   <li key={f} className="flex items-start gap-2">
-                    <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${tier.highlight ? "text-ink" : "text-blue"}`} />
-                    <span className={`text-sm ${tier.highlight ? "text-ink/90" : "text-ink-soft"}`}>{f}</span>
+                    <Check className={`w-4 h-4 flex-shrink-0 mt-0.5 ${tier.highlight ? "text-surf" : "text-blue"}`} />
+                    <span className={`text-sm ${tier.highlight ? "text-surf/95" : "text-ink-soft"}`}>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -181,8 +181,8 @@ export default function CreationWeb() {
                 href="#contact"
                 className={`mt-8 inline-flex items-center justify-center rounded-xl text-sm font-semibold transition-all hover:shadow-md min-h-11 px-5 py-2.5 ${
                   tier.highlight
-                    ? "bg-ink text-white hover:bg-ink/90"
-                    : "bg-amber text-ink hover:bg-amber/90 hover:shadow-amber/20"
+                    ? "bg-surf text-blue hover:bg-surf-mid"
+                    : "bg-blue text-surf hover:bg-blue/90 hover:shadow-blue/30"
                 }`}
               >
                 Demander un devis

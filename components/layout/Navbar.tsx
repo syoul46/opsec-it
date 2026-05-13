@@ -22,8 +22,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 bg-white transition-all duration-300 border-b ${
-      scrolled ? "shadow-card border-border" : "border-border/40"
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 border-b ${
+      scrolled
+        ? "bg-surf/85 backdrop-blur-md shadow-card border-border"
+        : "bg-transparent border-transparent"
     }`}>
       <div className="wrap h-20 flex items-center justify-between">
 
@@ -44,23 +46,23 @@ export default function Navbar() {
         </nav>
 
         <a href="/#contact"
-           className="hidden md:inline-flex items-center rounded-xl bg-blue text-white text-sm font-semibold hover:bg-blue/90 transition-all shadow-sm hover:shadow-md hover:shadow-blue/20 min-h-11 px-5 py-2.5">
+           className="hidden md:inline-flex items-center rounded-xl bg-blue text-surf text-sm font-semibold hover:bg-blue/90 transition-all shadow-sm hover:shadow-md hover:shadow-blue/30 min-h-11 px-5 py-2.5">
           Prendre contact
         </a>
 
-        <button className="md:hidden p-1 text-ink-soft" onClick={() => setOpen(!open)}>
+        <button className="md:hidden p-1 text-ink-soft hover:text-ink" onClick={() => setOpen(!open)} aria-label="Ouvrir le menu">
           {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-border px-6 py-4 space-y-3">
+        <div className="md:hidden bg-surf-mid border-t border-border px-6 py-4 space-y-3">
           {links.map(l => (
             <a key={l.href} href={l.href} onClick={() => setOpen(false)}
                className="block text-sm font-medium text-ink-soft hover:text-ink">{l.label}</a>
           ))}
           <a href="/#contact" onClick={() => setOpen(false)}
-             className="block text-center px-4 py-2 rounded-lg bg-blue text-white text-sm font-semibold">
+             className="block text-center px-4 py-2 rounded-lg bg-blue text-surf text-sm font-semibold">
             Prendre contact
           </a>
         </div>

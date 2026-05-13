@@ -1,30 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  /* Couleurs */
-  --color-ink:        #0F172A;
-  --color-ink-soft:   #475569;
-  --color-ink-dim:    #94A3B8;
-  --color-surf:       #FAFAF8;
-  --color-surf-mid:   #F5F3EF;
-  --color-blue:       #4F46E5;
-  --color-blue-soft:  #EEF2FF;
-  --color-blue-mid:   #E0E7FF;
-  --color-green:      #10B981;
-  --color-green-soft: #ECFDF5;
-  --color-amber:      #F59E0B;
-  --color-amber-soft: #FFFBEB;
-  --color-amber-mid:  #FEF3C7;
-  --color-border:     #E2E8F0;
+  /* === Palette charte OPSEC-IT ===
+     ink/ink-soft/ink-dim : texte (clair, sur fond sombre)
+     surf/surf-mid        : fonds (bleu profond, élevé)
+     blue                 : accent principal = CUIVRE charte (#D2742F)
+     amber                : accent secondaire = OR BROSSÉ charte (#C6A857)
+     sand                 : accent chaud doux (charte #D8B48A)
+     green                : statut OK
+     border               : bordures subtiles sur fond sombre */
+
+  /* Texte */
+  --color-ink:        #E8EAF0;   /* texte principal clair */
+  --color-ink-soft:   #BFC3CC;   /* argent charte — texte secondaire */
+  --color-ink-dim:    #7A8294;   /* argent assombri — texte tertiaire */
+
+  /* Surfaces (bleu profond charte) */
+  --color-surf:       #0D1B2A;   /* fond principal */
+  --color-surf-mid:   #14253A;   /* fond alterné / cards */
+  --color-surf-hi:    #1B2D45;   /* hover / surfaces élevées */
+
+  /* Accent cuivre (mappé sur "blue" pour compat code existant) */
+  --color-blue:       #D2742F;
+  --color-blue-soft:  rgb(210 116 47 / 0.10);
+  --color-blue-mid:   rgb(210 116 47 / 0.28);
+
+  /* Or brossé (mappé sur "amber") */
+  --color-amber:      #C6A857;
+  --color-amber-soft: rgb(198 168 87 / 0.10);
+  --color-amber-mid:  rgb(198 168 87 / 0.28);
+
+  /* Sable charte — disponible en bonus */
+  --color-sand:       #D8B48A;
+  --color-sand-soft:  rgb(216 180 138 / 0.10);
+
+  /* Succès */
+  --color-green:      #5DD39E;
+  --color-green-soft: rgb(93 211 158 / 0.12);
+
+  /* Bordures sombres */
+  --color-border:     rgb(191 195 204 / 0.12);
 
   /* Typographie */
   --font-sans: var(--font-inter), system-ui, sans-serif;
 
-  /* Shadows */
-  --shadow-card:      0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
-  --shadow-card-md:   0 4px 16px 0 rgb(0 0 0 / 0.09), 0 2px 4px -2px rgb(0 0 0 / 0.06);
-  --shadow-card-lg:   0 10px 40px 0 rgb(0 0 0 / 0.11), 0 4px 8px -4px rgb(0 0 0 / 0.06);
-  --shadow-blue-glow: 0 0 0 3px rgb(79 70 229 / 0.15);
+  /* Shadows (adaptées au sombre — ombres plus marquées + lueur cuivre subtile) */
+  --shadow-card:      0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --shadow-card-md:   0 4px 16px 0 rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.35);
+  --shadow-card-lg:   0 10px 40px 0 rgb(0 0 0 / 0.55), 0 4px 8px -4px rgb(0 0 0 / 0.4);
+  --shadow-blue-glow: 0 0 0 3px rgb(210 116 47 / 0.25);
 
   /* Animations */
   --animate-fade-up: fadeUp 0.6s ease forwards;
@@ -50,8 +74,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #FAFAF8;
-  color: #0F172A;
+  background-color: #0D1B2A;
+  color: #E8EAF0;
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -74,8 +98,9 @@ body {
   .wrap { width: min(72rem, calc(100% - 10rem)); }  /* 2xl : 5rem chaque côté */
 }
 
-::selection { background: #E0E7FF; color: #4338CA; }
+::selection { background: rgb(210 116 47 / 0.35); color: #FFF1E0; }
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #F5F3EF; }
-::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 9999px; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0D1B2A; }
+::-webkit-scrollbar-thumb { background: #2A3B52; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #D2742F; }

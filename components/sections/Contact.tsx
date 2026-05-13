@@ -27,8 +27,8 @@ const subjects = [
 ];
 
 const inputBase =
-  "w-full bg-white border border-border rounded-xl px-4 py-3 text-sm text-ink placeholder-ink-dim " +
-  "focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/10 transition-all duration-150";
+  "w-full bg-surf border border-border rounded-xl px-4 py-3 text-sm text-ink placeholder-ink-dim " +
+  "focus:outline-none focus:border-blue focus:ring-2 focus:ring-blue/20 transition-all duration-150";
 
 const labelBase = "block text-xs font-semibold text-ink-soft uppercase tracking-wider mb-1.5";
 
@@ -46,7 +46,7 @@ export default function Contact() {
   };
 
   return (
-    <SectionWrapper id="contact" className="pt-32 pb-28 bg-white">
+    <SectionWrapper id="contact" className="pt-32 pb-28 bg-surf">
       <div className="wrap">
         <div className="mb-14">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">Contact</span>
@@ -58,7 +58,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Form */}
-          <div className="lg:col-span-2 bg-surf rounded-2xl border border-border p-8 shadow-card">
+          <div className="lg:col-span-2 bg-surf-mid rounded-2xl border border-border p-8 shadow-card">
             {status === "success" ? (
               <div className="flex flex-col items-center justify-center py-16 gap-5">
                 <div className="w-16 h-16 rounded-full bg-green-soft flex items-center justify-center">
@@ -98,7 +98,7 @@ export default function Contact() {
                       className={inputBase}
                       {...register("nom")}
                     />
-                    {errors.nom && <p id="err-nom" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.nom.message}</p>}
+                    {errors.nom && <p id="err-nom" className="text-xs text-red-400 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.nom.message}</p>}
                   </div>
                   <div>
                     <label htmlFor="contact-societe" className={labelBase}>Organisation / Société *</label>
@@ -111,7 +111,7 @@ export default function Contact() {
                       className={inputBase}
                       {...register("societe")}
                     />
-                    {errors.societe && <p id="err-societe" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.societe.message}</p>}
+                    {errors.societe && <p id="err-societe" className="text-xs text-red-400 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.societe.message}</p>}
                   </div>
                 </div>
                 <div>
@@ -126,7 +126,7 @@ export default function Contact() {
                     className={inputBase}
                     {...register("email")}
                   />
-                  {errors.email && <p id="err-email" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.email.message}</p>}
+                  {errors.email && <p id="err-email" className="text-xs text-red-400 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.email.message}</p>}
                 </div>
                 <div>
                   <label htmlFor="contact-objet" className={labelBase}>Objet *</label>
@@ -141,7 +141,7 @@ export default function Contact() {
                     <option value="" disabled>Sélectionner un objet</option>
                     {subjects.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
                   </select>
-                  {errors.objet && <p id="err-objet" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.objet.message}</p>}
+                  {errors.objet && <p id="err-objet" className="text-xs text-red-400 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.objet.message}</p>}
                 </div>
                 <div>
                   <label htmlFor="contact-message" className={labelBase}>Message *</label>
@@ -154,19 +154,19 @@ export default function Contact() {
                     className={inputBase + " resize-none"}
                     {...register("message")}
                   />
-                  {errors.message && <p id="err-message" className="text-xs text-red-600 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.message.message}</p>}
+                  {errors.message && <p id="err-message" className="text-xs text-red-400 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.message.message}</p>}
                 </div>
                 {status === "error" && (
-                  <div className="flex items-center gap-2 text-sm text-red-600 bg-red-50 border border-red-100 rounded-xl p-3">
+                  <div className="flex items-center gap-2 text-sm text-red-300 bg-red-500/10 border border-red-500/30 rounded-xl p-3">
                     <AlertCircle className="w-4 h-4 flex-shrink-0" />
                     Erreur lors de l&apos;envoi. Contactez-moi directement par email.
                   </div>
                 )}
                 <div className="flex items-center gap-4 pt-1">
                   <button type="submit" disabled={status === "loading"}
-                          className="flex items-center gap-2 rounded-xl bg-amber text-ink font-semibold text-sm hover:bg-amber/90 disabled:opacity-60 transition-all shadow-md hover:shadow-lg hover:shadow-amber/20 min-h-11 px-5 py-2.5">
+                          className="flex items-center gap-2 rounded-xl bg-blue text-surf font-semibold text-sm hover:bg-blue/90 disabled:opacity-60 transition-all shadow-md hover:shadow-lg hover:shadow-blue/30 min-h-11 px-5 py-2.5">
                     {status === "loading"
-                      ? <><div className="w-4 h-4 border-2 border-ink/30 border-t-ink rounded-full animate-spin" />Envoi...</>
+                      ? <><div className="w-4 h-4 border-2 border-surf/30 border-t-surf rounded-full animate-spin" />Envoi...</>
                       : <><Send className="w-4 h-4" />Envoyer</>}
                   </button>
                   <p className="text-xs text-ink-dim flex items-center gap-1.5">
@@ -182,7 +182,7 @@ export default function Contact() {
             <p className="text-xs font-semibold uppercase tracking-widest text-ink-dim mb-5">Contacts directs</p>
 
             <a href="mailto:contact@opsec-it.fr"
-               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-white hover:border-blue/30 hover:shadow-card transition-all group">
+               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-surf-mid hover:border-blue/40 hover:shadow-card transition-all group">
               <div className="w-10 h-10 rounded-xl bg-blue/10 border border-blue/25 flex items-center justify-center flex-shrink-0">
                 <Mail className="w-4 h-4 text-blue" />
               </div>
@@ -193,7 +193,7 @@ export default function Contact() {
             </a>
 
             <a href="https://www.linkedin.com/in/sylvestre-mignot-261a7461/" target="_blank" rel="noopener noreferrer"
-               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-white hover:border-blue/30 hover:shadow-card transition-all group">
+               className="flex items-center gap-4 p-4 rounded-xl border border-border bg-surf-mid hover:border-blue/40 hover:shadow-card transition-all group">
               <div className="w-10 h-10 rounded-xl bg-blue/10 border border-blue/25 flex items-center justify-center flex-shrink-0">
                 <ExternalLink className="w-4 h-4 text-blue" />
               </div>
@@ -204,7 +204,7 @@ export default function Contact() {
             </a>
 
             {/* Dispo */}
-            <div className="mt-6 p-5 rounded-xl border border-green/20 bg-green-soft">
+            <div className="mt-6 p-5 rounded-xl border border-green/30 bg-green/10">
               <div className="flex items-center gap-2 mb-2">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green opacity-60" />
