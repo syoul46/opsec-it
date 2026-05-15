@@ -1,54 +1,54 @@
 @import "tailwindcss";
+@import "./theme.css";
 
-@theme {
-  /* === Palette charte OPSEC-IT ===
-     ink/ink-soft/ink-dim : texte (clair, sur fond sombre)
-     surf/surf-mid        : fonds (bleu profond, élevé)
-     blue                 : accent principal = CUIVRE charte (#D2742F)
-     amber                : accent secondaire = OR BROSSÉ charte (#C6A857)
-     sand                 : accent chaud doux (charte #D8B48A)
-     green                : statut OK
-     border               : bordures subtiles sur fond sombre */
+/* =============================================================
+   Mapping Tailwind ← Design tokens
+   -------------------------------------------------------------
+   `@theme inline` indique à Tailwind d'inliner les `var(...)` au
+   lieu d'évaluer les valeurs au build. Conséquence : les classes
+   `bg-surf`, `text-ink`, etc. réagissent au runtime selon le
+   `data-theme` actif sur <html>.
 
+   POUR AJOUTER UN TOKEN : déclarer ici + dans `theme.css`.
+   POUR AJOUTER UN THÈME : voir `theme.css`.
+   ============================================================= */
+@theme inline {
   /* Texte */
-  --color-ink:        #E8EAF0;   /* texte principal clair */
-  --color-ink-soft:   #BFC3CC;   /* argent charte — texte secondaire */
-  --color-ink-dim:    #7A8294;   /* argent assombri — texte tertiaire */
+  --color-ink:        var(--ds-ink);
+  --color-ink-soft:   var(--ds-ink-soft);
+  --color-ink-dim:    var(--ds-ink-dim);
 
-  /* Surfaces (bleu profond charte) */
-  --color-surf:       #0D1B2A;   /* fond principal */
-  --color-surf-mid:   #14253A;   /* fond alterné / cards */
-  --color-surf-hi:    #1B2D45;   /* hover / surfaces élevées */
+  /* Surfaces */
+  --color-surf:       var(--ds-surf);
+  --color-surf-mid:   var(--ds-surf-mid);
+  --color-surf-hi:    var(--ds-surf-hi);
 
-  /* Accent cuivre (mappé sur "blue" pour compat code existant) */
-  --color-blue:       #D2742F;
-  --color-blue-soft:  rgb(210 116 47 / 0.10);
-  --color-blue-mid:   rgb(210 116 47 / 0.28);
+  /* Accents */
+  --color-blue:       var(--ds-blue);
+  --color-blue-soft:  var(--ds-blue-soft);
+  --color-blue-mid:   var(--ds-blue-mid);
 
-  /* Or brossé (mappé sur "amber") */
-  --color-amber:      #C6A857;
-  --color-amber-soft: rgb(198 168 87 / 0.10);
-  --color-amber-mid:  rgb(198 168 87 / 0.28);
+  --color-amber:      var(--ds-amber);
+  --color-amber-soft: var(--ds-amber-soft);
+  --color-amber-mid:  var(--ds-amber-mid);
 
-  /* Sable charte — disponible en bonus */
-  --color-sand:       #D8B48A;
-  --color-sand-soft:  rgb(216 180 138 / 0.10);
+  --color-sand:       var(--ds-sand);
+  --color-sand-soft:  var(--ds-sand-soft);
 
-  /* Succès */
-  --color-green:      #5DD39E;
-  --color-green-soft: rgb(93 211 158 / 0.12);
+  --color-green:      var(--ds-green);
+  --color-green-soft: var(--ds-green-soft);
 
-  /* Bordures sombres */
-  --color-border:     rgb(191 195 204 / 0.12);
+  /* Bordures */
+  --color-border:     var(--ds-border);
 
   /* Typographie */
   --font-sans: var(--font-inter), system-ui, sans-serif;
 
-  /* Shadows (adaptées au sombre — ombres plus marquées + lueur cuivre subtile) */
-  --shadow-card:      0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.3);
-  --shadow-card-md:   0 4px 16px 0 rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.35);
-  --shadow-card-lg:   0 10px 40px 0 rgb(0 0 0 / 0.55), 0 4px 8px -4px rgb(0 0 0 / 0.4);
-  --shadow-blue-glow: 0 0 0 3px rgb(210 116 47 / 0.25);
+  /* Shadows */
+  --shadow-card:      var(--ds-shadow-card);
+  --shadow-card-md:   var(--ds-shadow-card-md);
+  --shadow-card-lg:   var(--ds-shadow-card-lg);
+  --shadow-blue-glow: var(--ds-shadow-glow);
 
   /* Animations */
   --animate-fade-up: fadeUp 0.6s ease forwards;
@@ -74,33 +74,25 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #0D1B2A;
-  color: #E8EAF0;
+  background-color: var(--ds-body-bg);
+  color: var(--ds-body-fg);
   font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 /* Conteneur centré — marges latérales garanties */
 .wrap {
-  width: min(72rem, calc(100% - 2rem));    /* mobile : 1rem chaque côté */
+  width: min(72rem, calc(100% - 2rem));
   margin-inline: auto;
 }
 
-@media (min-width: 640px) {
-  .wrap { width: min(72rem, calc(100% - 3rem)); }   /* sm : 1.5rem chaque côté */
-}
+@media (min-width: 640px)  { .wrap { width: min(72rem, calc(100% - 3rem));  } }
+@media (min-width: 1024px) { .wrap { width: min(72rem, calc(100% - 6rem));  } }
+@media (min-width: 1536px) { .wrap { width: min(72rem, calc(100% - 10rem)); } }
 
-@media (min-width: 1024px) {
-  .wrap { width: min(72rem, calc(100% - 6rem)); }   /* lg : 3rem chaque côté */
-}
-
-@media (min-width: 1536px) {
-  .wrap { width: min(72rem, calc(100% - 10rem)); }  /* 2xl : 5rem chaque côté */
-}
-
-::selection { background: rgb(210 116 47 / 0.35); color: #FFF1E0; }
+::selection { background: var(--ds-selection-bg); color: var(--ds-selection-fg); }
 
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0D1B2A; }
-::-webkit-scrollbar-thumb { background: #2A3B52; border-radius: 9999px; }
-::-webkit-scrollbar-thumb:hover { background: #D2742F; }
+::-webkit-scrollbar-track { background: var(--ds-surf); }
+::-webkit-scrollbar-thumb { background: var(--ds-scroll-tk); border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ds-blue); }

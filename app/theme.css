@@ -1,0 +1,118 @@
+/* =============================================================
+   OPSEC-IT — Système de thèmes
+   =============================================================
+
+   Pour ajouter un nouveau thème :
+     1. Dupliquer un bloc `[data-theme="..."]` ci-dessous
+     2. Modifier les variables `--ds-*` (raw values)
+     3. Activer en posant `data-theme="mon-theme"` sur <html>
+        (cf. components/theme/ThemeProvider.tsx)
+
+   Schéma sémantique (tokens) :
+     ink / ink-soft / ink-dim   → texte (du + contrasté au + discret)
+     surf / surf-mid / surf-hi  → fonds (du + bas au + élevé)
+     blue                       → accent principal (CTA, focus)
+     amber                      → accent secondaire (badges, titres)
+     sand                       → accent chaud doux
+     green                      → succès / statut OK
+     border                     → bordures subtiles
+
+   IMPORTANT : ne JAMAIS référencer les `--ds-*` dans les composants.
+   Les composants utilisent uniquement `--color-*` (mappés via @theme inline).
+   ============================================================= */
+
+
+/* ────────────────────────────────────────────────────────────
+   Thème par défaut — POLYNESIAN DARK (charte OPSEC-IT)
+   ──────────────────────────────────────────────────────────── */
+:root,
+[data-theme="polynesian-dark"] {
+  /* Texte */
+  --ds-ink:        #E8EAF0;
+  --ds-ink-soft:   #BFC3CC;
+  --ds-ink-dim:    #7A8294;
+
+  /* Surfaces */
+  --ds-surf:       #0D1B2A;
+  --ds-surf-mid:   #14253A;
+  --ds-surf-hi:    #1B2D45;
+
+  /* Accent cuivre (= "blue" pour compat code) */
+  --ds-blue:       #D2742F;
+  --ds-blue-soft:  rgb(210 116 47 / 0.10);
+  --ds-blue-mid:   rgb(210 116 47 / 0.28);
+
+  /* Or brossé (= "amber") */
+  --ds-amber:      #C6A857;
+  --ds-amber-soft: rgb(198 168 87 / 0.10);
+  --ds-amber-mid:  rgb(198 168 87 / 0.28);
+
+  /* Sable */
+  --ds-sand:       #D8B48A;
+  --ds-sand-soft:  rgb(216 180 138 / 0.10);
+
+  /* Succès */
+  --ds-green:      #5DD39E;
+  --ds-green-soft: rgb(93 211 158 / 0.12);
+
+  /* Bordures */
+  --ds-border:     rgb(191 195 204 / 0.12);
+
+  /* Body */
+  --ds-body-bg:     var(--ds-surf);
+  --ds-body-fg:     var(--ds-ink);
+  --ds-scroll-tk:   #2A3B52;
+
+  /* Sélection texte */
+  --ds-selection-bg: rgb(210 116 47 / 0.35);
+  --ds-selection-fg: #FFF1E0;
+
+  /* Shadows (sombres marquées) */
+  --ds-shadow-card:    0 1px 3px 0 rgb(0 0 0 / 0.4),  0 1px 2px -1px rgb(0 0 0 / 0.3);
+  --ds-shadow-card-md: 0 4px 16px 0 rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.35);
+  --ds-shadow-card-lg: 0 10px 40px 0 rgb(0 0 0 / 0.55), 0 4px 8px -4px rgb(0 0 0 / 0.4);
+  --ds-shadow-glow:    0 0 0 3px rgb(210 116 47 / 0.25);
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   Thème SAND LIGHT — clair, sable polynésien (scaffold)
+   Activer avec data-theme="sand-light"
+   ──────────────────────────────────────────────────────────── */
+[data-theme="sand-light"] {
+  --ds-ink:        #1A2030;
+  --ds-ink-soft:   #475063;
+  --ds-ink-dim:    #6B7384;
+
+  --ds-surf:       #FAF5EC;
+  --ds-surf-mid:   #F1E9D6;
+  --ds-surf-hi:    #E8DCC0;
+
+  --ds-blue:       #B85A1C;
+  --ds-blue-soft:  rgb(184 90 28 / 0.10);
+  --ds-blue-mid:   rgb(184 90 28 / 0.30);
+
+  --ds-amber:      #9B8233;
+  --ds-amber-soft: rgb(155 130 51 / 0.10);
+  --ds-amber-mid:  rgb(155 130 51 / 0.30);
+
+  --ds-sand:       #C9A56A;
+  --ds-sand-soft:  rgb(201 165 106 / 0.12);
+
+  --ds-green:      #3A8C5E;
+  --ds-green-soft: rgb(58 140 94 / 0.12);
+
+  --ds-border:     rgb(26 32 48 / 0.12);
+
+  --ds-body-bg:     var(--ds-surf);
+  --ds-body-fg:     var(--ds-ink);
+  --ds-scroll-tk:   #D5C7AA;
+
+  --ds-selection-bg: rgb(184 90 28 / 0.25);
+  --ds-selection-fg: #1A2030;
+
+  --ds-shadow-card:    0 1px 3px 0 rgb(26 32 48 / 0.08), 0 1px 2px -1px rgb(26 32 48 / 0.05);
+  --ds-shadow-card-md: 0 4px 16px 0 rgb(26 32 48 / 0.10), 0 2px 4px -2px rgb(26 32 48 / 0.06);
+  --ds-shadow-card-lg: 0 10px 40px 0 rgb(26 32 48 / 0.14), 0 4px 8px -4px rgb(26 32 48 / 0.08);
+  --ds-shadow-glow:    0 0 0 3px rgb(184 90 28 / 0.20);
+}

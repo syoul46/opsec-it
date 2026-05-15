@@ -1,38 +1,35 @@
 import {
-  ShieldCheck, Server, Lock, Cloud, RefreshCw, Headphones,
+  ShieldCheck, Server, Lock, Cloud, RefreshCw, Headphones, type LucideIcon,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 
-const services = [
-  { Icon: ShieldCheck, title: "Diagnostic sécurité",          description: "Analyse de votre infrastructure : identification des vulnérabilités, mauvaises configurations et points d'amélioration. Rapport clair avec recommandations priorisées.",  tags: ["Analyse", "Recommandations", "Rapport"] },
-  { Icon: Server,      title: "Administration systèmes",      description: "Gestion de vos serveurs Linux/Windows, routeurs et firewalls. Supervision avec Zabbix, mises à jour et interventions rapides.",                                              tags: ["Linux", "Windows Server", "Zabbix"] },
-  { Icon: Lock,        title: "Sécurisation d'infrastructures", description: "Durcissement des systèmes, segmentation réseau, gestion des accès et des mots de passe. Des bases solides pour réduire votre exposition.",                                tags: ["Hardening", "Segmentation", "Accès"] },
-  { Icon: Cloud,       title: "Virtualisation",               description: "Déploiement et administration de vos environnements virtualisés on-premise (Proxmox, VMware). Conteneurisation avec Docker.",                                                tags: ["Proxmox", "VMware", "Docker"] },
-  { Icon: RefreshCw,   title: "Continuité d'activité",        description: "Stratégie de sauvegarde, procédures de reprise documentées et tests réguliers. Pour que votre activité survive à un incident.",                                              tags: ["Sauvegarde", "PRA", "Documentation"] },
-  { Icon: Headphones,  title: "Support & accompagnement",     description: "Interlocuteur technique unique pour les structures sans DSI. Suivi régulier, réponse aux incidents, documentation et accompagnement de vos équipes.",                       tags: ["DSI externalisée", "Associations", "PME"] },
-];
+// L'ordre doit correspondre à messages.services.items
+const ICONS: LucideIcon[] = [ShieldCheck, Server, Lock, Cloud, RefreshCw, Headphones];
+
+type Item = { title: string; description: string; tags: string[] };
 
 export default function Services() {
+  const t = useTranslations("services");
+  const items = t.raw("items") as Item[];
+
   return (
     <SectionWrapper id="services" className="pt-32 pb-28 bg-surf-mid">
       <div className="wrap">
         <div className="mb-5">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
-            Expertise & Services
+            {t("kicker")}
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-ink mb-4 leading-tight">
-            Ce que j&apos;apporte à votre structure
+            {t("title")}
           </h2>
-          <p className="text-ink-soft max-w-lg leading-relaxed">
-            Des prestations adaptées aux associations et PME : pragmatiques,
-            documentées, sans jargon. Vous n&apos;avez pas besoin d&apos;un DSI
-            à plein temps — vous avez besoin d&apos;un interlocuteur technique
-            de confiance.
-          </p>
+          <p className="text-ink-soft max-w-lg leading-relaxed">{t("intro")}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {services.map(s => <ServiceCard key={s.title} {...s} />)}
+          {items.map((s, i) => (
+            <ServiceCard key={s.title} Icon={ICONS[i]} title={s.title} description={s.description} tags={s.tags} />
+          ))}
         </div>
       </div>
     </SectionWrapper>

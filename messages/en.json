@@ -1,0 +1,350 @@
+{
+  "seo": {
+    "title": "OPSEC-IT — Sylvestre MIGNOT, AIS | Security & Infra for Nonprofits & SMBs",
+    "description": "AIS-certified (IPSSI), Sylvestre MIGNOT secures and administers IT systems for nonprofits and SMBs. Audit, hardening, virtualization, web development.",
+    "keywords": "IT security,system administration,secure infrastructure,AIS,security audit,SMB,nonprofits,GDPR,web development,Next.js",
+    "ogTitle": "OPSEC-IT — Security & Infra for Nonprofits & SMBs",
+    "ogDescription": "Sylvestre MIGNOT, AIS — Audit, administration and securing of infrastructures for nonprofits and SMBs. Custom web design.",
+    "jobTitle": "Secure Infrastructure Administrator",
+    "personDescription": "AIS-certified (IPSSI), specialized in securing and administering infrastructures for nonprofits and SMBs.",
+    "businessDescription": "Securing, administering infrastructures and building websites for nonprofits and SMBs."
+  },
+
+  "nav": {
+    "services": "Services",
+    "creationWeb": "Web design",
+    "parcours": "About",
+    "methodologie": "Method",
+    "contact": "Contact",
+    "cta": "Get in touch",
+    "openMenu": "Open menu",
+    "switchLanguage": "Change language"
+  },
+
+  "footer": {
+    "tagline": "Securing, administering infrastructures and building websites for nonprofits and SMBs. Sylvestre MIGNOT, AIS.",
+    "navigation": "Navigation",
+    "contact": "Contact",
+    "linkedin": "LinkedIn",
+    "rights": "© {year} OPSEC-IT — Sylvestre MIGNOT. All rights reserved.",
+    "legal": "Legal notice",
+    "privacy": "Privacy"
+  },
+
+  "hero": {
+    "badge": "Secure Infrastructure Administrator · AIS",
+    "title": "Websites that are <accent>secure</accent>,<br></br>built to <accent>last</accent>.",
+    "subtitle": "Sylvestre MIGNOT, AIS-certified (IPSSI), secures and administers IT systems for nonprofits and SMBs — and builds their custom websites.",
+    "checks": [
+      "Reduced cyber risk",
+      "GDPR & ANSSI compliance",
+      "Guaranteed business continuity",
+      "Pricing tailored to nonprofits & SMBs"
+    ],
+    "ctaPrimary": "Get in touch",
+    "ctaSecondary": "See services",
+    "logoAlt": "OPSEC-IT logo — Security & Web Innovation",
+    "available": "Available",
+    "availableSub": "Reply within 24 business hours",
+    "stats": [
+      { "value": "6 yrs", "label": "field experience" },
+      { "value": "AIS",   "label": "certified — IPSSI" },
+      { "value": "24h",   "label": "response time" }
+    ]
+  },
+
+  "services": {
+    "kicker": "Expertise & Services",
+    "title": "What I bring to your organization",
+    "intro": "Services tailored to nonprofits and SMBs: pragmatic, documented, jargon-free. You don't need a full-time IT director — you need a trusted technical partner.",
+    "items": [
+      { "title": "Security audit",              "description": "Analysis of your infrastructure: identification of vulnerabilities, misconfigurations and improvement areas. Clear report with prioritized recommendations.", "tags": ["Analysis", "Recommendations", "Report"] },
+      { "title": "Systems administration",      "description": "Management of your Linux/Windows servers, routers and firewalls. Monitoring with Zabbix, updates and rapid response.",                                       "tags": ["Linux", "Windows Server", "Zabbix"] },
+      { "title": "Infrastructure hardening",    "description": "System hardening, network segmentation, access and password management. Solid foundations to reduce your exposure.",                                        "tags": ["Hardening", "Segmentation", "Access"] },
+      { "title": "Virtualization",              "description": "Deployment and administration of your on-premise virtualized environments (Proxmox, VMware). Containerization with Docker.",                                "tags": ["Proxmox", "VMware", "Docker"] },
+      { "title": "Business continuity",         "description": "Backup strategy, documented recovery procedures and regular testing. So your activity survives any incident.",                                                "tags": ["Backup", "DRP", "Documentation"] },
+      { "title": "Support & guidance",          "description": "Single technical contact for organizations without an IT department. Regular follow-up, incident response, documentation and team coaching.",                "tags": ["Outsourced IT", "Nonprofits", "SMBs"] }
+    ]
+  },
+
+  "creationWeb": {
+    "kicker": "Web design",
+    "title": "Your online presence, hassle-free",
+    "intro": "Modern, fast and accessible websites — built for nonprofits and SMBs that want a professional showcase without agency costs or delays.",
+    "items": [
+      { "title": "Landing page",       "description": "A professional one-page or multi-section website. Responsive design, fast loading, contact form. Turnkey delivery.",            "tags": ["Responsive", "One-page", "Next.js"] },
+      { "title": "Multi-page site",    "description": "Structured site of 3 to 5 pages, no CMS. Ideal for organizations with stable content: about, team, contact.",                  "tags": ["3–5 pages", "Static", "Responsive"] },
+      { "title": "Design & branding",  "description": "Brand guidelines, mockups and implementation. A site that reflects you, consistent with your communication.",                  "tags": ["UI/UX", "Brand guide", "Figma"] },
+      { "title": "SEO & performance",  "description": "Natural search and performance optimization: Core Web Vitals, tags, sitemap. To be found on Google.",                          "tags": ["SEO", "Core Web Vitals", "Lighthouse"] },
+      { "title": "Redesign",           "description": "Modernization of an existing site: new design, technical migration, improved performance and accessibility.",                  "tags": ["Migration", "Accessibility", "Performance"] },
+      { "title": "Maintenance",        "description": "Regular updates, automatic backups, availability monitoring and rapid fixes. Your site in good hands.",                          "tags": ["Hosting", "Backup", "Support"] }
+    ],
+    "pricing": {
+      "kicker": "Pricing",
+      "title": "Clear packages",
+      "intro": "No surprises. The packages below cover the most common needs. Free quote for any specific project.",
+      "fromLabel": "From",
+      "ctaLabel": "Request a quote",
+      "tiers": [
+        {
+          "name": "Landing page",
+          "price": "€800",
+          "priceXpf": "95,500 CFP",
+          "sub": "",
+          "from": true,
+          "description": "Responsive one-pager, polished design, contact form.",
+          "features": ["Custom design", "Mobile / desktop responsive", "Contact form", "Basic SEO optimization", "Delivery within 2 weeks"],
+          "highlight": false
+        },
+        {
+          "name": "Multi-page site",
+          "price": "€1,800",
+          "priceXpf": "214,800 CFP",
+          "sub": "",
+          "from": true,
+          "description": "3 to 5 structured pages, no CMS. Stable content, fast site.",
+          "features": ["3 to 5 custom pages", "Mobile / desktop responsive", "Full on-page SEO", "Contact form", "Delivery within 3 weeks"],
+          "highlight": false
+        },
+        {
+          "name": "Site + CMS",
+          "price": "€2,800",
+          "priceXpf": "334,100 CFP",
+          "sub": "",
+          "from": true,
+          "description": "Up to 5 pages + back-office to manage your content autonomously.",
+          "features": ["Up to 5 pages", "Built-in CMS (simple admin)", "Blog or news", "Advanced SEO", "Onboarding training"],
+          "highlight": true
+        },
+        {
+          "name": "Maintenance",
+          "price": "€60",
+          "priceXpf": "7,200 CFP",
+          "sub": "/ month",
+          "from": true,
+          "description": "Peace of mind: updates, backups, support.",
+          "features": ["Hosting included", "Monthly updates", "Automatic backups", "Availability monitoring", "1h of support / month"],
+          "highlight": false
+        }
+      ]
+    }
+  },
+
+  "about": {
+    "kicker": "About",
+    "title": "Expertise forged in the field",
+    "portraitAlt": "Portrait of Sylvestre MIGNOT",
+    "experienceTitle": "Experience",
+    "approachTitle": "My approach",
+    "certificationTitle": "Certification",
+    "skillsTitle": "Technical skills",
+    "testimonialsTitle": "Client testimonials",
+    "certification": {
+      "label": "AIS",
+      "sub": "Secure Infrastructure Administrator — IPSSI Paris, 2026"
+    },
+    "experience": [
+      { "period": "2025 — 2026", "role": "AIS training",                          "company": "IPSSI Paris",        "description": "Secure Infrastructure Administrator — certification obtained. Focus: auditing, securing and administering infrastructures." },
+      { "period": "2018 — 2024", "role": "Network, systems & DevOps technician",  "company": "SAS ANUANUA",        "description": "Linux/Windows systems administration, network infrastructure, cloud deployments, DevOps automation. Multi-project environment." },
+      { "period": "2008 — 2017", "role": "MIDI interface technician",             "company": "Live performance",   "description": "Design and deployment of MIDI interfacing systems for live shows. Real-time reliability constraints, custom hardware, full technical autonomy." }
+    ],
+    "skills": [
+      { "label": "Linux / Systems",         "sub": "Server administration, service management, maintenance" },
+      { "label": "Networking & Security",   "sub": "TCP/IP, Firewall, VPN, segmentation" },
+      { "label": "Monitoring",              "sub": "Zabbix, infrastructure monitoring" },
+      { "label": "Virtualization",          "sub": "Virtualized environments: Proxmox, VMware" },
+      { "label": "Containerization",        "sub": "Docker, Docker Compose" },
+      { "label": "Data protection",         "sub": "GDPR compliance, encryption, access control" }
+    ],
+    "values": [
+      { "title": "Security by design",     "description": "Security baked in from the start, not bolted on afterwards." },
+      { "title": "Technical pragmatism",   "description": "Solutions tailored to your context, without over-engineering." },
+      { "title": "Clear communication",    "description": "Reports that decision-makers can read, not just technicians." }
+    ],
+    "testimonials": [
+      { "quote": "We needed a site worthy of our setting and our hospitality. Sylvestre captured the spirit of the Clos in a clear, elegant and effective website. Bookings followed very quickly, and his follow-up remains highly responsive.",     "author": "Christelle & David Bernadou", "initials": "CB", "structure": "Le Clos de Gamel",                  "url": "https://closdegamel.com", "display": "closdegamel.com" },
+      { "quote": "Sylvestre completely rebuilt our website and modernized our infrastructure. Technical rigor, attention to detail and real understanding of our challenges: a trusted long-term partner, always proactive.",                          "author": "Fred Bordier",                "initials": "FB", "structure": "Anuanua — Laser engraving & cutting", "url": "https://anuanua.fr",      "display": "anuanua.fr"      }
+    ]
+  },
+
+  "methodology": {
+    "kicker": "OPSEC Method",
+    "title": "How I work",
+    "intro": "A structured four-phase approach, adapted to your organization's operational reality.",
+    "callout": "Operational security is not a final state — it's an ongoing process of adapting to threats and to the evolution of your organization.",
+    "steps": [
+      { "num": "01", "title": "Risk analysis",        "description": "Mapping of the IT system, identification of critical assets and attack vectors. Risk report prioritized to your business.",                "tags": ["EBIOS RM", "Threat modeling"] },
+      { "num": "02", "title": "Hardening",            "description": "OS hardening, network segmentation, privilege management, encryption and update policy per CIS benchmarks.",                              "tags": ["CIS Benchmarks", "Least privilege"] },
+      { "num": "03", "title": "Continuous monitoring", "description": "Deployment of monitoring and anomaly detection tools. Dashboards, alerts and periodic log review.",                                        "tags": ["SIEM", "Alerting"] },
+      { "num": "04", "title": "Incident response",   "description": "Documented procedures for every type of incident: ransomware, intrusion, outage. Regular testing and continuous improvement.",            "tags": ["IR plan", "Forensics"] }
+    ]
+  },
+
+  "contact": {
+    "kicker": "Contact",
+    "title": "Let's talk about your needs",
+    "intro": "Reply within 24h. For emergencies (ongoing incident), please mention it in the subject.",
+    "form": {
+      "honeypotLabel": "Do not fill",
+      "labelName": "Name",
+      "labelOrg": "Organization / Company",
+      "labelEmail": "Email",
+      "labelSubject": "Subject",
+      "labelMessage": "Message",
+      "placeholderName": "John Doe",
+      "placeholderOrg": "ACME Inc.",
+      "placeholderEmail": "contact@company.com",
+      "placeholderSelect": "Select a subject",
+      "placeholderMessage": "Describe your need, your context...",
+      "required": "*",
+      "submit": "Send",
+      "submitting": "Sending...",
+      "responseTime": "Reply within 24 business hours"
+    },
+    "subjects": [
+      { "value": "audit",          "label": "Security audit" },
+      { "value": "administration", "label": "Systems & network administration" },
+      { "value": "cloud",          "label": "Cloud & virtualization" },
+      { "value": "creation-web",   "label": "Website creation" },
+      { "value": "urgence",        "label": "Emergency / Ongoing incident" },
+      { "value": "autre",          "label": "Other request" }
+    ],
+    "errors": {
+      "name": "Name required",
+      "org": "Organization required",
+      "email": "Invalid email",
+      "message": "Message too short (20 characters minimum)",
+      "send": "Sending error. Please contact me directly by email."
+    },
+    "success": {
+      "title": "Message sent!",
+      "description": "I'll reply within 24 business hours.",
+      "again": "Send another message"
+    },
+    "sidebar": {
+      "title": "Direct contacts",
+      "emailLabel": "Email",
+      "linkedinLabel": "LinkedIn",
+      "linkedinName": "Sylvestre MIGNOT",
+      "availableTitle": "Available",
+      "availableText": "Accepting new missions.\nReply within 24 business hours — first intervention scheduled within 48-72h."
+    }
+  },
+
+  "legal": {
+    "mentions": {
+      "metaTitle": "Legal notice — OPSEC-IT",
+      "metaDescription": "Legal notice of opsec-it.fr",
+      "kicker": "Legal information",
+      "title": "Legal notice",
+      "sections": {
+        "editor": {
+          "title": "Site publisher",
+          "intro": "This site <strong>opsec-it.fr</strong> is published by:",
+          "items": [
+            "<strong>Sylvestre MIGNOT</strong>",
+            "Sole proprietor — micro-enterprise",
+            "Activity: administration and securing of IT systems, website creation",
+            "Email: <a>contact@opsec-it.fr</a>"
+          ],
+          "note": "SIREN / SIRET and intra-community VAT numbers are provided upon request."
+        },
+        "director": {
+          "title": "Publication director",
+          "body": "Sylvestre MIGNOT, as site publisher."
+        },
+        "hosting": {
+          "title": "Hosting",
+          "body": "The site is hosted on a private infrastructure administered by the publisher. Information about the technical hosting provider can be provided upon request at <a>contact@opsec-it.fr</a>."
+        },
+        "ip": {
+          "title": "Intellectual property",
+          "p1": "All content on opsec-it.fr (text, images, graphics, logos, source code) is the exclusive property of Sylvestre MIGNOT, unless otherwise stated. Any reproduction, representation, modification or exploitation, in whole or in part, is prohibited without prior written authorization.",
+          "p2": "Client testimonials published on this site are with the explicit consent of the individuals named."
+        },
+        "liability": {
+          "title": "Liability",
+          "p1": "The publisher strives to provide accurate and up-to-date information. However, they cannot be held liable for errors, lack of availability of information or the presence of viruses on the site.",
+          "p2": "External links on the site do not constitute approval of their content. The publisher declines all responsibility regarding third-party sites accessible via these links."
+        },
+        "personal": {
+          "title": "Personal data",
+          "body": "The processing of personal data collected via the contact form is detailed in the <a>privacy policy</a>."
+        },
+        "law": {
+          "title": "Applicable law",
+          "body": "This site is subject to French law. Any dispute relating to its use falls under the exclusive jurisdiction of French courts."
+        }
+      }
+    },
+    "privacy": {
+      "metaTitle": "Privacy policy — OPSEC-IT",
+      "metaDescription": "Privacy policy and personal data processing — opsec-it.fr",
+      "kicker": "GDPR",
+      "title": "Privacy policy",
+      "sections": {
+        "controller": {
+          "title": "Data controller",
+          "p1": "Personal data collected on opsec-it.fr is processed by Sylvestre MIGNOT, site publisher, acting as data controller within the meaning of the General Data Protection Regulation (GDPR).",
+          "p2": "Contact: <a>contact@opsec-it.fr</a>"
+        },
+        "data": {
+          "title": "Data collected",
+          "intro": "Only data strictly necessary to process your request is collected via the contact form:",
+          "items": ["Name", "Organization / company", "Email address", "Subject and content of the message"],
+          "note": "No sensitive data within the meaning of article 9 of the GDPR is collected. No tracking cookies, no third-party analytics tools are deployed on the site."
+        },
+        "purpose": {
+          "title": "Purposes and legal basis",
+          "intro": "Data is collected and processed to:",
+          "items": [
+            "respond to your contact request;",
+            "establish, where applicable, a commercial proposal;",
+            "ensure follow-up of the contractual relationship if it materializes."
+          ],
+          "note": "The legal basis is your <strong>consent</strong> (article 6.1.a of the GDPR), given by voluntarily submitting the form, as well as the <strong>performance of pre-contractual measures</strong> at your request (article 6.1.b)."
+        },
+        "recipients": {
+          "title": "Recipients",
+          "p1": "Data is intended exclusively for Sylvestre MIGNOT. It is neither sold, rented nor transferred to third parties.",
+          "p2": "Contact emails are sent via the Resend service (<a>resend.com</a>) acting as a sub-processor within the meaning of the GDPR."
+        },
+        "retention": {
+          "title": "Retention period",
+          "items": [
+            "Requests without commercial follow-up: <strong>12 months</strong> maximum",
+            "Requests resulting in a commercial relationship: duration of the relationship + 3 years (prospecting), 10 years (accounting obligations)"
+          ]
+        },
+        "rights": {
+          "title": "Your rights",
+          "intro": "In accordance with articles 15 to 22 of the GDPR, you have the following rights:",
+          "items": [
+            "right of access to your data;",
+            "right of rectification;",
+            "right to erasure;",
+            "right to restriction of processing;",
+            "right to portability;",
+            "right to object;",
+            "right to withdraw your consent at any time."
+          ],
+          "contact": "To exercise these rights, contact: <a>contact@opsec-it.fr</a>.",
+          "cnil": "You also have the right to lodge a complaint with the <a>CNIL</a>."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "body": "This site uses <strong>no tracking or audience measurement cookies</strong>. Only strictly necessary technical cookies may be deposited (if applicable, none to date)."
+        },
+        "security": {
+          "title": "Security",
+          "body": "Collected data is transmitted via HTTPS and stored securely. Given the nature of the activity, proportionate technical and organizational measures are implemented to protect your data against unauthorized access."
+        }
+      }
+    }
+  },
+
+  "locale": {
+    "fr": "Français",
+    "en": "English"
+  }
+}

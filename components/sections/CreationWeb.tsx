@@ -1,147 +1,63 @@
-import { Globe, LayoutTemplate, Paintbrush, Search, Zap, Wrench, Check } from "lucide-react";
+import { Globe, LayoutTemplate, Paintbrush, Search, Zap, Wrench, Check, type LucideIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import { Link } from "@/i18n/navigation";
 
-const webServices = [
-  {
-    Icon: Globe,
-    title: "Site vitrine",
-    description: "Une présence web professionnelle en one-page ou multi-sections. Design responsive, chargement rapide, formulaire de contact. Livré clé en main.",
-    tags: ["Responsive", "One-page", "Next.js"],
-  },
-  {
-    Icon: LayoutTemplate,
-    title: "Site multi-pages",
-    description: "Site structuré de 3 à 5 pages, sans CMS. Idéal pour les structures dont le contenu évolue peu : présentation, équipe, contact.",
-    tags: ["3–5 pages", "Statique", "Responsive"],
-  },
-  {
-    Icon: Paintbrush,
-    title: "Design & identité",
-    description: "Création de charte graphique, maquettes et intégration. Un site à votre image, cohérent avec votre communication.",
-    tags: ["UI/UX", "Charte graphique", "Figma"],
-  },
-  {
-    Icon: Search,
-    title: "SEO & performance",
-    description: "Optimisation du référencement naturel et des performances : Core Web Vitals, balises, sitemap. Pour être trouvé sur Google.",
-    tags: ["SEO", "Core Web Vitals", "Lighthouse"],
-  },
-  {
-    Icon: Zap,
-    title: "Refonte",
-    description: "Modernisation d'un site existant : nouveau design, migration technique, amélioration des performances et de l'accessibilité.",
-    tags: ["Migration", "Accessibilité", "Performance"],
-  },
-  {
-    Icon: Wrench,
-    title: "Maintenance",
-    description: "Mises à jour régulières, sauvegardes automatiques, surveillance de disponibilité et corrections rapides. Votre site entre de bonnes mains.",
-    tags: ["Hébergement", "Backup", "Support"],
-  },
-];
+// L'ordre doit correspondre à messages.creationWeb.items
+const ICONS: LucideIcon[] = [Globe, LayoutTemplate, Paintbrush, Search, Zap, Wrench];
 
-const pricingTiers = [
-  {
-    name: "Site vitrine",
-    price: "800 €",
-    sub: "",
-    from: true,
-    description: "Une page responsive, design soigné, formulaire de contact.",
-    features: [
-      "Design sur mesure",
-      "Responsive mobile / desktop",
-      "Formulaire de contact",
-      "Optimisation SEO de base",
-      "Livraison sous 2 semaines",
-    ],
-    highlight: false,
-  },
-  {
-    name: "Site multi-pages",
-    price: "1 800 €",
-    sub: "",
-    from: true,
-    description: "3 à 5 pages structurées, sans CMS. Contenu stable, site rapide.",
-    features: [
-      "3 à 5 pages sur mesure",
-      "Responsive mobile / desktop",
-      "SEO on-page complet",
-      "Formulaire de contact",
-      "Livraison sous 3 semaines",
-    ],
-    highlight: false,
-  },
-  {
-    name: "Site + CMS",
-    price: "2 800 €",
-    sub: "",
-    from: true,
-    description: "Jusqu'à 5 pages + back-office pour gérer vos contenus en autonomie.",
-    features: [
-      "Jusqu'à 5 pages",
-      "CMS intégré (admin simple)",
-      "Blog ou actualités",
-      "SEO avancé",
-      "Formation à la prise en main",
-    ],
-    highlight: true,
-  },
-  {
-    name: "Maintenance",
-    price: "60 €",
-    sub: "/ mois",
-    from: true,
-    description: "Tranquillité d'esprit : mises à jour, sauvegardes, support.",
-    features: [
-      "Hébergement inclus",
-      "Mises à jour mensuelles",
-      "Sauvegardes automatiques",
-      "Surveillance de disponibilité",
-      "1h de support / mois",
-    ],
-    highlight: false,
-  },
-];
+type ServiceItem = { title: string; description: string; tags: string[] };
+type Tier = {
+  name: string;
+  price: string;
+  priceXpf: string;
+  sub: string;
+  from: boolean;
+  description: string;
+  features: string[];
+  highlight: boolean;
+};
 
 export default function CreationWeb() {
+  const t = useTranslations("creationWeb");
+  const tp = useTranslations("creationWeb.pricing");
+  const items = t.raw("items") as ServiceItem[];
+  const tiers = tp.raw("tiers") as Tier[];
+
   return (
     <SectionWrapper id="creation-web" className="pt-32 pb-28 bg-surf">
       <div className="wrap">
 
         <div className="mb-5">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
-            Création web
+            {t("kicker")}
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-ink mb-4 leading-tight">
-            Votre présence en ligne, sans prise de tête
+            {t("title")}
           </h2>
-          <p className="text-ink-soft max-w-lg leading-relaxed">
-            Des sites modernes, rapides et accessibles — conçus pour les associations
-            et PME qui veulent une vitrine professionnelle sans les coûts ni les délais d&apos;une agence.
-          </p>
+          <p className="text-ink-soft max-w-lg leading-relaxed">{t("intro")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
-          {webServices.map(s => <ServiceCard key={s.title} {...s} />)}
+          {items.map((s, i) => (
+            <ServiceCard key={s.title} Icon={ICONS[i]} title={s.title} description={s.description} tags={s.tags} />
+          ))}
         </div>
 
         {/* Tarifs */}
         <div className="mb-5">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
-            Tarifs
+            {tp("kicker")}
           </span>
           <h3 className="text-2xl md:text-3xl font-black text-ink mb-2 leading-tight">
-            Des forfaits clairs
+            {tp("title")}
           </h3>
-          <p className="text-ink-soft max-w-lg leading-relaxed text-sm">
-            Pas de surprise. Les tarifs ci-dessous couvrent les besoins les plus courants.
-            Devis gratuit pour tout projet spécifique.
-          </p>
+          <p className="text-ink-soft max-w-lg leading-relaxed text-sm">{tp("intro")}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {pricingTiers.map(tier => (
+          {tiers.map(tier => (
             <div
               key={tier.name}
               className={`rounded-2xl border p-8 flex flex-col shadow-card transition-all duration-200 hover:shadow-card-md hover:-translate-y-1 ${
@@ -155,7 +71,7 @@ export default function CreationWeb() {
               </p>
               {tier.from && (
                 <p className={`text-xs font-medium mb-1 ${tier.highlight ? "text-surf/75" : "text-ink-soft"}`}>
-                  À partir de
+                  {tp("fromLabel")}
                 </p>
               )}
               <div className="flex items-baseline gap-1 mb-1">
@@ -166,6 +82,9 @@ export default function CreationWeb() {
                   {tier.sub}
                 </span>
               </div>
+              <p className={`text-sm font-medium mb-4 ${tier.highlight ? "text-surf/80" : "text-ink-soft"}`}>
+                ≈ {tier.priceXpf}{tier.sub && ` ${tier.sub}`}
+              </p>
               <p className={`text-sm mb-6 leading-relaxed ${tier.highlight ? "text-surf/90" : "text-ink-soft"}`}>
                 {tier.description}
               </p>
@@ -177,16 +96,16 @@ export default function CreationWeb() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#contact"
+              <Link
+                href="/#contact"
                 className={`mt-8 inline-flex items-center justify-center rounded-xl text-sm font-semibold transition-all hover:shadow-md min-h-11 px-5 py-2.5 ${
                   tier.highlight
                     ? "bg-surf text-blue hover:bg-surf-mid"
                     : "bg-blue text-surf hover:bg-blue/90 hover:shadow-blue/30"
                 }`}
               >
-                Demander un devis
-              </a>
+                {tp("ctaLabel")}
+              </Link>
             </div>
           ))}
         </div>
