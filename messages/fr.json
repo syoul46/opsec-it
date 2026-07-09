@@ -88,18 +88,19 @@
       "tiers": [
         {
           "name": "Site vitrine",
-          "price": "800 €",
-          "priceXpf": "95 500 F CFP",
+          "price": "1 200 €",
+          "priceXpf": "143 200 F CFP",
           "sub": "",
           "from": true,
+          "note": "Associations déclarées : 800 € (−33 %)",
           "description": "Une page responsive, design soigné, formulaire de contact.",
           "features": ["Design sur mesure", "Responsive mobile / desktop", "Formulaire de contact", "Optimisation SEO de base", "Livraison sous 2 semaines"],
           "highlight": false
         },
         {
           "name": "Site multi-pages",
-          "price": "1 800 €",
-          "priceXpf": "214 800 F CFP",
+          "price": "2 200 €",
+          "priceXpf": "262 500 F CFP",
           "sub": "",
           "from": true,
           "description": "3 à 5 pages structurées, sans CMS. Contenu stable, site rapide.",
@@ -108,22 +109,36 @@
         },
         {
           "name": "Site + CMS",
-          "price": "2 800 €",
-          "priceXpf": "334 100 F CFP",
+          "price": "3 400 €",
+          "priceXpf": "405 700 F CFP",
           "sub": "",
           "from": true,
           "description": "Jusqu'à 5 pages + back-office pour gérer vos contenus en autonomie.",
           "features": ["Jusqu'à 5 pages", "CMS intégré (admin simple)", "Blog ou actualités", "SEO avancé", "Formation à la prise en main"],
           "highlight": true
-        },
+        }
+      ],
+      "maintenanceTitle": "Maintenance & hébergement",
+      "maintenanceIntro": "Votre site entre de bonnes mains : deux formules mensuelles, sans engagement.",
+      "maintenanceTiers": [
         {
-          "name": "Maintenance",
+          "name": "Essentiel",
           "price": "60 €",
           "priceXpf": "7 200 F CFP",
           "sub": "/ mois",
-          "from": true,
-          "description": "Tranquillité d'esprit : mises à jour, sauvegardes, support.",
-          "features": ["Hébergement inclus", "Mises à jour mensuelles", "Sauvegardes automatiques", "Surveillance de disponibilité", "1h de support / mois"],
+          "from": false,
+          "description": "L'essentiel pour un site sain : hébergement, mises à jour, sauvegardes.",
+          "features": ["Hébergement inclus", "Mises à jour mensuelles", "Sauvegardes automatiques", "Surveillance de disponibilité", "Support facturé à l'heure"],
+          "highlight": false
+        },
+        {
+          "name": "Sérénité",
+          "price": "100 €",
+          "priceXpf": "11 900 F CFP",
+          "sub": "/ mois",
+          "from": false,
+          "description": "Tranquillité complète : tout Essentiel, plus support et suivi régulier.",
+          "features": ["Tout le forfait Essentiel", "1h de support / mois incluse", "Rapport mensuel d'activité", "Priorité d'intervention"],
           "highlight": false
         }
       ]

@@ -88,18 +88,19 @@
       "tiers": [
         {
           "name": "Landing page",
-          "price": "€800",
-          "priceXpf": "95,500 CFP",
+          "price": "€1,200",
+          "priceXpf": "143,200 CFP",
           "sub": "",
           "from": true,
+          "note": "Registered nonprofits: €800 (−33%)",
           "description": "Responsive one-pager, polished design, contact form.",
           "features": ["Custom design", "Mobile / desktop responsive", "Contact form", "Basic SEO optimization", "Delivery within 2 weeks"],
           "highlight": false
         },
         {
           "name": "Multi-page site",
-          "price": "€1,800",
-          "priceXpf": "214,800 CFP",
+          "price": "€2,200",
+          "priceXpf": "262,500 CFP",
           "sub": "",
           "from": true,
           "description": "3 to 5 structured pages, no CMS. Stable content, fast site.",
@@ -108,22 +109,36 @@
         },
         {
           "name": "Site + CMS",
-          "price": "€2,800",
-          "priceXpf": "334,100 CFP",
+          "price": "€3,400",
+          "priceXpf": "405,700 CFP",
           "sub": "",
           "from": true,
           "description": "Up to 5 pages + back-office to manage your content autonomously.",
           "features": ["Up to 5 pages", "Built-in CMS (simple admin)", "Blog or news", "Advanced SEO", "Onboarding training"],
           "highlight": true
-        },
+        }
+      ],
+      "maintenanceTitle": "Maintenance & hosting",
+      "maintenanceIntro": "Your site in good hands: two monthly plans, no commitment.",
+      "maintenanceTiers": [
         {
-          "name": "Maintenance",
+          "name": "Essential",
           "price": "€60",
           "priceXpf": "7,200 CFP",
           "sub": "/ month",
-          "from": true,
-          "description": "Peace of mind: updates, backups, support.",
-          "features": ["Hosting included", "Monthly updates", "Automatic backups", "Availability monitoring", "1h of support / month"],
+          "from": false,
+          "description": "The essentials for a healthy site: hosting, updates, backups.",
+          "features": ["Hosting included", "Monthly updates", "Automatic backups", "Availability monitoring", "Support billed hourly"],
+          "highlight": false
+        },
+        {
+          "name": "Peace of mind",
+          "price": "€100",
+          "priceXpf": "11,900 CFP",
+          "sub": "/ month",
+          "from": false,
+          "description": "Complete peace of mind: everything in Essential, plus support and regular follow-up.",
+          "features": ["Everything in Essential", "1h of support / month included", "Monthly activity report", "Priority response"],
           "highlight": false
         }
       ]
