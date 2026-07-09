@@ -66,7 +66,7 @@ export default function Hero() {
 
           {/* Logo transparent */}
           <div className="relative hidden lg:flex lg:col-span-2 justify-center items-start self-start -mt-8">
-            <div className="relative w-full max-w-[340px]">
+            <div className="w-full max-w-[340px] flex flex-col items-center gap-4">
               <Image
                 src="/logo.png"
                 alt={t("logoAlt")}
@@ -75,7 +75,7 @@ export default function Hero() {
                 priority
                 className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
               />
-              <div className="absolute -bottom-2 -left-2 bg-surf-mid/90 backdrop-blur-sm rounded-xl shadow-card-md border border-border px-4 py-3 flex items-center gap-3">
+              <div className="bg-surf-mid/90 backdrop-blur-sm rounded-xl shadow-card-md border border-border px-4 py-3 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-green/15 border border-green/30 flex items-center justify-center">
                   <CheckCircle className="w-4 h-4 text-green" />
                 </div>
