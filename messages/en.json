@@ -1,10 +1,10 @@
 {
   "seo": {
     "title": "OPSEC-IT — Sylvestre MIGNOT, AIS | Security & Infra for Nonprofits & SMBs",
-    "description": "AIS-certified (IPSSI), Sylvestre MIGNOT secures and administers IT systems for nonprofits and SMBs. Audit, hardening, virtualization, web development.",
-    "keywords": "IT security,system administration,secure infrastructure,AIS,security audit,SMB,nonprofits,GDPR,web development,Next.js",
+    "description": "AIS-certified (IPSSI), Sylvestre MIGNOT secures and administers IT systems for nonprofits and SMBs. Security check-ups, hardening, virtualization, web development.",
+    "keywords": "IT security,system administration,secure infrastructure,AIS,security check-up,SMB,nonprofits,GDPR,web development,Next.js",
     "ogTitle": "OPSEC-IT — Security & Infra for Nonprofits & SMBs",
-    "ogDescription": "Sylvestre MIGNOT, AIS — Audit, administration and securing of infrastructures for nonprofits and SMBs. Custom web design.",
+    "ogDescription": "Sylvestre MIGNOT, AIS — Security check-ups, administration and securing of infrastructures for nonprofits and SMBs. Custom web design.",
     "jobTitle": "Secure Infrastructure Administrator",
     "personDescription": "AIS-certified (IPSSI), specialized in securing and administering infrastructures for nonprofits and SMBs.",
     "businessDescription": "Securing, administering infrastructures and building websites for nonprofits and SMBs."
@@ -37,8 +37,8 @@
     "subtitle": "Sylvestre MIGNOT, AIS-certified (IPSSI), secures and administers IT systems for nonprofits and SMBs — and builds their custom websites.",
     "checks": [
       "Reduced cyber risk",
-      "GDPR & ANSSI compliance",
-      "Guaranteed business continuity",
+      "GDPR & ANSSI best practices",
+      "Tested backups & recovery",
       "Pricing tailored to nonprofits & SMBs"
     ],
     "ctaPrimary": "Get in touch",
@@ -58,12 +58,12 @@
     "title": "What I bring to your organization",
     "intro": "Services tailored to nonprofits and SMBs: pragmatic, documented, jargon-free. You don't need a full-time IT director — you need a trusted technical partner.",
     "items": [
-      { "title": "Security audit",              "description": "Analysis of your infrastructure: identification of vulnerabilities, misconfigurations and improvement areas. Clear report with prioritized recommendations.", "tags": ["Analysis", "Recommendations", "Report"] },
+      { "title": "Security check-up",           "description": "Review of your setup: weak points, misconfigurations and improvement areas. Clear report with prioritized recommendations.",                                  "tags": ["Analysis", "Recommendations", "Report"] },
       { "title": "Systems administration",      "description": "Management of your Linux/Windows servers, routers and firewalls. Monitoring with Zabbix, updates and rapid response.",                                       "tags": ["Linux", "Windows Server", "Zabbix"] },
       { "title": "Infrastructure hardening",    "description": "System hardening, network segmentation, access and password management. Solid foundations to reduce your exposure.",                                        "tags": ["Hardening", "Segmentation", "Access"] },
       { "title": "Virtualization",              "description": "Deployment and administration of your on-premise virtualized environments (Proxmox, VMware). Containerization with Docker.",                                "tags": ["Proxmox", "VMware", "Docker"] },
       { "title": "Business continuity",         "description": "Backup strategy, documented recovery procedures and regular testing. So your activity survives any incident.",                                                "tags": ["Backup", "DRP", "Documentation"] },
-      { "title": "Support & guidance",          "description": "Single technical contact for organizations without an IT department. Regular follow-up, incident response, documentation and team coaching.",                "tags": ["Outsourced IT", "Nonprofits", "SMBs"] }
+      { "title": "Support & guidance",          "description": "Single technical contact for organizations without an IT department. Regular follow-up, assistance when incidents happen, documentation and team coaching.",                "tags": ["Outsourced IT", "Nonprofits", "SMBs"] }
     ]
   },
 
@@ -188,10 +188,10 @@
     "intro": "A structured four-phase approach, adapted to your organization's operational reality.",
     "callout": "Operational security is not a final state — it's an ongoing process of adapting to threats and to the evolution of your organization.",
     "steps": [
-      { "num": "01", "title": "Risk analysis",        "description": "Mapping of the IT system, identification of critical assets and attack vectors. Risk report prioritized to your business.",                "tags": ["EBIOS RM", "Threat modeling"] },
-      { "num": "02", "title": "Hardening",            "description": "OS hardening, network segmentation, privilege management, encryption and update policy per CIS benchmarks.",                              "tags": ["CIS Benchmarks", "Least privilege"] },
-      { "num": "03", "title": "Continuous monitoring", "description": "Deployment of monitoring and anomaly detection tools. Dashboards, alerts and periodic log review.",                                        "tags": ["SIEM", "Alerting"] },
-      { "num": "04", "title": "Incident response",   "description": "Documented procedures for every type of incident: ransomware, intrusion, outage. Regular testing and continuous improvement.",            "tags": ["IR plan", "Forensics"] }
+      { "num": "01", "title": "Risk analysis",          "description": "Mapping of your setup: what's critical to your business, what's exposed, what's missing. Findings prioritized to your business.",             "tags": ["Mapping", "Prioritization"] },
+      { "num": "02", "title": "Hardening",              "description": "System hardening, network segmentation, access management, encryption and update policy based on public baselines (CIS).",                  "tags": ["CIS Benchmarks", "Least privilege"] },
+      { "num": "03", "title": "Continuous monitoring",  "description": "Monitoring put in place: dashboards, alerts on anomalies and periodic log review.",                                                          "tags": ["Monitoring", "Alerts"] },
+      { "num": "04", "title": "Incident preparedness",  "description": "Tested backups, written procedures, a simple plan: who to call, what to unplug, how to restart. An incident is prepared before it happens.", "tags": ["Tested backups", "Procedures"] }
     ]
   },
 
@@ -217,7 +217,7 @@
       "responseTime": "Reply within 24 business hours"
     },
     "subjects": [
-      { "value": "audit",          "label": "Security audit" },
+      { "value": "audit",          "label": "Security check-up" },
       { "value": "administration", "label": "Systems & network administration" },
       { "value": "cloud",          "label": "Cloud & virtualization" },
       { "value": "creation-web",   "label": "Website creation" },

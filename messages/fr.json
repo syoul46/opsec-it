@@ -1,10 +1,10 @@
 {
   "seo": {
     "title": "OPSEC-IT — Sylvestre MIGNOT, AIS | Sécurité & Infra pour Asso et PME",
-    "description": "Titulaire AIS (IPSSI), Sylvestre MIGNOT sécurise et administre les systèmes d'information des associations et PME. Audit, hardening, virtualisation, création web.",
-    "keywords": "sécurité informatique,administrateur systèmes,infrastructure sécurisée,AIS,audit sécurité,PME,associations,RGPD,création site web,Next.js",
+    "description": "Titulaire AIS (IPSSI), Sylvestre MIGNOT sécurise et administre les systèmes d'information des associations et PME. Diagnostic sécurité, sécurisation, virtualisation, création web.",
+    "keywords": "sécurité informatique,administrateur systèmes,infrastructure sécurisée,AIS,diagnostic sécurité,PME,associations,RGPD,création site web,Next.js",
     "ogTitle": "OPSEC-IT — Sécurité & Infra pour Asso et PME",
-    "ogDescription": "Sylvestre MIGNOT, AIS — Audit, administration et sécurisation d'infrastructures pour associations et PME. Création web sur mesure.",
+    "ogDescription": "Sylvestre MIGNOT, AIS — Diagnostic, administration et sécurisation d'infrastructures pour associations et PME. Création web sur mesure.",
     "jobTitle": "Administrateur d'Infrastructures Sécurisées",
     "personDescription": "Titulaire du titre AIS (IPSSI), spécialisé en sécurisation et administration d'infrastructures pour associations et PME.",
     "businessDescription": "Sécurisation, administration d'infrastructures et création web pour les associations et les PME."
@@ -37,8 +37,8 @@
     "subtitle": "Sylvestre MIGNOT, titulaire du titre AIS (IPSSI), sécurise et administre les systèmes d'information des associations et des PME — et conçoit leurs sites web sur mesure.",
     "checks": [
       "Réduction des risques cyber",
-      "Conformité RGPD & ANSSI",
-      "Continuité d'activité assurée",
+      "Bonnes pratiques RGPD & ANSSI",
+      "Sauvegardes et reprise testées",
       "Tarifs adaptés aux asso et PME"
     ],
     "ctaPrimary": "Prendre contact",
@@ -58,12 +58,12 @@
     "title": "Ce que j'apporte à votre structure",
     "intro": "Des prestations adaptées aux associations et PME : pragmatiques, documentées, sans jargon. Vous n'avez pas besoin d'un DSI à plein temps — vous avez besoin d'un interlocuteur technique de confiance.",
     "items": [
-      { "title": "Diagnostic sécurité",            "description": "Analyse de votre infrastructure : identification des vulnérabilités, mauvaises configurations et points d'amélioration. Rapport clair avec recommandations priorisées.", "tags": ["Analyse", "Recommandations", "Rapport"] },
+      { "title": "Diagnostic sécurité",            "description": "État des lieux de votre installation : points faibles, mauvaises configurations et axes d'amélioration. Rapport clair avec recommandations priorisées.", "tags": ["Analyse", "Recommandations", "Rapport"] },
       { "title": "Administration systèmes",        "description": "Gestion de vos serveurs Linux/Windows, routeurs et firewalls. Supervision avec Zabbix, mises à jour et interventions rapides.",                                              "tags": ["Linux", "Windows Server", "Zabbix"] },
       { "title": "Sécurisation d'infrastructures", "description": "Durcissement des systèmes, segmentation réseau, gestion des accès et des mots de passe. Des bases solides pour réduire votre exposition.",                                "tags": ["Hardening", "Segmentation", "Accès"] },
       { "title": "Virtualisation",                 "description": "Déploiement et administration de vos environnements virtualisés on-premise (Proxmox, VMware). Conteneurisation avec Docker.",                                              "tags": ["Proxmox", "VMware", "Docker"] },
       { "title": "Continuité d'activité",          "description": "Stratégie de sauvegarde, procédures de reprise documentées et tests réguliers. Pour que votre activité survive à un incident.",                                             "tags": ["Sauvegarde", "PRA", "Documentation"] },
-      { "title": "Support & accompagnement",       "description": "Interlocuteur technique unique pour les structures sans DSI. Suivi régulier, réponse aux incidents, documentation et accompagnement de vos équipes.",                       "tags": ["DSI externalisée", "Associations", "PME"] }
+      { "title": "Support & accompagnement",       "description": "Interlocuteur technique unique pour les structures sans DSI. Suivi régulier, assistance en cas d'incident, documentation et accompagnement de vos équipes.",                       "tags": ["DSI externalisée", "Associations", "PME"] }
     ]
   },
 
@@ -188,10 +188,10 @@
     "intro": "Une approche structurée en quatre phases, adaptée à la réalité opérationnelle de votre structure.",
     "callout": "La sécurité opérationnelle n'est pas un état final — c'est un processus continu d'adaptation aux menaces et aux évolutions de votre structure.",
     "steps": [
-      { "num": "01", "title": "Analyse des risques",   "description": "Cartographie du SI, identification des actifs critiques et des vecteurs d'attaque. Rapport de risques priorisé selon votre métier.",                          "tags": ["EBIOS RM", "Threat modeling"] },
-      { "num": "02", "title": "Durcissement",          "description": "Hardening des OS, segmentation réseau, gestion des privilèges, chiffrement et politique de mises à jour selon les référentiels CIS.",                         "tags": ["CIS Benchmarks", "Least privilege"] },
-      { "num": "03", "title": "Surveillance continue", "description": "Déploiement d'outils de monitoring et de détection d'anomalies. Tableaux de bord, alertes et revue périodique des journaux.",                                  "tags": ["SIEM", "Alerting"] },
-      { "num": "04", "title": "Réponse aux incidents", "description": "Procédures documentées pour chaque type d'incident : ransomware, intrusion, défaillance. Tests réguliers et amélioration continue.",                          "tags": ["PRI", "Forensics"] }
+      { "num": "01", "title": "Analyse des risques",        "description": "Cartographie de votre installation : ce qui est critique pour votre activité, ce qui est exposé, ce qui manque. Constats priorisés selon votre métier.", "tags": ["Cartographie", "Priorisation"] },
+      { "num": "02", "title": "Durcissement",               "description": "Sécurisation des systèmes, segmentation réseau, gestion des accès, chiffrement et politique de mises à jour selon les référentiels publics (CIS).",       "tags": ["CIS Benchmarks", "Moindre privilège"] },
+      { "num": "03", "title": "Surveillance continue",      "description": "Mise en place d'une supervision : tableaux de bord, alertes en cas d'anomalie et revue périodique des journaux.",                                          "tags": ["Supervision", "Alertes"] },
+      { "num": "04", "title": "Préparation aux incidents",  "description": "Sauvegardes testées, procédures écrites, plan simple : qui appeler, quoi débrancher, comment redémarrer. Un incident se prépare avant qu'il n'arrive.",   "tags": ["Sauvegardes testées", "Procédures"] }
     ]
   },
 
@@ -217,7 +217,7 @@
       "responseTime": "Réponse sous 24h ouvrées"
     },
     "subjects": [
-      { "value": "audit",          "label": "Audit de sécurité" },
+      { "value": "audit",          "label": "Diagnostic sécurité" },
       { "value": "administration", "label": "Administration systèmes & réseaux" },
       { "value": "cloud",          "label": "Cloud & virtualisation" },
       { "value": "creation-web",   "label": "Création de site web" },
