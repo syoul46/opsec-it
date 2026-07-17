@@ -1,0 +1,40 @@
+# Vhost Caddy du site opsec-it.fr — CX23 Nuremberg.
+#
+# Fichier séparé et chargé par `import conf.d/*.caddy` depuis /etc/caddy/Caddyfile :
+# maeva documente `install -m644 .../deploy/Caddyfile /etc/caddy/Caddyfile`, qui écrase
+# le fichier entier. Tant que chaque site vit dans son propre fichier de conf.d, un
+# redéploiement de maeva ne peut pas emporter le vhost du site.
+#
+# Déployer :
+#   install -m644 /opt/opsec-it/deploy/opsec-it.caddy /etc/caddy/conf.d/
+#   caddy validate --config /etc/caddy/Caddyfile && systemctl reload caddy
+#
+# Le certificat Let's Encrypt est obtenu et renouvelé automatiquement, à condition que
+# le DNS d'opsec-it.fr et de www pointe sur cette machine (5.75.151.116).
+
+opsec-it.fr {
+	# Next.js écoute en clair sur la boucle locale uniquement (cf. deploy/docker-compose.yml).
+	reverse_proxy 127.0.0.1:3000
+
+	encode gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	log {
+		output file /var/log/caddy/opsec-it.log
+		format console
+	}
+}
+
+# Un seul nom canonique : le sitemap, robots.txt et metadataBase codent tous
+# https://opsec-it.fr en dur (app/sitemap.ts, app/robots.ts, app/[locale]/layout.tsx).
+# Servir le site sous www en plus créerait du contenu dupliqué contredisant le sitemap.
+www.opsec-it.fr {
+	redir https://opsec-it.fr{uri} permanent
+}

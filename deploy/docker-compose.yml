@@ -1,0 +1,52 @@
+# Déploiement d'opsec-it.fr sur le CX23 (Nuremberg), aux côtés de maeva-runner.
+#
+# Ne pas confondre avec docker-compose.prod.yml à la racine : celui-ci vise sonic
+# (réseau externe `sonic`, labels Fabio/Consul, TLS par acme.sh) et ne fonctionne pas ici.
+#
+# Le conteneur n'écoute QUE sur la boucle locale : Caddy est le seul process exposé à
+# Internet, exactement comme le runner maeva sur 8080. Ne pas remplacer par "3000:3000",
+# ce qui publierait le port sur l'IP publique en contournant Caddy et le pare-feu Hetzner.
+#
+# Déployer :
+#   cd /opt/opsec-it && docker compose -f deploy/docker-compose.yml up -d --build
+#
+# Le fichier deploy/.env (chmod 600, jamais commité) porte RESEND_API_KEY.
+
+name: opsec-it
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: opsec-it:local
+    container_name: opsec-it-app
+    restart: unless-stopped
+
+    ports:
+      - "127.0.0.1:3000:3000"
+
+    environment:
+      - NODE_ENV=production
+      # Absente = le formulaire de contact logge ici au lieu d'envoyer, et répond
+      # quand même "success" au visiteur (app/api/contact/route.ts). Les messages
+      # sont alors dans `docker compose logs`, pas dans la boîte mail.
+      - RESEND_API_KEY=${RESEND_API_KEY:-}
+
+    # La machine a 4 Go partagés avec maeva-runner. Le site tourne à ~200 Mo ;
+    # cette limite est un garde-fou pour qu'une fuite côté site ne fasse pas
+    # tomber le runner par OOM.
+    mem_limit: 512m
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
