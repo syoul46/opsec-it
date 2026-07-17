@@ -25,13 +25,17 @@ type MaskSpec = {
   opacity: number;
 };
 
+// Opacités au-dessus du plafond 0.10 du guide, à dessein : ses motifs sont des
+// traits fins (~1px au rendu), quasi imperceptibles à 8% sur le fond marine. Le but
+// réel est « discret mais visible » — on privilégie donc le visible. Le bouclier et
+// la vague sont sur fond uni (montés davantage) ; le tapa se répète (gardé plus bas).
 const PRESETS: Record<Preset, MaskSpec> = {
   // Grand bouclier tiki ancré dans l'angle bas-droit. Sections héro/method/contact.
-  "shield-corner": { url: "/bg/wm-tiki-shield.svg", repeat: "no-repeat", position: "right -60px bottom -80px", size: "360px", opacity: 0.09 },
+  "shield-corner": { url: "/bg/wm-tiki-shield.svg", repeat: "no-repeat", position: "right -60px bottom -80px", size: "420px", opacity: 0.18 },
   // Bandeau vague & réseau étiré en bas. Footer ou bandeau pleine largeur.
-  "wave-band": { url: "/bg/wm-wave-network.svg", repeat: "no-repeat", position: "center bottom", size: "100% auto", opacity: 0.08 },
+  "wave-band": { url: "/bg/wm-wave-network.svg", repeat: "no-repeat", position: "center bottom", size: "100% auto", opacity: 0.16 },
   // Motif tapa répété en tuile. Fond de pages de contenu entières.
-  tapa: { url: "/bg/wm-pattern-tapa.svg", repeat: "repeat", position: "0 0", size: "200px", opacity: 0.06 },
+  tapa: { url: "/bg/wm-pattern-tapa.svg", repeat: "repeat", position: "0 0", size: "200px", opacity: 0.10 },
 };
 
 // À poser comme premier enfant d'un conteneur `relative overflow-hidden`, le
