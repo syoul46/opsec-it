@@ -1,4 +1,5 @@
 import { TikiIcon } from "@/components/ui/tiki";
+import Watermark from "@/components/ui/Watermark";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
@@ -17,8 +18,9 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-surf-mid border-t border-border text-ink">
-      <div className="wrap py-14">
+    <footer className="relative overflow-hidden bg-surf-mid border-t border-border text-ink">
+      <Watermark preset="wave-band" />
+      <div className="wrap py-14 relative">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
             <div className="flex items-center gap-2 mb-4">

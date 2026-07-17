@@ -58,6 +58,10 @@
   /* Bordures */
   --ds-border:     rgb(191 195 204 / 0.12);
 
+  /* Filigranes d'arrière-plan (composant Watermark) : teinte suivie par thème.
+     Ardoise sur le fond marine — la couleur du guide, qui lit comme une texture. */
+  --ds-watermark:   #5F7794;
+
   /* Body */
   --ds-body-bg:     var(--ds-surf);
   --ds-body-fg:     var(--ds-ink);
@@ -103,6 +107,10 @@
   --ds-green-soft: rgb(58 140 94 / 0.12);
 
   --ds-border:     rgb(26 32 48 / 0.12);
+
+  /* Sur le crème, l'ardoise s'effacerait : on prend l'encre navy, qui reste
+     une texture discrète à faible opacité au lieu de disparaître. */
+  --ds-watermark:   #1A2030;
 
   --ds-body-bg:     var(--ds-surf);
   --ds-body-fg:     var(--ds-ink);

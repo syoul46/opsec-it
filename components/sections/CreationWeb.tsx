@@ -3,6 +3,7 @@ import { type TikiIconName } from "@/components/ui/tiki";
 import { useTranslations } from "next-intl";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import Watermark from "@/components/ui/Watermark";
 import { Link } from "@/i18n/navigation";
 
 // L'ordre doit correspondre à messages.creationWeb.items :
@@ -91,8 +92,9 @@ export default function CreationWeb() {
   const maintenanceTiers = tp.raw("maintenanceTiers") as Tier[];
 
   return (
-    <SectionWrapper id="creation-web" className="pt-32 pb-28 bg-surf">
-      <div className="wrap">
+    <SectionWrapper id="creation-web" className="relative overflow-hidden pt-32 pb-28 bg-surf">
+      <Watermark preset="tapa" />
+      <div className="wrap relative">
 
         <div className="mb-5">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">

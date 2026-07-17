@@ -6,6 +6,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import Watermark from "@/components/ui/Watermark";
 import { Send, ExternalLink, Mail, CheckCircle, AlertCircle, Clock } from "lucide-react";
 
 const inputBase =
@@ -53,8 +54,9 @@ export default function Contact() {
   const req = tForm("required");
 
   return (
-    <SectionWrapper id="contact" className="pt-32 pb-28 bg-surf">
-      <div className="wrap">
+    <SectionWrapper id="contact" className="relative overflow-hidden pt-32 pb-28 bg-surf">
+      <Watermark preset="shield-corner" />
+      <div className="wrap relative">
         <div className="mb-14">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">{t("kicker")}</span>
           <h2 className="text-3xl md:text-4xl font-black text-ink mb-4 leading-tight">{t("title")}</h2>
