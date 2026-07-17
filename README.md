@@ -55,7 +55,7 @@ Le site tourne sur le **CX23 Hetzner** (`5.75.151.116`, Nuremberg), en cohabitat
 avec `maeva-runner`. Caddy assure la terminaison TLS et le certificat Let's Encrypt ;
 le conteneur n'écoute que sur `127.0.0.1:3000` et n'est jamais exposé directement.
 
-Redéployer (le serveur suit la branche `design-v2`) :
+Redéployer (le serveur suit `main`) :
 
 ```bash
 ssh root@5.75.151.116
