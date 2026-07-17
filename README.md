@@ -26,7 +26,12 @@ Le site est accessible sur [http://localhost:3000](http://localhost:3000).
 |------------------|------------------------------------------------|------------------|
 | `RESEND_API_KEY` | Clé API Resend pour l'envoi des emails contact | Oui en production |
 
-Sans clé, le formulaire loggue simplement les soumissions en console (mode dev).
+Sans clé, le formulaire écrit la soumission dans les logs **et répond quand même
+« message envoyé » au visiteur** (`app/api/contact/route.ts`). Acceptable en dev,
+silencieux et coûteux en prod : les messages sont dans `docker compose logs`, pas
+dans la boîte mail. La variable est lue au runtime — la renseigner dans
+`deploy/.env` puis `docker compose -f deploy/docker-compose.yml up -d` suffit,
+sans rebuild.
 
 ## Structure
 
@@ -46,14 +51,25 @@ components/
 
 ## Déploiement
 
-Build production :
+Le site tourne sur le **CX23 Hetzner** (`5.75.151.116`, Nuremberg), en cohabitation
+avec `maeva-runner`. Caddy assure la terminaison TLS et le certificat Let's Encrypt ;
+le conteneur n'écoute que sur `127.0.0.1:3000` et n'est jamais exposé directement.
+
+Redéployer (le serveur suit la branche `design-v2`) :
 
 ```bash
-npm run build
-npm start
+ssh root@5.75.151.116
+cd /opt/opsec-it && git pull && docker compose -f deploy/docker-compose.yml up -d --build
 ```
 
-Ou via Docker (`docker-compose.prod.yml`).
+Tout est dans `deploy/` : `docker-compose.yml` (le conteneur), `opsec-it.caddy` (le
+vhost, à installer dans `/etc/caddy/conf.d/`) et `.env` (non commité, `RESEND_API_KEY`).
+
+En local, `npm run dev` suffit ; pour tester l'image telle qu'elle tourne en prod :
+
+```bash
+docker compose -f deploy/docker-compose.yml up --build
+```
 
 ## Contact
 

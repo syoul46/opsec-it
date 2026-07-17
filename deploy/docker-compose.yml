@@ -1,7 +1,8 @@
 # Déploiement d'opsec-it.fr sur le CX23 (Nuremberg), aux côtés de maeva-runner.
 #
-# Ne pas confondre avec docker-compose.prod.yml à la racine : celui-ci vise sonic
-# (réseau externe `sonic`, labels Fabio/Consul, TLS par acme.sh) et ne fonctionne pas ici.
+# Seul fichier de déploiement du projet : les anciens compose (racine) et la pipeline
+# Woodpecker visaient sonic, une machine qui n'héberge plus ce site. Ils ont été
+# supprimés — ne pas les réintroduire, la cible est ce CX23.
 #
 # Le conteneur n'écoute QUE sur la boucle locale : Caddy est le seul process exposé à
 # Internet, exactement comme le runner maeva sur 8080. Ne pas remplacer par "3000:3000",
