@@ -257,12 +257,15 @@
           "title": "Site publisher",
           "intro": "This site <strong>opsec-it.fr</strong> is published by:",
           "items": [
-            "<strong>Sylvestre MIGNOT</strong>",
+            "<strong>Sylvestre MIGNOT — EI</strong>",
             "Sole proprietor — micro-enterprise",
             "Activity: administration and securing of IT systems, website creation",
+            "SIRET: 995 144 623 00015 — SIREN: 995 144 623",
+            "Cahors Trade and Companies Register (RCS) 995 144 623",
+            "APE code: 62.03Z — Management of computer facilities",
             "Email: <a>contact@opsec-it.fr</a>"
           ],
-          "note": "SIREN / SIRET and intra-community VAT numbers are provided upon request."
+          "note": "VAT not applicable, article 293 B of the French General Tax Code (VAT exemption scheme)."
         },
         "director": {
           "title": "Publication director",
@@ -270,7 +273,7 @@
         },
         "hosting": {
           "title": "Hosting",
-          "body": "The site is hosted on a private infrastructure administered by the publisher. Information about the technical hosting provider can be provided upon request at <a>contact@opsec-it.fr</a>."
+          "body": "This site is hosted by <strong>Hetzner Online GmbH</strong>, Industriestr. 25, 91710 Gunzenhausen, Germany — phone: +49 (0)9831 505-0. The servers hosting this site are located in Germany (Nuremberg)."
         },
         "ip": {
           "title": "Intellectual property",

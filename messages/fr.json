@@ -257,12 +257,15 @@
           "title": "Éditeur du site",
           "intro": "Le présent site <strong>opsec-it.fr</strong> est édité par :",
           "items": [
-            "<strong>Sylvestre MIGNOT</strong>",
+            "<strong>Sylvestre MIGNOT — EI</strong>",
             "Entrepreneur individuel — micro-entreprise",
             "Activité : administration et sécurisation de systèmes d'information, création de sites web",
+            "SIRET : 995 144 623 00015 — SIREN : 995 144 623",
+            "RCS Cahors 995 144 623",
+            "Code APE : 62.03Z — Gestion d'installations informatiques",
             "Email : <a>contact@opsec-it.fr</a>"
           ],
-          "note": "Les informations SIREN / SIRET et numéro de TVA intracommunautaire sont communiqués sur demande."
+          "note": "TVA non applicable, article 293 B du CGI (franchise en base de TVA)."
         },
         "director": {
           "title": "Directeur de la publication",
@@ -270,7 +273,7 @@
         },
         "hosting": {
           "title": "Hébergement",
-          "body": "Le site est hébergé sur une infrastructure privée administrée par l'éditeur. Les informations relatives au prestataire technique d'hébergement peuvent être communiquées sur simple demande à <a>contact@opsec-it.fr</a>."
+          "body": "Le site est hébergé par <strong>Hetzner Online GmbH</strong>, Industriestr. 25, 91710 Gunzenhausen, Allemagne — téléphone : +49 (0)9831 505-0. Les serveurs qui hébergent ce site sont situés en Allemagne (Nuremberg)."
         },
         "ip": {
           "title": "Propriété intellectuelle",
