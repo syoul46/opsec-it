@@ -1,9 +1,11 @@
 import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import { Search, ShieldCheck, Eye, Zap, type LucideIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { TikiIcon, type TikiIconName } from "@/components/ui/tiki";
 
-const ICONS: LucideIcon[] = [Search, ShieldCheck, Eye, Zap];
+// Même ordre que messages.methodology.steps :
+// cartographie → durcissement → surveillance → préparation aux incidents.
+const ICONS: TikiIconName[] = ["star-compass", "tattoo-hardening", "tiki-eye", "tiki-incident"];
 
 type Step = { num: string; title: string; description: string; tags: string[] };
 
@@ -36,7 +38,7 @@ export default function Methodology() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-14">
           {steps.map((s, i) => {
-            const Icon = ICONS[i];
+            const glyph = ICONS[i];
             return (
               <div key={s.num}
                    className="group bg-surf-mid rounded-2xl border border-border p-7 shadow-card hover:shadow-card-md hover:-translate-y-0.5 hover:border-blue/40 transition-all duration-200">
@@ -44,7 +46,7 @@ export default function Methodology() {
                   <div className="flex-shrink-0 text-center">
                     <span className="block text-3xl font-black text-blue/30 leading-none mb-2.5">{s.num}</span>
                     <div className="w-10 h-10 rounded-xl bg-blue/10 border border-blue/25 flex items-center justify-center mx-auto group-hover:bg-blue group-hover:border-blue transition-colors duration-200">
-                      <Icon className="w-5 h-5 text-blue group-hover:text-surf transition-colors duration-200" />
+                      <TikiIcon name={glyph} className="w-5 h-5 text-blue group-hover:text-surf transition-colors duration-200" />
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">

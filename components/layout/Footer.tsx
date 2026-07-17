@@ -1,4 +1,4 @@
-import { Shield } from "lucide-react";
+import { TikiIcon } from "@/components/ui/tiki";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Shield className="w-5 h-5 text-blue" />
+              <TikiIcon name="networking-security" className="w-5 h-5 text-blue" />
               <span className="font-bold text-base">OPSEC<span className="text-blue">-IT</span></span>
             </div>
             <p className="text-sm text-ink-soft leading-relaxed max-w-xs">{t("tagline")}</p>

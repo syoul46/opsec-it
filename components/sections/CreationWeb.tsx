@@ -1,11 +1,16 @@
-import { Globe, LayoutTemplate, Paintbrush, Search, Zap, Wrench, Check, type LucideIcon } from "lucide-react";
+import { Check } from "lucide-react";
+import { type TikiIconName } from "@/components/ui/tiki";
 import { useTranslations } from "next-intl";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { Link } from "@/i18n/navigation";
 
-// L'ordre doit correspondre à messages.creationWeb.items
-const ICONS: LucideIcon[] = [Globe, LayoutTemplate, Paintbrush, Search, Zap, Wrench];
+// L'ordre doit correspondre à messages.creationWeb.items :
+// vitrine, multi-pages, design, SEO, refonte, maintenance.
+const ICONS: TikiIconName[] = [
+  "landing-page", "multipage-site", "design-branding",
+  "seo-performance", "redesign", "maintenance-support",
+];
 
 type ServiceItem = { title: string; description: string; tags: string[] };
 type Tier = {
@@ -101,7 +106,7 @@ export default function CreationWeb() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
           {items.map((s, i) => (
-            <ServiceCard key={s.title} Icon={ICONS[i]} title={s.title} description={s.description} tags={s.tags} />
+            <ServiceCard key={s.title} glyph={ICONS[i]} title={s.title} description={s.description} tags={s.tags} />
           ))}
         </div>
 

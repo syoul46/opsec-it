@@ -1,10 +1,16 @@
 import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import { CheckCircle, Award, Terminal, Network, Activity, Layers, Package, Lock, Quote, type LucideIcon } from "lucide-react";
+import { CheckCircle, Quote } from "lucide-react";
+import { TikiIcon, type TikiIconName } from "@/components/ui/tiki";
 import { useTranslations } from "next-intl";
 
 // L'ordre doit correspondre à messages.about.skills
-const SKILL_ICONS: LucideIcon[] = [Terminal, Network, Activity, Layers, Package, Lock];
+// Même ordre que messages.about.skills : Linux, réseaux & sécurité, supervision,
+// virtualisation, conteneurisation, protection des données.
+const SKILL_ICONS: TikiIconName[] = [
+  "linux-systems", "networking-security", "monitoring",
+  "virtualization", "containerization", "niho-encryption",
+];
 
 type Experience   = { period: string; role: string; company: string; description: string };
 type Skill        = { label: string; sub: string };
@@ -93,7 +99,7 @@ export default function About() {
             <div className="mb-8">
               <div className="flex items-center gap-4 p-4 rounded-xl border bg-blue/10 border-blue/30 shadow-sm">
                 <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue">
-                  <Award className="w-4 h-4 text-surf" />
+                  <TikiIcon name="certification" className="w-4 h-4 text-surf" />
                 </div>
                 <div>
                   <p className="text-sm font-bold text-blue">{t("certification.label")}</p>
@@ -105,12 +111,12 @@ export default function About() {
             <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-4">{t("skillsTitle")}</h3>
             <div className="space-y-3">
               {skills.map((s, i) => {
-                const Icon = SKILL_ICONS[i];
+                const glyph = SKILL_ICONS[i];
                 return (
                   <div key={s.label}
                        className="flex items-center gap-4 p-4 rounded-xl border bg-surf border-border hover:border-blue/40 hover:bg-blue/5 transition-all">
                     <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue/10 border border-blue/25">
-                      <Icon className="w-4 h-4 text-blue" />
+                      <TikiIcon name={glyph} className="w-5 h-5 text-blue" />
                     </div>
                     <div>
                       <p className="text-sm font-bold text-ink">{s.label}</p>

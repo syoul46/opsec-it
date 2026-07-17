@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Shield, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { TikiIcon } from "@/components/ui/tiki";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "@/components/i18n/LocaleSwitcher";
@@ -35,7 +36,7 @@ export default function Navbar() {
       <div className="wrap h-20 flex items-center justify-between">
 
         <Link href="/" className="flex items-center gap-2 group">
-          <Shield className="w-6 h-6 text-blue" />
+          <TikiIcon name="networking-security" className="w-6 h-6 text-blue" />
           <span className="font-bold text-xl tracking-tight">
             <span className="text-ink">OPSEC</span><span className="text-blue">-IT</span>
           </span>
