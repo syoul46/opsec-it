@@ -5,10 +5,11 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { REPO_URL, LICENSE_SPDX } from "@/lib/site";
 
-const navKeys = ["services", "creationWeb", "parcours", "methodologie", "contact"] as const;
+const navKeys = ["services", "creationWeb", "packs", "parcours", "methodologie", "contact"] as const;
 const navAnchors: Record<(typeof navKeys)[number], string> = {
   services:     "/#services",
   creationWeb:  "/#creation-web",
+  packs:        "/packs",
   parcours:     "/#parcours",
   methodologie: "/#methodologie",
   contact:      "/#contact",

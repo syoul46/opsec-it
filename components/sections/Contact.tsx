@@ -31,9 +31,13 @@ export default function Contact() {
         nom:     z.string().min(2, tErr("name")).max(100),
         societe: z.string().min(2, tErr("org")).max(150),
         email:   z.string().email(tErr("email")).max(200),
-        objet:   z.enum(["audit", "administration", "cloud", "creation-web", "urgence", "autre"]),
+        objet:   z.enum(["audit", "administration", "cloud", "creation-web", "pack", "urgence", "autre"]),
         message: z.string().min(20, tErr("message")).max(5000),
-        website: z.string().max(0).optional(),
+        // Honeypot : accepté rempli côté client aussi. Avec `.max(0)`, un
+        // gestionnaire de mots de passe qui remplit le champ bloquait la
+        // soumission sans message visible — le champ est aria-hidden et hors
+        // écran, l'utilisateur ne voyait rien. Le tri se fait côté serveur.
+        website: z.string().max(200).optional(),
       }),
     [tErr],
   );

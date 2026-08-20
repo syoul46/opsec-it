@@ -19,6 +19,7 @@
   "nav": {
     "services": "Services",
     "creationWeb": "Création web",
+    "packs": "Packs",
     "parcours": "Parcours",
     "methodologie": "Méthodologie",
     "contact": "Contact",
@@ -169,6 +170,84 @@
     }
   },
 
+  "packs": {
+    "metaTitle": "Packs sécurité + web — asso, PME et pensions | OPSEC-IT",
+    "metaDescription": "Trois forfaits qui réunissent le site web et la sécurité dans un seul devis : Lancement Association 1 200 €, PME Visibilité 2 150 €, Hôtel/Pension 4 150 €.",
+    "kicker": "Packs",
+    "title": "Le site et la sécurité dans le même devis",
+    "intro": "Un site tout neuf posé sur une installation qui prend l'eau ne protège personne. Ces trois forfaits réunissent la création web et le volet sécurité en une seule prestation, à un prix inférieur à la somme des deux. Ils couvrent les situations les plus courantes ; tout le reste se fait sur devis.",
+    "listLabel": "À la carte",
+    "savingLabel": "vous économisez",
+    "ctaLabel": "Demander ce pack",
+    "items": [
+      {
+        "name": "Lancement Association",
+        "price": "1 200 €",
+        "priceXpf": "143 200 F CFP",
+        "listPrice": "1 360 €",
+        "saving": "160 €",
+        "note": "Réservé aux associations déclarées",
+        "description": "Pour une association qui part de zéro : une vitrine propre, un premier regard sur sa sécurité, et un mois pour prendre ses marques sans se soucier de l'hébergement.",
+        "features": [
+          "Site vitrine one-page, au tarif association",
+          "Diagnostic sécurité simplifié, avec rapport écrit",
+          "1 mois d'hébergement et de maintenance inclus",
+          "Formulaire de contact conforme au RGPD",
+          "Livraison sous 2 semaines"
+        ],
+        "highlight": true
+      },
+      {
+        "name": "PME Visibilité",
+        "price": "2 150 €",
+        "priceXpf": "256 600 F CFP",
+        "listPrice": "2 400 €",
+        "saving": "250 €",
+        "description": "Pour une TPE ou une PME qui a une vitrine à tenir et des données à protéger. Le site et l'audit de sécurité arrivent dans le même devis, donc dans le même budget.",
+        "features": [
+          "Site vitrine one-page sur mesure",
+          "Audit de sécurité complet, recommandations priorisées",
+          "3 mois de maintenance Sérénité",
+          "Optimisation SEO et Core Web Vitals",
+          "Livraison sous 2 semaines"
+        ],
+        "highlight": false
+      },
+      {
+        "name": "Hôtel / Pension",
+        "price": "4 150 €",
+        "priceXpf": "495 200 F CFP",
+        "listPrice": "4 600 €",
+        "saving": "450 €",
+        "description": "Pour une pension, un hôtel ou un centre de plongée qui prend des réservations : un site que vous mettez à jour vous-même, et la sécurisation des données que vos clients vous confient.",
+        "features": [
+          "Site jusqu'à 5 pages avec back-office intégré",
+          "Sécurisation des formulaires et des données clients",
+          "3 mois de maintenance Sérénité",
+          "Formation à la prise en main du CMS",
+          "Livraison sous 3 semaines"
+        ],
+        "highlight": false
+      }
+    ],
+    "teaser": {
+      "title": "Besoin des deux à la fois ?",
+      "body": "Trois forfaits réunissent la création du site et le volet sécurité dans un seul devis, pour 10 % de moins que les deux pris séparément — pour les associations, les TPE-PME et les hébergeurs touristiques.",
+      "cta": "Voir les packs"
+    },
+    "commonTitle": "Dans les trois packs",
+    "commonItems": [
+      "Le code vous est livré sous licence libre : vous l'hébergez où vous voulez et vous le faites reprendre par qui vous voulez.",
+      "Devis détaillé et gratuit avant tout engagement — le pack est un point de départ, pas un carcan.",
+      "Intervention à distance par défaut, en France métropolitaine comme en Polynésie française.",
+      "Réponse sous 24 h ouvrées, première intervention planifiée sous 48 à 72 heures."
+    ],
+    "alacarteTitle": "Aucun ne correspond ?",
+    "alacarteBody": "Les prestations existent aussi séparément : la création web a sa propre grille tarifaire, et le volet sécurité se chiffre après un premier échange sur votre installation.",
+    "alacarteWeb": "Voir les tarifs web",
+    "alacarteServices": "Voir les prestations sécurité"
+  },
+
   "about": {
     "kicker": "Parcours",
     "title": "Expertise forgée sur le terrain",
@@ -246,6 +325,7 @@
       { "value": "administration", "label": "Administration systèmes & réseaux" },
       { "value": "cloud",          "label": "Cloud & virtualisation" },
       { "value": "creation-web",   "label": "Création de site web" },
+      { "value": "pack",           "label": "Pack (site + sécurité)" },
       { "value": "urgence",        "label": "Urgence / Incident en cours" },
       { "value": "autre",          "label": "Autre demande" }
     ],

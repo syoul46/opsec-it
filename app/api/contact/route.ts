@@ -7,7 +7,7 @@ const schema = z.object({
   nom:     z.string().trim().min(2).max(100),
   societe: z.string().trim().min(2).max(150),
   email:   z.string().trim().email().max(200),
-  objet:   z.enum(["audit", "administration", "cloud", "creation-web", "urgence", "autre"]),
+  objet:   z.enum(["audit", "administration", "cloud", "creation-web", "pack", "urgence", "autre"]),
   message: z.string().trim().min(20).max(5000),
   // Honeypot — doit rester vide, mais le schema l'accepte REMPLI a dessein.
   // Avec un `.max(0)`, un bot qui mordait a l'hameçon recevait un 400 « Champs
