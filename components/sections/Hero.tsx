@@ -12,7 +12,7 @@ export default function Hero() {
     <section className="relative bg-surf pt-28 pb-36 overflow-hidden">
       {/* Image de fond polynésienne */}
       <Image
-        src="/bg/hero-sunset.png"
+        src="/bg/hero-sunset.webp"
         alt=""
         aria-hidden="true"
         fill
@@ -68,7 +68,7 @@ export default function Hero() {
           <div className="relative hidden lg:flex lg:col-span-2 justify-center items-start self-start -mt-8">
             <div className="w-full max-w-[340px] flex flex-col items-center gap-4">
               <Image
-                src="/logo.png"
+                src="/logo.webp"
                 alt={t("logoAlt")}
                 width={760}
                 height={520}

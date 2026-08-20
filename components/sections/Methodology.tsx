@@ -16,7 +16,7 @@ export default function Methodology() {
   return (
     <SectionWrapper id="methodologie" className="relative pt-32 pb-28 bg-surf overflow-hidden">
       <Image
-        src="/bg/methodology-sunset.png"
+        src="/bg/methodology-sunset.webp"
         alt=""
         aria-hidden="true"
         fill

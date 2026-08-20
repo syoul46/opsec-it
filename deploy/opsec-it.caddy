@@ -10,21 +10,38 @@
 #   caddy validate --config /etc/caddy/Caddyfile && systemctl reload caddy
 #
 # Le certificat Let's Encrypt est obtenu et renouvelé automatiquement, à condition que
-# le DNS d'opsec-it.fr et de www pointe sur cette machine (5.75.151.116).
+# le DNS d'opsec-it.fr et de www pointe sur cette machine.
+#
+# L'adresse IP du serveur n'est volontairement écrite nulle part dans ce dépôt,
+# qui est public : la garder hors du code ne protège rien en soi (un DNS suffit à
+# la retrouver) mais évite de l'associer à un inventaire de la stack, des chemins
+# et des ports. À conserver dans ~/.ssh/config, pas ici.
 
 opsec-it.fr {
 	# Next.js écoute en clair sur la boucle locale uniquement (cf. deploy/docker-compose.yml).
 	reverse_proxy 127.0.0.1:3000
 
-	encode gzip
+	# zstd d'abord : Caddy négocie le meilleur encodage accepté par le client et
+	# retombe sur gzip pour les vieux navigateurs. Fonctionne parce que Next ne
+	# compresse plus en amont (`compress: false` dans next.config.ts) — sinon le
+	# corps arriverait déjà gzippé et zstd ne serait jamais utilisé.
+	encode zstd gzip
 
 	header {
+		# HSTS reste ici : c'est une politique du terminateur TLS, pas de l'app.
+		#
+		# Ajouter `; preload` engage le domaine dans la liste préchargée des
+		# navigateurs — quasi irréversible (des mois de délai pour en sortir) et
+		# contraignant pour TOUS les sous-domaines actuels et futurs
+		# d'opsec-it.fr. À décider consciemment, pas par réflexe de scoring.
 		Strict-Transport-Security "max-age=31536000; includeSubDomains"
-		X-Content-Type-Options "nosniff"
-		X-Frame-Options "DENY"
-		Referrer-Policy "strict-origin-when-cross-origin"
 		-Server
 	}
+
+	# Les autres en-têtes (CSP, Permissions-Policy, X-Frame-Options, nosniff,
+	# Referrer-Policy, COOP) sont émis par l'application : cf. `headers()` dans
+	# next.config.ts. Ne pas les redéclarer ici — `header` remplace la valeur
+	# amont sans prévenir, et on se retrouverait avec deux sources de vérité.
 
 	log {
 		output file /var/log/caddy/opsec-it.log

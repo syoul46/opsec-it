@@ -7,7 +7,12 @@
     "ogDescription": "Sylvestre MIGNOT, AIS — Security check-ups, administration and securing of infrastructures for nonprofits and SMBs. Custom web design.",
     "jobTitle": "Secure Infrastructure Administrator",
     "personDescription": "AIS-certified (IPSSI), specialized in securing and administering infrastructures for nonprofits and SMBs.",
-    "businessDescription": "Securing, administering infrastructures and building websites for nonprofits and SMBs."
+    "businessDescription": "Securing, administering infrastructures and building websites for nonprofits and SMBs.",
+    "ogTags": ["Security check-up", "Administration", "Web design"]
+  },
+
+  "a11y": {
+    "skipToContent": "Skip to content"
   },
 
   "nav": {
@@ -26,9 +31,11 @@
     "navigation": "Navigation",
     "contact": "Contact",
     "linkedin": "LinkedIn",
-    "rights": "© {year} OPSEC-IT — Sylvestre MIGNOT. All rights reserved.",
+    "rights": "© {year} OPSEC-IT — Sylvestre MIGNOT. Content and brand: all rights reserved.",
     "legal": "Legal notice",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "sourceCode": "Source code",
+    "sourceCodeTitle": "This site's code on GitHub, under the AGPL-3.0 licence"
   },
 
   "hero": {
@@ -39,7 +46,8 @@
       "Reduced cyber risk",
       "GDPR & ANSSI best practices",
       "Tested backups & recovery",
-      "Pricing tailored to nonprofits & SMBs"
+      "Pricing tailored to nonprofits & SMBs",
+      "Source code delivered under a free licence — the site is yours"
     ],
     "ctaPrimary": "Get in touch",
     "ctaSecondary": "See services",
@@ -79,6 +87,20 @@
       { "title": "Redesign",           "description": "Modernization of an existing site: new design, technical migration, improved performance and accessibility.",                  "tags": ["Migration", "Accessibility", "Performance"] },
       { "title": "Maintenance",        "description": "Regular updates, automatic backups, availability monitoring and rapid fixes. Your site in good hands.",                          "tags": ["Hosting", "Backup", "Support"] }
     ],
+    "openSource": {
+      "kicker": "Open source",
+      "title": "The site is yours. Actually yours.",
+      "intro": "Many cheap offers are rentals: you pay every month, and the day you stop, the site disappears. Here the code is delivered to you under a free licence. You host it where you want, you hand it to whoever you want, and it keeps running even if we stop working together.",
+      "points": [
+        { "title": "No rental", "description": "You pay once for the build, not a subscription to stay online. Maintenance is a service, not a toll." },
+        { "title": "No mandatory provider", "description": "The code is standard and documented. Any developer can take over — me included, but not only me." },
+        { "title": "Nothing to take on trust", "description": "The site you are reading is itself published under the AGPL-3.0 licence. You can check how it is built before trusting me with yours." }
+      ],
+      "clone": "git clone https://github.com/syoul46/opsec-it",
+      "repoLabel": "See this site's code",
+      "licenseLabel": "AGPL-3.0"
+    },
+
     "pricing": {
       "kicker": "Pricing",
       "title": "Clear packages",
@@ -118,6 +140,7 @@
           "highlight": true
         }
       ],
+      "ownershipNote": "In all three cases, your site's code is delivered to you under a free licence: no subscription is needed to keep it online.",
       "maintenanceTitle": "Maintenance & hosting",
       "maintenanceIntro": "Your site in good hands: two monthly plans, no commitment.",
       "maintenanceTiers": [
@@ -174,7 +197,8 @@
     "values": [
       { "title": "Security by design",     "description": "Security baked in from the start, not bolted on afterwards." },
       { "title": "Technical pragmatism",   "description": "Solutions tailored to your context, without over-engineering." },
-      { "title": "Clear communication",    "description": "Reports that decision-makers can read, not just technicians." }
+      { "title": "Clear communication",    "description": "Reports that decision-makers can read, not just technicians." },
+      { "title": "Transparency",           "description": "This site's code is public, under a free licence. I don't ask to be taken on trust: it can be checked." }
     ],
     "testimonials": [
       { "quote": "We needed a site worthy of our setting and our hospitality. Sylvestre captured the spirit of the Clos in a clear, elegant and effective website. Bookings followed very quickly, and his follow-up remains highly responsive.",     "author": "Christelle & David Bernadou", "initials": "CB", "structure": "Le Clos de Gamel",                  "url": "https://closdegamel.com", "display": "closdegamel.com" },
@@ -277,8 +301,9 @@
         },
         "ip": {
           "title": "Intellectual property",
-          "p1": "All content on opsec-it.fr (text, images, graphics, logos, source code) is the exclusive property of Sylvestre MIGNOT, unless otherwise stated. Any reproduction, representation, modification or exploitation, in whole or in part, is prohibited without prior written authorization.",
-          "p2": "Client testimonials published on this site are with the explicit consent of the individuals named."
+          "p1": "The editorial and graphic content of opsec-it.fr — text, images, photographs, illustrations, the OPSEC-IT brand and its logo — is the exclusive property of Sylvestre MIGNOT, unless otherwise stated. Any reproduction, representation, modification or exploitation, in whole or in part, is prohibited without prior written authorization.",
+          "p2": "The <repo>site's source code</repo> is an exception: it is published under the <licence>GNU AGPL-3.0 licence</licence>, which permits reading, reuse and modification under the terms it sets out. That licence covers the code alone, excluding the items listed in the previous paragraph.",
+          "p3": "Client testimonials published on this site are with the explicit consent of the individuals named."
         },
         "liability": {
           "title": "Liability",

@@ -5,6 +5,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import "../globals.css";
 import ThemeScript from "@/components/theme/ThemeScript";
+import SkipLink from "@/components/layout/SkipLink";
 import { routing, type AppLocale } from "@/i18n/routing";
 
 const inter = Inter({
@@ -117,7 +118,10 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <SkipLink />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -7,7 +7,12 @@
     "ogDescription": "Sylvestre MIGNOT, AIS — Diagnostic, administration et sécurisation d'infrastructures pour associations et PME. Création web sur mesure.",
     "jobTitle": "Administrateur d'Infrastructures Sécurisées",
     "personDescription": "Titulaire du titre AIS (IPSSI), spécialisé en sécurisation et administration d'infrastructures pour associations et PME.",
-    "businessDescription": "Sécurisation, administration d'infrastructures et création web pour les associations et les PME."
+    "businessDescription": "Sécurisation, administration d'infrastructures et création web pour les associations et les PME.",
+    "ogTags": ["Diagnostic sécurité", "Administration", "Création web"]
+  },
+
+  "a11y": {
+    "skipToContent": "Aller au contenu"
   },
 
   "nav": {
@@ -26,9 +31,11 @@
     "navigation": "Navigation",
     "contact": "Contact",
     "linkedin": "LinkedIn",
-    "rights": "© {year} OPSEC-IT — Sylvestre MIGNOT. Tous droits réservés.",
+    "rights": "© {year} OPSEC-IT — Sylvestre MIGNOT. Contenus et marque : tous droits réservés.",
     "legal": "Mentions légales",
-    "privacy": "Confidentialité"
+    "privacy": "Confidentialité",
+    "sourceCode": "Code source",
+    "sourceCodeTitle": "Le code de ce site sur GitHub, sous licence AGPL-3.0"
   },
 
   "hero": {
@@ -39,7 +46,8 @@
       "Réduction des risques cyber",
       "Bonnes pratiques RGPD & ANSSI",
       "Sauvegardes et reprise testées",
-      "Tarifs adaptés aux asso et PME"
+      "Tarifs adaptés aux asso et PME",
+      "Code livré sous licence libre — votre site vous appartient"
     ],
     "ctaPrimary": "Prendre contact",
     "ctaSecondary": "Voir les services",
@@ -79,6 +87,20 @@
       { "title": "Refonte",            "description": "Modernisation d'un site existant : nouveau design, migration technique, amélioration des performances et de l'accessibilité.",                  "tags": ["Migration", "Accessibilité", "Performance"] },
       { "title": "Maintenance",        "description": "Mises à jour régulières, sauvegardes automatiques, surveillance de disponibilité et corrections rapides. Votre site entre de bonnes mains.",     "tags": ["Hébergement", "Backup", "Support"] }
     ],
+    "openSource": {
+      "kicker": "Code ouvert",
+      "title": "Votre site vous appartient. Vraiment.",
+      "intro": "Beaucoup d'offres à petit prix sont des locations : vous payez tous les mois, et le jour où vous arrêtez, le site disparaît. Ici, le code vous est livré sous licence libre. Vous l'hébergez où vous voulez, vous le faites reprendre par qui vous voulez, et il continue de tourner même si nous cessons de travailler ensemble.",
+      "points": [
+        { "title": "Aucune location", "description": "Vous payez une fois la création, pas un abonnement pour rester en ligne. La maintenance est un service, pas un péage." },
+        { "title": "Aucun prestataire obligatoire", "description": "Le code est standard et documenté. N'importe quel développeur peut reprendre la suite — moi compris, mais pas seulement." },
+        { "title": "Rien à croire sur parole", "description": "Le site que vous lisez est lui-même publié sous licence AGPL-3.0. Vous pouvez vérifier comment il est fait avant de me confier le vôtre." }
+      ],
+      "clone": "git clone https://github.com/syoul46/opsec-it",
+      "repoLabel": "Voir le code de ce site",
+      "licenseLabel": "AGPL-3.0"
+    },
+
     "pricing": {
       "kicker": "Tarifs",
       "title": "Des forfaits clairs",
@@ -118,6 +140,7 @@
           "highlight": true
         }
       ],
+      "ownershipNote": "Dans les trois cas, le code de votre site vous est livré sous licence libre : aucun abonnement n'est nécessaire pour le garder en ligne.",
       "maintenanceTitle": "Maintenance & hébergement",
       "maintenanceIntro": "Votre site entre de bonnes mains : deux formules mensuelles, sans engagement.",
       "maintenanceTiers": [
@@ -174,7 +197,8 @@
     "values": [
       { "title": "Sécurité by design",    "description": "La sécurité intégrée dès la conception, pas ajoutée après coup." },
       { "title": "Pragmatisme technique", "description": "Des solutions adaptées à votre contexte, sans sur-ingénierie." },
-      { "title": "Communication claire",  "description": "Des rapports compréhensibles pour les décideurs, pas seulement les techniciens." }
+      { "title": "Communication claire",  "description": "Des rapports compréhensibles pour les décideurs, pas seulement les techniciens." },
+      { "title": "Transparence",          "description": "Le code de ce site est public, sous licence libre. Je ne demande pas qu'on me croie sur parole : on peut vérifier." }
     ],
     "testimonials": [
       { "quote": "Nous avions besoin d'un site à la hauteur de notre cadre et de notre accueil. Sylvestre a su traduire l'esprit du Clos en un site clair, élégant et efficace. Les réservations ont suivi très vite, et son suivi reste d'une grande réactivité.", "author": "Christelle & David Bernadou", "initials": "CB", "structure": "Le Clos de Gamel",                "url": "https://closdegamel.com", "display": "closdegamel.com" },
@@ -277,8 +301,9 @@
         },
         "ip": {
           "title": "Propriété intellectuelle",
-          "p1": "L'ensemble des contenus présents sur le site opsec-it.fr (textes, images, graphismes, logos, code source) est la propriété exclusive de Sylvestre MIGNOT, sauf mention contraire. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, est interdite sans autorisation écrite préalable.",
-          "p2": "Les témoignages clients publiés sur ce site le sont avec l'accord explicite des personnes citées."
+          "p1": "Les contenus éditoriaux et graphiques du site opsec-it.fr — textes, images, photographies, illustrations, la marque OPSEC-IT et son logo — sont la propriété exclusive de Sylvestre MIGNOT, sauf mention contraire. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, est interdite sans autorisation écrite préalable.",
+          "p2": "Le <repo>code source du site</repo> fait exception : il est publié sous <licence>licence GNU AGPL-3.0</licence>, qui en autorise la lecture, la reprise et la modification dans les conditions qu'elle définit. Cette licence porte sur le code seul, à l'exclusion des éléments visés au paragraphe précédent.",
+          "p3": "Les témoignages clients publiés sur ce site le sont avec l'accord explicite des personnes citées."
         },
         "liability": {
           "title": "Responsabilité",

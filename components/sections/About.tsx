@@ -27,7 +27,7 @@ export default function About() {
   return (
     <SectionWrapper id="parcours" className="relative pt-32 pb-28 bg-surf-mid overflow-hidden">
       <Image
-        src="/bg/about-sunset.png"
+        src="/bg/about-sunset.webp"
         alt=""
         aria-hidden="true"
         fill

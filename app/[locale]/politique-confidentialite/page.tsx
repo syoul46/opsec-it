@@ -55,7 +55,7 @@ export default async function PolitiqueConfidentialite({
     <>
       <Navbar />
       <div className="h-20" aria-hidden="true" />
-      <main className="bg-surf pt-20 pb-28">
+      <main id="contenu" className="bg-surf pt-20 pb-28">
         <div className="wrap max-w-3xl">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
             {t("kicker")}
