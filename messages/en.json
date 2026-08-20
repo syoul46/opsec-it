@@ -1,13 +1,14 @@
 {
   "seo": {
-    "title": "OPSEC-IT — Sylvestre MIGNOT, AIS | Security & Infra for Nonprofits & SMBs",
-    "description": "AIS-certified (IPSSI), Sylvestre MIGNOT secures and administers IT systems for nonprofits and SMBs. Security check-ups, hardening, virtualization, web development.",
+    "title": "Security & web for nonprofits and SMBs — OPSEC-IT",
+    "description": "Security check-ups, infrastructure administration and website development for nonprofits and SMBs. Sylvestre MIGNOT, AIS — France and French Polynesia.",
     "keywords": "IT security,system administration,secure infrastructure,AIS,security check-up,SMB,nonprofits,GDPR,web development,Next.js",
     "ogTitle": "OPSEC-IT — Security & Infra for Nonprofits & SMBs",
     "ogDescription": "Sylvestre MIGNOT, AIS — Security check-ups, administration and securing of infrastructures for nonprofits and SMBs. Custom web design.",
     "jobTitle": "Secure Infrastructure Administrator",
     "personDescription": "AIS-certified (IPSSI), specialized in securing and administering infrastructures for nonprofits and SMBs.",
-    "businessDescription": "Securing, administering infrastructures and building websites for nonprofits and SMBs.",
+    "businessDescription": "Securing, administering infrastructures and building websites for nonprofits and SMBs, in mainland France and French Polynesia.",
+    "offerCatalogName": "Website packages",
     "ogTags": ["Security check-up", "Administration", "Web design"]
   },
 
@@ -27,7 +28,7 @@
   },
 
   "footer": {
-    "tagline": "Securing, administering infrastructures and building websites for nonprofits and SMBs. Sylvestre MIGNOT, AIS.",
+    "tagline": "Securing, administering infrastructures and building websites for nonprofits and SMBs. Mainland France and French Polynesia. Sylvestre MIGNOT, AIS.",
     "navigation": "Navigation",
     "contact": "Contact",
     "linkedin": "LinkedIn",
@@ -40,7 +41,7 @@
 
   "hero": {
     "badge": "Secure Infrastructure Administrator · AIS",
-    "title": "Websites that are <accent>secure</accent>,<br></br>built to <accent>last</accent>.",
+    "title": "Websites that are <accent>secure</accent>, <br></br>built to <accent>last</accent>.",
     "subtitle": "Sylvestre MIGNOT, AIS-certified (IPSSI), secures and administers IT systems for nonprofits and SMBs — and builds their custom websites.",
     "checks": [
       "Reduced cyber risk",
@@ -104,7 +105,7 @@
     "pricing": {
       "kicker": "Pricing",
       "title": "Clear packages",
-      "intro": "No surprises. The packages below cover the most common needs. Free quote for any specific project.",
+      "intro": "No surprises. The packages below cover the most common needs, priced in euros and Pacific francs — I work in mainland France as well as French Polynesia. Free quote for any specific project.",
       "fromLabel": "From",
       "ctaLabel": "Request a quote",
       "tiers": [
@@ -273,7 +274,7 @@
   "legal": {
     "mentions": {
       "metaTitle": "Legal notice — OPSEC-IT",
-      "metaDescription": "Legal notice of opsec-it.fr",
+      "metaDescription": "Legal notice for opsec-it.fr: publisher, host, intellectual property and the source-code licence (AGPL-3.0).",
       "kicker": "Legal information",
       "title": "Legal notice",
       "sections": {
@@ -322,7 +323,7 @@
     },
     "privacy": {
       "metaTitle": "Privacy policy — OPSEC-IT",
-      "metaDescription": "Privacy policy and personal data processing — opsec-it.fr",
+      "metaDescription": "How opsec-it.fr handles personal data: what the contact form collects, why, for how long, and your GDPR rights. No tracking cookies.",
       "kicker": "GDPR",
       "title": "Privacy policy",
       "sections": {

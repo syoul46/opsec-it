@@ -20,7 +20,20 @@ export default function Hero() {
         sizes="100vw"
         className="object-cover object-center pointer-events-none select-none"
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-surf/95 via-surf/70 to-surf/10 pointer-events-none" />
+      {/* Voile de lisibilité.
+          Le dégradé horizontal est calibré sur la colonne de texte du desktop, qui
+          s'arrête à 3/5 de la largeur : à droite il s'efface (`to-surf/10`) pour
+          laisser voir le coucher de soleil. En dessous de `lg`, la mise en page
+          repasse sur une seule colonne — le texte allait alors jusqu'au bord et
+          tombait dans la zone claire. Mesuré à 500 px : sous-titre à 1,57:1 et
+          titre cuivre à 1,50:1, là où WCAG AA demande 4,5:1 et 3:1.
+          D'où un voile plat tant qu'on est en une colonne, et le dégradé seulement
+          à partir de `lg`, où il ne gêne plus personne.
+          85 % et pas moins : à 80 % le titre cuivre retombait à 3,25:1, soit 8 %
+          au-dessus du seuil — trop juste pour survivre à un changement de photo.
+          Valeurs mesurées à 85 % sur le pixel de fond le plus clair de chaque
+          bande : sous-titre 7,3:1, titre cuivre 3,7:1. */}
+      <div aria-hidden="true" className="absolute inset-0 bg-surf/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-surf/95 lg:via-surf/70 lg:to-surf/10 pointer-events-none" />
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-surf pointer-events-none" />
 
       <div className="relative wrap">

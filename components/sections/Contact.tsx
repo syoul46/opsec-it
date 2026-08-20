@@ -67,7 +67,10 @@ export default function Contact() {
           {/* Form */}
           <div className="lg:col-span-2 bg-surf-mid rounded-2xl border border-border p-8 shadow-card">
             {status === "success" ? (
-              <div className="flex flex-col items-center justify-center py-16 gap-5">
+              // role="status" : à la soumission le formulaire disparaît et ce bloc
+              // le remplace. Sans région live, un lecteur d'écran ne signalait rien —
+              // l'utilisateur restait devant un contenu remplacé en silence.
+              <div role="status" className="flex flex-col items-center justify-center py-16 gap-5">
                 <div className="w-16 h-16 rounded-full bg-green-soft flex items-center justify-center">
                   <CheckCircle className="w-8 h-8 text-green" />
                 </div>
@@ -127,7 +130,7 @@ export default function Contact() {
                   {errors.message && <p id="err-message" className="text-xs text-red-400 mt-1 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.message.message}</p>}
                 </div>
                 {status === "error" && (
-                  <div className="flex items-center gap-2 text-sm text-red-300 bg-red-500/10 border border-red-500/30 rounded-xl p-3">
+                  <div role="alert" className="flex items-center gap-2 text-sm text-red-300 bg-red-500/10 border border-red-500/30 rounded-xl p-3">
                     <AlertCircle className="w-4 h-4 flex-shrink-0" />
                     {tErr("send")}
                   </div>

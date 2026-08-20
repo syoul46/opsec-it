@@ -1,13 +1,14 @@
 {
   "seo": {
-    "title": "OPSEC-IT — Sylvestre MIGNOT, AIS | Sécurité & Infra pour Asso et PME",
-    "description": "Titulaire AIS (IPSSI), Sylvestre MIGNOT sécurise et administre les systèmes d'information des associations et PME. Diagnostic sécurité, sécurisation, virtualisation, création web.",
+    "title": "Sécurité & web pour asso et PME — OPSEC-IT",
+    "description": "Diagnostic sécurité, administration d'infrastructures et création de sites web pour associations et PME. Sylvestre MIGNOT, AIS — France et Polynésie.",
     "keywords": "sécurité informatique,administrateur systèmes,infrastructure sécurisée,AIS,diagnostic sécurité,PME,associations,RGPD,création site web,Next.js",
     "ogTitle": "OPSEC-IT — Sécurité & Infra pour Asso et PME",
     "ogDescription": "Sylvestre MIGNOT, AIS — Diagnostic, administration et sécurisation d'infrastructures pour associations et PME. Création web sur mesure.",
     "jobTitle": "Administrateur d'Infrastructures Sécurisées",
     "personDescription": "Titulaire du titre AIS (IPSSI), spécialisé en sécurisation et administration d'infrastructures pour associations et PME.",
-    "businessDescription": "Sécurisation, administration d'infrastructures et création web pour les associations et les PME.",
+    "businessDescription": "Sécurisation, administration d'infrastructures et création web pour les associations et les PME, en France métropolitaine et en Polynésie française.",
+    "offerCatalogName": "Forfaits de création de site web",
     "ogTags": ["Diagnostic sécurité", "Administration", "Création web"]
   },
 
@@ -27,7 +28,7 @@
   },
 
   "footer": {
-    "tagline": "Sécurisation, administration d'infrastructures et création web pour les associations et les PME. Sylvestre MIGNOT, AIS.",
+    "tagline": "Sécurisation, administration d'infrastructures et création web pour les associations et les PME. France métropolitaine et Polynésie française. Sylvestre MIGNOT, AIS.",
     "navigation": "Navigation",
     "contact": "Contact",
     "linkedin": "LinkedIn",
@@ -40,7 +41,7 @@
 
   "hero": {
     "badge": "Administrateur d'Infrastructures Sécurisées · AIS",
-    "title": "Des sites web <accent>sécurisés</accent>,<br></br>pensés pour <accent>durer</accent>.",
+    "title": "Des sites web <accent>sécurisés</accent>, <br></br>pensés pour <accent>durer</accent>.",
     "subtitle": "Sylvestre MIGNOT, titulaire du titre AIS (IPSSI), sécurise et administre les systèmes d'information des associations et des PME — et conçoit leurs sites web sur mesure.",
     "checks": [
       "Réduction des risques cyber",
@@ -104,7 +105,7 @@
     "pricing": {
       "kicker": "Tarifs",
       "title": "Des forfaits clairs",
-      "intro": "Pas de surprise. Les tarifs ci-dessous couvrent les besoins les plus courants. Devis gratuit pour tout projet spécifique.",
+      "intro": "Pas de surprise. Les tarifs ci-dessous couvrent les besoins les plus courants, en euros et en francs Pacifique — j'interviens en France métropolitaine comme en Polynésie française. Devis gratuit pour tout projet spécifique.",
       "fromLabel": "À partir de",
       "ctaLabel": "Demander un devis",
       "tiers": [
@@ -273,7 +274,7 @@
   "legal": {
     "mentions": {
       "metaTitle": "Mentions légales — OPSEC-IT",
-      "metaDescription": "Mentions légales du site opsec-it.fr",
+      "metaDescription": "Mentions légales d'opsec-it.fr : éditeur, hébergeur, propriété intellectuelle et licence du code source publié sous AGPL-3.0.",
       "kicker": "Informations légales",
       "title": "Mentions légales",
       "sections": {
@@ -322,7 +323,7 @@
     },
     "privacy": {
       "metaTitle": "Politique de confidentialité — OPSEC-IT",
-      "metaDescription": "Politique de confidentialité et traitement des données personnelles — opsec-it.fr",
+      "metaDescription": "Données personnelles sur opsec-it.fr : ce que collecte le formulaire de contact, pourquoi, combien de temps, et vos droits RGPD. Aucun cookie de suivi.",
       "kicker": "RGPD",
       "title": "Politique de confidentialité",
       "sections": {

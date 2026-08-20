@@ -129,7 +129,10 @@ export default function About() {
 
             {/* Témoignages clients */}
             <div className="mt-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-blue mb-4">{t("testimonialsTitle")}</p>
+              {/* h3 et non <p> : les trois autres intertitres du bloc (Expérience, Mon
+                  approche, Certification) en sont, celui-ci sortait du plan de
+                  titres et disparaissait de la navigation au lecteur d'écran. */}
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-blue mb-4">{t("testimonialsTitle")}</h3>
               <div className="space-y-4">
                 {testimonials.map(tm => (
                   <div key={tm.author} className="p-6 rounded-xl border border-border bg-surf">

@@ -32,16 +32,51 @@ Le site est accessible sur [http://localhost:3000](http://localhost:3000).
 
 ## Variables d'environnement
 
-| Variable         | Rôle                                           | Obligatoire      |
-|------------------|------------------------------------------------|------------------|
-| `RESEND_API_KEY` | Clé API Resend pour l'envoi des emails contact | Oui en production |
+| Variable         | Rôle                                                    | Obligatoire       |
+|------------------|---------------------------------------------------------|-------------------|
+| `RESEND_API_KEY` | Clé API Resend pour l'envoi des emails contact           | Oui en production |
+| `CONTACT_TO`     | Destinataire des messages du formulaire                  | Oui en production |
+| `CONTACT_FROM`   | Expéditeur, sur un domaine vérifié chez Resend           | Non (voir plus bas) |
 
-Sans clé, le formulaire écrit la soumission dans les logs **et répond quand même
-« message envoyé » au visiteur** (`app/api/contact/route.ts`). Acceptable en dev,
-silencieux et coûteux en prod : les messages sont dans `docker compose logs`, pas
-dans la boîte mail. La variable est lue au runtime — la renseigner dans
-`deploy/.env` puis `docker compose -f deploy/docker-compose.yml up -d` suffit,
-sans rebuild.
+Sans `RESEND_API_KEY` **ou** sans `CONTACT_TO`, le formulaire écrit la soumission
+dans les logs **et répond quand même « message envoyé » au visiteur**
+(`app/api/contact/route.ts`). Acceptable en dev, silencieux et coûteux en prod :
+les messages sont dans `docker compose logs`, pas dans la boîte mail.
+
+`CONTACT_TO` n'est pas en dur dans le code parce que ce dépôt est public et que le
+destinataire est une boîte personnelle. Les trois variables sont lues au runtime —
+les renseigner dans `deploy/.env` puis
+`docker compose -f deploy/docker-compose.yml up -d` suffit, sans rebuild.
+
+## E-mail — passer du bac à sable à son propre domaine
+
+Tant que `CONTACT_FROM` est vide, les messages partent de
+`onboarding@resend.dev` : l'expéditeur bac à sable de Resend, qui **ne sait livrer
+qu'au titulaire du compte** et atterrit très souvent en indésirables. Pour envoyer
+depuis `contact@opsec-it.fr`, dans cet ordre — l'inverse casse les envois :
+
+1. **Resend** → *Domains* → ajouter `opsec-it.fr`. Resend génère trois
+   enregistrements, tous sur le sous-domaine `send.` :
+
+   | Type | Nom                          | Valeur                                       |
+   |------|------------------------------|----------------------------------------------|
+   | MX   | `send`                       | `feedback-smtp.<région>.amazonses.com` (prio 10) |
+   | TXT  | `send`                       | `v=spf1 include:amazonses.com ~all`          |
+   | TXT  | `resend._domainkey`          | `p=…` (clé générée, propre au domaine)       |
+
+2. **Publier ces trois enregistrements** dans la zone DNS (Hetzner,
+   `ns1.your-server.de`). Le SPF de la racine — `v=spf1 mx ~all` — **n'est pas à
+   toucher** : Resend signe l'enveloppe depuis `send.opsec-it.fr`, et le DMARC du
+   domaine étant en alignement relâché (`aspf=r`, `adkim=r`), le sous-domaine
+   s'aligne tout seul.
+3. **Attendre la vérification** côté Resend (quelques minutes à quelques heures).
+4. Alors seulement, poser dans `deploy/.env` :
+   `CONTACT_FROM=OPSEC-IT <contact@opsec-it.fr>` puis relancer le conteneur.
+
+Contrôler après coup avec `scripts/check-email-dns.sh`.
+
+Note : le DMARC est en `p=none`, c'est-à-dire en observation. Une fois les envois
+stabilisés et les rapports `rua` relus, passer à `p=quarantine`.
 
 ## Structure
 

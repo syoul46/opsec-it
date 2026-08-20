@@ -33,6 +33,14 @@ services:
       # quand même "success" au visiteur (app/api/contact/route.ts). Les messages
       # sont alors dans `docker compose logs`, pas dans la boîte mail.
       - RESEND_API_KEY=${RESEND_API_KEY:-}
+      # Destinataire des messages du formulaire. Hors du dépôt, qui est public :
+      # c'est une boîte personnelle, elle n'a rien à faire sur github.com.
+      # Absente = même repli que ci-dessus (journal, pas d'envoi).
+      - CONTACT_TO=${CONTACT_TO:-}
+      # Expéditeur. Doit appartenir à un domaine vérifié chez Resend ; tant que
+      # opsec-it.fr ne l'est pas, laisser vide pour garder le repli bac à sable
+      # `onboarding@resend.dev`. Procédure : README, section E-mail.
+      - CONTACT_FROM=${CONTACT_FROM:-}
 
     # La machine a 4 Go partagés avec maeva-runner. Le site tourne à ~200 Mo ;
     # cette limite est un garde-fou pour qu'une fuite côté site ne fasse pas
