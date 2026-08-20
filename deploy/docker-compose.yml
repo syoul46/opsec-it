@@ -39,8 +39,13 @@ services:
     # tomber le runner par OOM.
     mem_limit: 512m
 
+    # 127.0.0.1 et pas `localhost` : dans l'image Alpine, `localhost` resout
+    # d'abord sur ::1, alors que le serveur Next n'ecoute qu'en IPv4 (HOSTNAME
+    # 0.0.0.0 dans le Dockerfile). Le healthcheck echouait donc depuis toujours
+    # — 95 000 echecs d'affilee au moment ou le probleme a ete vu — en signalant
+    # « unhealthy » un conteneur parfaitement sain.
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/api/health"]
       interval: 30s
       timeout: 5s
       retries: 3
