@@ -19,6 +19,7 @@
   "nav": {
     "services": "Services",
     "creationWeb": "Web design",
+    "packs": "Packages",
     "parcours": "About",
     "methodologie": "Method",
     "contact": "Contact",
@@ -66,6 +67,7 @@
     "kicker": "Expertise & Services",
     "title": "What I bring to your organization",
     "intro": "Services tailored to nonprofits and SMBs: pragmatic, documented, jargon-free. You don't need a full-time IT director — you need a trusted technical partner.",
+    "pricingNote": "These are quoted after a first conversation about your setup: the price depends on your estate, not on a catalogue. Free quote, no commitment — and if you need the website and the security work together, the <packs>packages</packs> cover the most common cases.",
     "items": [
       { "title": "Security check-up",           "description": "Review of your setup: weak points, misconfigurations and improvement areas. Clear report with prioritized recommendations.",                                  "tags": ["Analysis", "Recommendations", "Report"] },
       { "title": "Systems administration",      "description": "Management of your Linux/Windows servers, routers and firewalls. Monitoring with Zabbix, updates and rapid response.",                                       "tags": ["Linux", "Windows Server", "Zabbix"] },
@@ -169,6 +171,84 @@
     }
   },
 
+  "packs": {
+    "metaTitle": "Security + web packages for nonprofits & SMBs | OPSEC-IT",
+    "metaDescription": "Three packages bundling the website and the security work into a single quote: Nonprofit Launch €1,200, SMB Visibility €2,150, Hotel/Accommodation €4,150.",
+    "kicker": "Packages",
+    "title": "The website and the security work in one quote",
+    "intro": "A brand-new website sitting on a leaking setup protects no one. These three packages bundle web design and security into a single engagement, for less than the two bought separately. They cover the most common situations; anything else is quoted individually.",
+    "listLabel": "Bought separately",
+    "savingLabel": "you save",
+    "ctaLabel": "Ask about this package",
+    "items": [
+      {
+        "name": "Nonprofit Launch",
+        "price": "€1,200",
+        "priceXpf": "143,200 CFP",
+        "listPrice": "€1,360",
+        "saving": "€160",
+        "note": "Registered nonprofits only",
+        "description": "For a nonprofit starting from scratch: a clean showcase site, a first look at its security, and a month to settle in without worrying about hosting.",
+        "features": [
+          "One-page showcase site, at the nonprofit rate",
+          "Simplified security check-up, with a written report",
+          "1 month of hosting and maintenance included",
+          "GDPR-compliant contact form",
+          "Delivery within 2 weeks"
+        ],
+        "highlight": true
+      },
+      {
+        "name": "SMB Visibility",
+        "price": "€2,150",
+        "priceXpf": "256,600 CFP",
+        "listPrice": "€2,400",
+        "saving": "€250",
+        "description": "For a small business with a storefront to keep up and data to protect. The site and the security audit land in the same quote, so in the same budget.",
+        "features": [
+          "Custom one-page showcase site",
+          "Full security audit, prioritized recommendations",
+          "3 months of Sérénité maintenance",
+          "SEO and Core Web Vitals optimization",
+          "Delivery within 2 weeks"
+        ],
+        "highlight": false
+      },
+      {
+        "name": "Hotel / Tourist accommodation",
+        "price": "€4,150",
+        "priceXpf": "495,200 CFP",
+        "listPrice": "€4,600",
+        "saving": "€450",
+        "description": "For a guesthouse, hotel or dive centre taking bookings: a site you update yourself, and proper protection for the data your guests hand over.",
+        "features": [
+          "Up to 5 pages with a built-in back-office",
+          "Hardening of forms and customer data",
+          "3 months of Sérénité maintenance",
+          "Onboarding training for the CMS",
+          "Delivery within 3 weeks"
+        ],
+        "highlight": false
+      }
+    ],
+    "teaser": {
+      "title": "Need both at once?",
+      "body": "Three packages bundle the website build and the security work into a single quote, for about 10% less than buying them separately — for nonprofits, small businesses and tourism hosts.",
+      "cta": "See the packages"
+    },
+    "commonTitle": "In all three packages",
+    "commonItems": [
+      "The code is delivered to you under a free licence: host it where you want, hand it to whoever you want.",
+      "Detailed, free quote before any commitment — a package is a starting point, not a straitjacket.",
+      "Remote by default, in mainland France as well as French Polynesia.",
+      "Reply within 24 business hours, first intervention scheduled within 48 to 72 hours."
+    ],
+    "alacarteTitle": "None of them fits?",
+    "alacarteBody": "Everything is available separately: web design has its own price list, and the security work is quoted after a first conversation about your setup.",
+    "alacarteWeb": "See web pricing",
+    "alacarteServices": "See security services"
+  },
+
   "about": {
     "kicker": "About",
     "title": "Expertise forged in the field",
@@ -246,6 +326,7 @@
       { "value": "administration", "label": "Systems & network administration" },
       { "value": "cloud",          "label": "Cloud & virtualization" },
       { "value": "creation-web",   "label": "Website creation" },
+      { "value": "pack",           "label": "Package (site + security)" },
       { "value": "urgence",        "label": "Emergency / Ongoing incident" },
       { "value": "autre",          "label": "Other request" }
     ],

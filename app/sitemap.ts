@@ -18,6 +18,7 @@ const PATHS: {
   priority: number;
 }[] = [
   { path: "",                           lastModified: "2026-08-20", changeFrequency: "monthly", priority: 1   },
+  { path: "/packs",                     lastModified: "2026-08-20", changeFrequency: "monthly", priority: 0.8 },
   { path: "/mentions-legales",          lastModified: "2026-08-20", changeFrequency: "yearly",  priority: 0.3 },
   { path: "/politique-confidentialite", lastModified: "2026-08-20", changeFrequency: "yearly",  priority: 0.3 },
 ];

@@ -7,10 +7,14 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "@/components/i18n/LocaleSwitcher";
 
-const navKeys = ["services", "creationWeb", "parcours", "methodologie", "contact"] as const;
+// « packs » est la seule entrée qui pointe vers une vraie page et non vers une
+// ancre de la landing : la page /packs existe pour être collée dans un e-mail de
+// prospection, ce qu'une ancre au milieu d'une one-page ne permet pas.
+const navKeys = ["services", "creationWeb", "packs", "parcours", "methodologie", "contact"] as const;
 const navAnchors: Record<(typeof navKeys)[number], string> = {
   services:     "/#services",
   creationWeb:  "/#creation-web",
+  packs:        "/packs",
   parcours:     "/#parcours",
   methodologie: "/#methodologie",
   contact:      "/#contact",
