@@ -1,7 +1,9 @@
 import { TikiIcon } from "@/components/ui/tiki";
 import Watermark from "@/components/ui/Watermark";
+import GithubMark from "@/components/ui/GithubMark";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { REPO_URL, LICENSE_SPDX } from "@/lib/site";
 
 const navKeys = ["services", "creationWeb", "parcours", "methodologie", "contact"] as const;
 const navAnchors: Record<(typeof navKeys)[number], string> = {
@@ -52,6 +54,19 @@ export default function Footer() {
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-ink-dim">{t("rights", { year })}</p>
           <ul className="flex flex-wrap items-center gap-x-4 gap-y-1">
+            <li>
+              {/* Le lien vers le dépôt est permanent et présent sur toutes les pages :
+                  c'est le signal minimum crédible pour une offre qui promet que le
+                  code appartient au client. */}
+              <a href={REPO_URL} target="_blank" rel="noopener noreferrer"
+                 title={t("sourceCodeTitle")}
+                 className="inline-flex items-center gap-1.5 text-xs text-ink-dim hover:text-blue transition-colors">
+                <GithubMark className="w-3.5 h-3.5" />
+                {t("sourceCode")}
+                <span className="text-ink-dim/60">· {LICENSE_SPDX}</span>
+              </a>
+            </li>
+            <li aria-hidden="true" className="text-xs text-ink-dim">·</li>
             <li>
               <Link href="/mentions-legales" className="text-xs text-ink-dim hover:text-blue transition-colors">
                 {t("legal")}

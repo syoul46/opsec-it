@@ -4,7 +4,10 @@ import { useTranslations } from "next-intl";
 import ServiceCard from "@/components/ui/ServiceCard";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Watermark from "@/components/ui/Watermark";
+import TerminalLine from "@/components/ui/TerminalLine";
+import GithubMark from "@/components/ui/GithubMark";
 import { Link } from "@/i18n/navigation";
+import { REPO_URL, LICENSE_SPDX } from "@/lib/site";
 
 // L'ordre doit correspondre à messages.creationWeb.items :
 // vitrine, multi-pages, design, SEO, refonte, maintenance.
@@ -87,9 +90,11 @@ function TierCard({ tier, fromLabel, ctaLabel }: { tier: Tier; fromLabel: string
 export default function CreationWeb() {
   const t = useTranslations("creationWeb");
   const tp = useTranslations("creationWeb.pricing");
+  const tOs = useTranslations("creationWeb.openSource");
   const items = t.raw("items") as ServiceItem[];
   const tiers = tp.raw("tiers") as Tier[];
   const maintenanceTiers = tp.raw("maintenanceTiers") as Tier[];
+  const osPoints = tOs.raw("points") as { title: string; description: string }[];
 
   return (
     <SectionWrapper id="creation-web" className="relative overflow-hidden pt-32 pb-28 bg-surf">
@@ -112,6 +117,41 @@ export default function CreationWeb() {
           ))}
         </div>
 
+        {/* Code ouvert — placé juste avant les tarifs, parce que c'est là que se
+            joue la comparaison avec les offres par abonnement : le visiteur lit
+            l'argument « le code vous appartient » avant de lire les prix. */}
+        <div className="rounded-2xl border border-blue/30 bg-blue-soft p-8 md:p-10 mb-14">
+          <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
+            {tOs("kicker")}
+          </span>
+          <h3 className="text-2xl md:text-3xl font-black text-ink mb-3 leading-tight">
+            {tOs("title")}
+          </h3>
+          <p className="text-ink-soft leading-relaxed max-w-2xl mb-8">{tOs("intro")}</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            {osPoints.map(p => (
+              <div key={p.title} className="flex gap-3">
+                <Check className="w-5 h-5 text-blue flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="text-sm font-bold text-ink mb-1">{p.title}</p>
+                  <p className="text-sm text-ink-soft leading-relaxed">{p.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 pt-6 border-t border-blue/20">
+            <TerminalLine text={tOs("clone")} prefix="$" speed={28} className="flex-1 min-w-0" />
+            <a href={REPO_URL} target="_blank" rel="noopener noreferrer"
+               className="inline-flex items-center justify-center gap-2 rounded-xl border border-border text-ink text-sm font-semibold hover:bg-surf-mid hover:border-blue/40 transition-all min-h-11 px-5 py-2.5 flex-shrink-0">
+              <GithubMark className="w-4 h-4" />
+              {tOs("repoLabel")}
+              <span className="text-ink-dim font-normal">· {LICENSE_SPDX}</span>
+            </a>
+          </div>
+        </div>
+
         {/* Tarifs */}
         <div className="mb-5">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
@@ -123,11 +163,18 @@ export default function CreationWeb() {
           <p className="text-ink-soft max-w-lg leading-relaxed text-sm">{tp("intro")}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
           {tiers.map(tier => (
             <TierCard key={tier.name} tier={tier} fromLabel={tp("fromLabel")} ctaLabel={tp("ctaLabel")} />
           ))}
         </div>
+
+        {/* Rappel sous la grille : la maintenance qui suit se lit comme un service
+            optionnel, pas comme le loyer sans lequel le site s'éteint. */}
+        <p className="flex items-start gap-2 text-sm text-ink-soft mb-14 max-w-2xl">
+          <Check className="w-4 h-4 text-blue flex-shrink-0 mt-0.5" />
+          {tp("ownershipNote")}
+        </p>
 
         {/* Maintenance */}
         <div className="mb-5">

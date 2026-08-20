@@ -5,6 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { routing, type AppLocale } from "@/i18n/routing";
+import { REPO_URL, LICENSE_URL } from "@/lib/site";
 
 const BASE_URL = "https://opsec-it.fr";
 
@@ -45,7 +46,7 @@ export default async function MentionsLegales({
     <>
       <Navbar />
       <div className="h-20" aria-hidden="true" />
-      <main className="bg-surf pt-20 pb-28">
+      <main id="contenu" className="bg-surf pt-20 pb-28">
         <div className="wrap max-w-3xl">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
             {t("kicker")}
@@ -90,7 +91,22 @@ export default async function MentionsLegales({
             <section>
               <SecTitle>{t("sections.ip.title")}</SecTitle>
               <p>{t("sections.ip.p1")}</p>
-              <p className="mt-3">{t("sections.ip.p2")}</p>
+              {/* Le code source est sous AGPL-3.0 et le reste tous droits réservés :
+                  affirmer les deux dans un seul paragraphe rendait la page fausse
+                  dès la publication du dépôt. */}
+              <p className="mt-3">
+                {t.rich("sections.ip.p2", {
+                  repo: (chunks) => (
+                    <a href={REPO_URL} target="_blank" rel="noopener noreferrer"
+                       className="text-blue hover:underline">{chunks}</a>
+                  ),
+                  licence: (chunks) => (
+                    <a href={LICENSE_URL} target="_blank" rel="noopener noreferrer"
+                       className="text-blue hover:underline">{chunks}</a>
+                  ),
+                })}
+              </p>
+              <p className="mt-3">{t("sections.ip.p3")}</p>
             </section>
 
             <section>

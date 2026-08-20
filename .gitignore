@@ -46,3 +46,10 @@ next-env.d.ts
 # CI reports (SBOM, Trivy)
 /.reports/
 .env.deploy
+
+# Réglages locaux de Claude Code — contiennent des règles de permission qui citent
+# des commandes complètes : adresses de serveur, chemins, et parfois des secrets
+# collés en clair. Le dépôt est public : la protection doit vivre ICI et pas
+# seulement dans le ~/.config/git/ignore de la machine qui a créé le fichier.
+.claude/settings.local.json
+.claude/*.local.json

@@ -1,5 +1,10 @@
 "use client";
 
+// Ligne de terminal qui se tape à l'écran.
+//
+// Les classes étaient restées sur les tokens d'une charte précédente
+// (`text-accent`, `text-text-dim`, `animate-blink`), qui n'existent plus dans
+// app/theme.css : le composant sortait sans couleur. Corrigé vers blue/ink-dim.
 import { useEffect, useState } from "react";
 
 interface TerminalLineProps {
@@ -39,11 +44,11 @@ export default function TerminalLine({
   }, [started, displayed, text, speed]);
 
   return (
-    <div className={`font-mono text-sm text-accent flex items-center gap-2 ${className}`}>
-      <span className="text-text-dim">{prefix}</span>
-      <span>{displayed}</span>
+    <div className={`font-mono text-sm text-blue flex items-center gap-2 ${className}`}>
+      <span className="text-ink-dim">{prefix}</span>
+      <span className="break-all">{displayed}</span>
       {!done && (
-        <span className="inline-block w-2 h-4 bg-accent animate-blink" />
+        <span className="inline-block w-2 h-4 bg-blue animate-pulse" />
       )}
     </div>
   );
