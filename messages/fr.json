@@ -67,6 +67,7 @@
     "kicker": "Expertise & Services",
     "title": "Ce que j'apporte à votre structure",
     "intro": "Des prestations adaptées aux associations et PME : pragmatiques, documentées, sans jargon. Vous n'avez pas besoin d'un DSI à plein temps — vous avez besoin d'un interlocuteur technique de confiance.",
+    "pricingNote": "Ces prestations se chiffrent après un premier échange sur votre installation : le prix dépend de votre parc, pas d'un catalogue. Devis gratuit et sans engagement — et si vous cherchez le site et la sécurité ensemble, les <packs>packs</packs> couvrent les cas les plus courants.",
     "items": [
       { "title": "Diagnostic sécurité",            "description": "État des lieux de votre installation : points faibles, mauvaises configurations et axes d'amélioration. Rapport clair avec recommandations priorisées.", "tags": ["Analyse", "Recommandations", "Rapport"] },
       { "title": "Administration systèmes",        "description": "Gestion de vos serveurs Linux/Windows, routeurs et firewalls. Supervision avec Zabbix, mises à jour et interventions rapides.",                                              "tags": ["Linux", "Windows Server", "Zabbix"] },
@@ -172,7 +173,7 @@
 
   "packs": {
     "metaTitle": "Packs sécurité + web — asso, PME et pensions | OPSEC-IT",
-    "metaDescription": "Trois forfaits qui réunissent le site web et la sécurité dans un seul devis : Lancement Association 1 200 €, PME Visibilité 2 150 €, Hôtel/Pension 4 150 €.",
+    "metaDescription": "Trois forfaits qui réunissent le site web et la sécurité dans un seul devis : Lancement Association 1 200 €, PME Visibilité 2 150 €, Hôtel/Hébergement 4 150 €.",
     "kicker": "Packs",
     "title": "Le site et la sécurité dans le même devis",
     "intro": "Un site tout neuf posé sur une installation qui prend l'eau ne protège personne. Ces trois forfaits réunissent la création web et le volet sécurité en une seule prestation, à un prix inférieur à la somme des deux. Ils couvrent les situations les plus courantes ; tout le reste se fait sur devis.",
@@ -214,7 +215,7 @@
         "highlight": false
       },
       {
-        "name": "Hôtel / Pension",
+        "name": "Hôtel / Hébergement touristique",
         "price": "4 150 €",
         "priceXpf": "495 200 F CFP",
         "listPrice": "4 600 €",

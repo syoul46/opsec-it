@@ -67,6 +67,7 @@
     "kicker": "Expertise & Services",
     "title": "What I bring to your organization",
     "intro": "Services tailored to nonprofits and SMBs: pragmatic, documented, jargon-free. You don't need a full-time IT director — you need a trusted technical partner.",
+    "pricingNote": "These are quoted after a first conversation about your setup: the price depends on your estate, not on a catalogue. Free quote, no commitment — and if you need the website and the security work together, the <packs>packages</packs> cover the most common cases.",
     "items": [
       { "title": "Security check-up",           "description": "Review of your setup: weak points, misconfigurations and improvement areas. Clear report with prioritized recommendations.",                                  "tags": ["Analysis", "Recommendations", "Report"] },
       { "title": "Systems administration",      "description": "Management of your Linux/Windows servers, routers and firewalls. Monitoring with Zabbix, updates and rapid response.",                                       "tags": ["Linux", "Windows Server", "Zabbix"] },
@@ -172,7 +173,7 @@
 
   "packs": {
     "metaTitle": "Security + web packages for nonprofits & SMBs | OPSEC-IT",
-    "metaDescription": "Three packages bundling the website and the security work into a single quote: Nonprofit Launch €1,200, SMB Visibility €2,150, Hotel/Guesthouse €4,150.",
+    "metaDescription": "Three packages bundling the website and the security work into a single quote: Nonprofit Launch €1,200, SMB Visibility €2,150, Hotel/Accommodation €4,150.",
     "kicker": "Packages",
     "title": "The website and the security work in one quote",
     "intro": "A brand-new website sitting on a leaking setup protects no one. These three packages bundle web design and security into a single engagement, for less than the two bought separately. They cover the most common situations; anything else is quoted individually.",
@@ -214,7 +215,7 @@
         "highlight": false
       },
       {
-        "name": "Hotel / Guesthouse",
+        "name": "Hotel / Tourist accommodation",
         "price": "€4,150",
         "priceXpf": "495,200 CFP",
         "listPrice": "€4,600",

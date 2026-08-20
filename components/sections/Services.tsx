@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import { Link } from "@/i18n/navigation";
 import { TikiIcon, TileSecurity, type TikiIconName } from "@/components/ui/tiki";
 
 type Item = { title: string; description: string; tags: string[] };
@@ -101,6 +102,17 @@ export default function Services() {
             {t("title")}
           </h2>
           <p className="text-ink-soft max-w-lg leading-relaxed">{t("intro")}</p>
+          {/* Le volet sécurité reste sans prix affiché : un audit dépend du parc,
+              et un montant au mur devient un plafond en négociation. Le silence
+              total, en revanche, laisse croire que c'est hors de prix — d'où cette
+              ligne, qui dit pourquoi et où trouver un tarif ferme. */}
+          <p className="text-sm text-ink-dim max-w-xl leading-relaxed mt-4">
+            {t.rich("pricingNote", {
+              packs: (chunks) => (
+                <Link href="/packs" className="text-blue hover:underline">{chunks}</Link>
+              ),
+            })}
+          </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {items.map((s, i) => {
