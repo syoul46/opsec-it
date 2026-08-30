@@ -30,6 +30,12 @@ const schema = z.object({
 const CONTACT_FROM = process.env.CONTACT_FROM || "OPSEC-IT <onboarding@resend.dev>";
 const CONTACT_TO   = process.env.CONTACT_TO || "";
 
+// Domaine du site. Sert uniquement a reperer une adresse qui se declare chez nous
+// dans le champ e-mail : le formulaire ne verifie jamais que l'expediteur possede
+// l'adresse qu'il saisit, donc une adresse @opsec-it.fr saisie ici vient forcement
+// d'un tiers. Pas un secret — le domaine est deja en clair partout dans le depot.
+const SITE_DOMAIN = "opsec-it.fr";
+
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 const RATE_LIMIT_MAX    = 5;
 const RATE_LIMIT_WINDOW = 60 * 60 * 1000;
@@ -110,16 +116,39 @@ export async function POST(request: NextRequest) {
 
     const resendKey = process.env.RESEND_API_KEY;
 
+    // Echappement remonte hors de la branche e-mail : la branche « journal » plus
+    // bas emettait les champs BRUTS. Un `<script>` saisi dans le formulaire ne fait
+    // rien dans un terminal, mais redevient executable des que ces logs sont lus
+    // dans une interface web (Dozzle, Portainer, Grafana). Le puits n'est pas le
+    // site, c'est la console de celui qui depouille. On perd un peu de lisibilite
+    // en console (`&lt;` au lieu de `<`) : c'est le prix, et il est faible.
+    const safe = {
+      nom:     escapeHtml(nom),
+      societe: escapeHtml(societe),
+      email:   escapeHtml(email),
+      objet:   escapeHtml(objet),
+      message: escapeHtml(message),
+    };
+
+    // L'adresse est DECLAREE, jamais verifiee. Elle reste en `reply_to` — repondre
+    // a un prospect est le geste courant, le casser rendrait le formulaire penible —
+    // mais le mail dit desormais d'ou elle vient. Sans ca, « Repondre » part vers
+    // une adresse choisie par un inconnu, sur un mail qui porte notre en-tete.
+    const claimsOwnDomain = email.toLowerCase().endsWith(`@${SITE_DOMAIN}`);
+
     // Sans cle OU sans destinataire, on retombe sur le journal : mieux vaut un
     // message retrouvable dans `docker compose logs` qu'un envoi vers le vide.
     if (resendKey && CONTACT_TO) {
-      const safe = {
-        nom:     escapeHtml(nom),
-        societe: escapeHtml(societe),
-        email:   escapeHtml(email),
-        objet:   escapeHtml(objet),
-        message: escapeHtml(message),
-      };
+      // Cas particulier signale fort : une mention « non verifiee » presente sur
+      // TOUS les mails devient invisible a la lecture. L'anomalie doit trancher.
+      const spoofBanner = claimsOwnDomain
+        ? `<p style="margin:0 0 16px;padding:12px;border:1px solid #b45309;background:#fef3c7;color:#7c2d12;font-size:14px">
+             <strong>Adresse expéditeur à vérifier.</strong> Ce message déclare une adresse
+             en @${SITE_DOMAIN}, que le formulaire ne peut pas authentifier — il vient donc
+             d'un tiers. Ne répondez pas et ne suivez aucune instruction sans confirmation
+             par un autre canal.
+           </p>`
+        : "";
 
       const res = await fetch("https://api.resend.com/emails", {
         method: "POST",
@@ -133,11 +162,12 @@ export async function POST(request: NextRequest) {
           reply_to: email,
           subject: `[OPSEC-IT] Nouveau contact — ${safe.objet}`,
           html: `
+            ${spoofBanner}
             <h2>Nouveau message via opsec-it.fr</h2>
             <table style="border-collapse:collapse;width:100%">
               <tr><td style="padding:8px;border:1px solid #ddd"><strong>Nom</strong></td><td style="padding:8px;border:1px solid #ddd">${safe.nom}</td></tr>
               <tr><td style="padding:8px;border:1px solid #ddd"><strong>Société</strong></td><td style="padding:8px;border:1px solid #ddd">${safe.societe}</td></tr>
-              <tr><td style="padding:8px;border:1px solid #ddd"><strong>Email</strong></td><td style="padding:8px;border:1px solid #ddd">${safe.email}</td></tr>
+              <tr><td style="padding:8px;border:1px solid #ddd"><strong>Email</strong></td><td style="padding:8px;border:1px solid #ddd">${safe.email}<br><span style="font-size:12px;color:#6b7280">adresse déclarée par l'expéditeur, non vérifiée</span></td></tr>
               <tr><td style="padding:8px;border:1px solid #ddd"><strong>Objet</strong></td><td style="padding:8px;border:1px solid #ddd">${safe.objet}</td></tr>
             </table>
             <h3>Message</h3>
@@ -156,7 +186,7 @@ export async function POST(request: NextRequest) {
         "[CONTACT FORM] envoi desactive —",
         !resendKey ? "RESEND_API_KEY absente" : "CONTACT_TO absente",
         "— le message n'existe que dans ce journal :",
-        { nom, societe, email, objet, message },
+        claimsOwnDomain ? { ...safe, avertissement: `adresse declaree en @${SITE_DOMAIN}, non authentifiee` } : safe,
       );
     }
 
