@@ -55,28 +55,62 @@ Tant que `CONTACT_FROM` est vide, les messages partent de
 qu'au titulaire du compte** et atterrit très souvent en indésirables. Pour envoyer
 depuis `contact@opsec-it.fr`, dans cet ordre — l'inverse casse les envois :
 
-1. **Resend** → *Domains* → ajouter `opsec-it.fr`. Resend génère trois
-   enregistrements, tous sur le sous-domaine `send.` :
+1. **Resend** → *Domains* → ajouter `opsec-it.fr`, en choisissant la région
+   **eu-west-1 (Irlande)**. La région se fige à la création : en changer impose de
+   supprimer le domaine, le recréer et refaire tout le DNS, nouvelle clé DKIM
+   comprise. Hors EEE, il faudrait en plus déclarer le transfert et sa base
+   juridique dans la politique de confidentialité (RGPD art. 13-1-f).
 
-   | Type | Nom                          | Valeur                                       |
-   |------|------------------------------|----------------------------------------------|
-   | MX   | `send`                       | `feedback-smtp.<région>.amazonses.com` (prio 10) |
-   | TXT  | `send`                       | `v=spf1 include:amazonses.com ~all`          |
-   | TXT  | `resend._domainkey`          | `p=…` (clé générée, propre au domaine)       |
+2. Resend génère **trois enregistrements** — une clé DKIM sur le domaine racine,
+   et deux CNAME d'infrastructure. Ce n'est plus un MX et un TXT posés à la main
+   sur `send`, comme dans l'ancien schéma :
 
-2. **Publier ces trois enregistrements** dans la zone DNS (Hetzner,
-   `ns1.your-server.de`). Le SPF de la racine — `v=spf1 mx ~all` — **n'est pas à
-   toucher** : Resend signe l'enveloppe depuis `send.opsec-it.fr`, et le DMARC du
-   domaine étant en alignement relâché (`aspf=r`, `adkim=r`), le sous-domaine
-   s'aligne tout seul.
-3. **Attendre la vérification** côté Resend (quelques minutes à quelques heures).
-4. Alors seulement, poser dans `deploy/.env` :
+   | Type  | Nom                 | Valeur                                   |
+   |-------|---------------------|------------------------------------------|
+   | TXT   | `resend._domainkey` | `p=…` (clé générée, propre au domaine)   |
+   | CNAME | `send`              | `send.forge.rmta.net.`                   |
+   | CNAME | `rsend`             | `rsend-euw1.forge.rmta.net.`             |
+
+   `send` porte le Return-Path (MTA propre à Resend), `rsend` le chemin SES
+   régional — c'est lui qui mène à `feedback-smtp.eu-west-1.amazonses.com`.
+
+3. **Publier ces trois enregistrements** dans la zone DNS (Hetzner,
+   `ns1.your-server.de`, syntaxe BIND). Deux pièges :
+   - **les points finaux sur les cibles CNAME sont obligatoires**, sinon Hetzner
+     résout `send.forge.rmta.net.opsec-it.fr.` ;
+   - la valeur DKIM ne doit contenir **ni espace ni retour à la ligne** — le
+     dashboard la replie à l'affichage. Elle fait 218 caractères, donc elle tient
+     dans une seule chaîne TXT (pas de découpage à 255).
+
+   Le SPF de la racine — `v=spf1 mx ~all` — **n'est pas à toucher ici** : Resend
+   signe l'enveloppe depuis `send.opsec-it.fr`, et le DMARC du domaine étant en
+   alignement relâché (`aspf=r`, `adkim=r`), le sous-domaine s'aligne tout seul.
+   Ne pas passer `adkim`/`aspf` en strict : ça casserait cet alignement.
+
+4. **Attendre la vérification** côté Resend (quelques minutes à quelques heures).
+5. Alors seulement, poser dans `deploy/.env` :
    `CONTACT_FROM=OPSEC-IT <contact@opsec-it.fr>` puis relancer le conteneur.
+   L'expéditeur est bien sur le domaine **racine** : `send` et `rsend` ne sont que
+   l'infrastructure de bounce, jamais une adresse d'envoi.
 
-Contrôler après coup avec `scripts/check-email-dns.sh`.
+Contrôler avant et après avec `scripts/check-email-dns.sh`.
 
-Note : le DMARC est en `p=none`, c'est-à-dire en observation. Une fois les envois
-stabilisés et les rapports `rua` relus, passer à `p=quarantine`.
+### Durcissement DMARC, une fois les envois stabilisés
+
+Le SPF racine est en `~all` (softfail) et le DMARC en `p=none` (observation) :
+aucune usurpation n'est donc réellement bloquée aujourd'hui. La montée se fait
+dans cet ordre, jamais l'inverse :
+
+1. Vérifier que la boîte Hetzner sort en `spf=pass` **et** `dkim=pass` — envoi de
+   test vers une adresse Gmail, puis « Afficher l'original », en-tête
+   `Authentication-Results`. C'est le cas : l'IP sortante est celle du MX, donc
+   couverte par `mx`, et Hetzner signe déjà avec le sélecteur `default2607`.
+2. Passer le SPF racine en `v=spf1 mx -all`.
+3. Relire les rapports `rua` pour confirmer l'inventaire des expéditeurs
+   légitimes — c'est l'unique source fiable, et elle est déjà alimentée.
+4. `p=quarantine; sp=quarantine; pct=25` → `pct=100` → `p=reject; sp=reject`, une
+   marche toutes les une à deux semaines. Ne pas oublier `sp=` : sans lui, les
+   sous-domaines restent usurpables quand la racine est verrouillée.
 
 ## Structure
 
