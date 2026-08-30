@@ -43,7 +43,7 @@ export default function LocaleSwitcher() {
             }`}
           >
             {l}
-            <span className="sr-only"> — {t(l)}</span>
+            <span className="sr-only">, {t(l)}</span>
           </button>
         );
       })}

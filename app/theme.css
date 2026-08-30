@@ -62,6 +62,10 @@
      Ardoise sur le fond marine — la couleur du guide, qui lit comme une texture. */
   --ds-watermark:   #5F7794;
 
+  /* Halo du texte posé sur photo (classe `.on-photo`, cf. globals.css) : noir
+     derrière l'encre claire du thème sombre. */
+  --ds-text-halo:   rgb(0 0 0 / 0.55);
+
   /* Body */
   --ds-body-bg:     var(--ds-surf);
   --ds-body-fg:     var(--ds-ink);
@@ -100,8 +104,13 @@
   --ds-amber-soft: rgb(155 130 51 / 0.10);
   --ds-amber-mid:  rgb(155 130 51 / 0.30);
 
-  --ds-sand:       #C9A56A;
-  --ds-sand-soft:  rgb(201 165 106 / 0.12);
+  /* Assombri comme les autres accents du thème clair (le cuivre passe de #D2742F
+     à #B85A1C, l'or de #C6A857 à #9B8233) : le sable était resté sur une valeur
+     claire, héritée du thème sombre. Tant qu'il ne servait nulle part ça ne se
+     voyait pas, mais il porte désormais du texte (frise du Parcours) et #C9A56A
+     donnait 1,9:1 sur le crème. #8A5A2B donne 4,85:1. */
+  --ds-sand:       #8A5A2B;
+  --ds-sand-soft:  rgb(138 90 43 / 0.12);
 
   --ds-green:      #3A8C5E;
   --ds-green-soft: rgb(58 140 94 / 0.12);
@@ -111,6 +120,10 @@
   /* Sur le crème, l'ardoise s'effacerait : on prend l'encre navy, qui reste
      une texture discrète à faible opacité au lieu de disparaître. */
   --ds-watermark:   #1A2030;
+
+  /* Halo inversé : le texte est sombre ici, c'est le fond clair qu'il faut
+     rappeler autour du glyphe. Un halo noir empâterait l'encre navy. */
+  --ds-text-halo:   rgb(250 245 236 / 0.85);
 
   --ds-body-bg:     var(--ds-surf);
   --ds-body-fg:     var(--ds-ink);

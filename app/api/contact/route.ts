@@ -144,7 +144,7 @@ export async function POST(request: NextRequest) {
       const spoofBanner = claimsOwnDomain
         ? `<p style="margin:0 0 16px;padding:12px;border:1px solid #b45309;background:#fef3c7;color:#7c2d12;font-size:14px">
              <strong>Adresse expéditeur à vérifier.</strong> Ce message déclare une adresse
-             en @${SITE_DOMAIN}, que le formulaire ne peut pas authentifier — il vient donc
+             en @${SITE_DOMAIN}, que le formulaire ne peut pas authentifier. Il vient donc
              d'un tiers. Ne répondez pas et ne suivez aucune instruction sans confirmation
              par un autre canal.
            </p>`
@@ -160,7 +160,7 @@ export async function POST(request: NextRequest) {
           from: CONTACT_FROM,
           to: [CONTACT_TO],
           reply_to: email,
-          subject: `[OPSEC-IT] Nouveau contact — ${safe.objet}`,
+          subject: `[OPSEC-IT] Nouveau contact · ${safe.objet}`,
           html: `
             ${spoofBanner}
             <h2>Nouveau message via opsec-it.fr</h2>
@@ -183,9 +183,9 @@ export async function POST(request: NextRequest) {
       }
     } else {
       console.warn(
-        "[CONTACT FORM] envoi desactive —",
+        "[CONTACT FORM] envoi desactive :",
         !resendKey ? "RESEND_API_KEY absente" : "CONTACT_TO absente",
-        "— le message n'existe que dans ce journal :",
+        "| le message n'existe que dans ce journal :",
         claimsOwnDomain ? { ...safe, avertissement: `adresse declaree en @${SITE_DOMAIN}, non authentifiee` } : safe,
       );
     }

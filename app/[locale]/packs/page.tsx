@@ -79,7 +79,7 @@ function PackCard({
       <p className={`text-xs mb-4 ${hi ? "text-surf/80" : "text-ink-dim"}`}>
         {listLabel} <s>{pack.listPrice}</s>{" "}
         <span className={`font-semibold ${hi ? "text-surf" : "text-green"}`}>
-          — {savingLabel} {pack.saving}
+          · {savingLabel} {pack.saving}
         </span>
       </p>
 

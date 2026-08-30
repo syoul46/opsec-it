@@ -24,13 +24,13 @@ export default function Hero() {
           Le dégradé horizontal est calibré sur la colonne de texte du desktop, qui
           s'arrête à 3/5 de la largeur : à droite il s'efface (`to-surf/10`) pour
           laisser voir le coucher de soleil. En dessous de `lg`, la mise en page
-          repasse sur une seule colonne — le texte allait alors jusqu'au bord et
+          repasse sur une seule colonne : le texte allait alors jusqu'au bord et
           tombait dans la zone claire. Mesuré à 500 px : sous-titre à 1,57:1 et
           titre cuivre à 1,50:1, là où WCAG AA demande 4,5:1 et 3:1.
           D'où un voile plat tant qu'on est en une colonne, et le dégradé seulement
           à partir de `lg`, où il ne gêne plus personne.
           85 % et pas moins : à 80 % le titre cuivre retombait à 3,25:1, soit 8 %
-          au-dessus du seuil — trop juste pour survivre à un changement de photo.
+          au-dessus du seuil, trop juste pour survivre à un changement de photo.
           Valeurs mesurées à 85 % sur le pixel de fond le plus clair de chaque
           bande : sous-titre 7,3:1, titre cuivre 3,7:1. */}
       <div aria-hidden="true" className="absolute inset-0 bg-surf/85 lg:bg-transparent lg:bg-gradient-to-r lg:from-surf/95 lg:via-surf/70 lg:to-surf/10 pointer-events-none" />
@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16 items-center">
 
           {/* Texte */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 on-photo">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-soft border border-amber-mid text-amber text-xs font-semibold mb-8">
               <Shield className="w-3.5 h-3.5" />
               {t("badge")}
@@ -88,13 +88,19 @@ export default function Hero() {
                 priority
                 className="w-full h-auto drop-shadow-[0_8px_24px_rgba(0,0,0,0.5)]"
               />
-              <div className="bg-surf-mid/90 backdrop-blur-sm rounded-xl shadow-card-md border border-border px-4 py-3 flex items-center gap-3">
+              {/* Fond opaque, pas `/90` : cette carte est la seule chose posée dans la
+                  colonne droite, là où le voile s'efface volontairement (`to-surf/10`)
+                  pour laisser voir le coucher de soleil. À 90 % le soleil traversait,
+                  et la sous-ligne `ink-dim` tombait à 3,6:1. L'anneau noir remplace
+                  l'ombre portée, invisible sur un fond clair : c'est lui qui pose la
+                  carte comme un plan distinct de la photo. */}
+              <div className="bg-surf-mid rounded-xl shadow-card-lg ring-1 ring-black/30 border border-border px-4 py-3 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-green/15 border border-green/30 flex items-center justify-center">
                   <CheckCircle className="w-4 h-4 text-green" />
                 </div>
                 <div>
                   <p className="text-xs font-bold text-ink">{t("available")}</p>
-                  <p className="text-xs text-ink-dim">{t("availableSub")}</p>
+                  <p className="text-xs text-ink-soft">{t("availableSub")}</p>
                 </div>
               </div>
             </div>
@@ -102,7 +108,7 @@ export default function Hero() {
         </div>
 
         {/* Stats bar */}
-        <div className="mt-16 pt-10 border-t border-border flex flex-wrap gap-10">
+        <div className="mt-16 pt-10 border-t border-border flex flex-wrap gap-10 on-photo">
           {stats.map((s, i) => (
             <div key={s.label} className={`${i > 0 ? "pl-10 border-l border-border" : ""}`}>
               <p className="text-2xl font-black text-ink">{s.value}</p>

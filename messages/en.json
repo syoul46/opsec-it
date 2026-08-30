@@ -1,10 +1,10 @@
 {
   "seo": {
-    "title": "Security & web for nonprofits and SMBs — OPSEC-IT",
-    "description": "Security check-ups, infrastructure administration and website development for nonprofits and SMBs. Sylvestre MIGNOT, AIS — France and French Polynesia.",
+    "title": "Security & web for nonprofits and SMBs · OPSEC-IT",
+    "description": "Security check-ups, infrastructure administration and website development for nonprofits and SMBs. Sylvestre MIGNOT, AIS. France and French Polynesia.",
     "keywords": "IT security,system administration,secure infrastructure,AIS,security check-up,SMB,nonprofits,GDPR,web development,Next.js",
-    "ogTitle": "OPSEC-IT — Security & Infra for Nonprofits & SMBs",
-    "ogDescription": "Sylvestre MIGNOT, AIS — Security check-ups, administration and securing of infrastructures for nonprofits and SMBs. Custom web design.",
+    "ogTitle": "OPSEC-IT · Security & Infra for Nonprofits & SMBs",
+    "ogDescription": "Sylvestre MIGNOT, AIS. Security check-ups, administration and securing of infrastructures for nonprofits and SMBs. Custom web design.",
     "jobTitle": "Secure Infrastructure Administrator",
     "personDescription": "AIS-certified (IPSSI), specialized in securing and administering infrastructures for nonprofits and SMBs.",
     "businessDescription": "Securing, administering infrastructures and building websites for nonprofits and SMBs, in mainland France and French Polynesia.",
@@ -33,7 +33,7 @@
     "navigation": "Navigation",
     "contact": "Contact",
     "linkedin": "LinkedIn",
-    "rights": "© {year} OPSEC-IT — Sylvestre MIGNOT. Content and brand: all rights reserved.",
+    "rights": "© {year} OPSEC-IT · Sylvestre MIGNOT. Content and brand: all rights reserved.",
     "legal": "Legal notice",
     "privacy": "Privacy",
     "sourceCode": "Source code",
@@ -43,22 +43,22 @@
   "hero": {
     "badge": "Secure Infrastructure Administrator · AIS",
     "title": "Websites that are <accent>secure</accent>, <br></br>built to <accent>last</accent>.",
-    "subtitle": "Sylvestre MIGNOT, AIS-certified (IPSSI), secures and administers IT systems for nonprofits and SMBs — and builds their custom websites.",
+    "subtitle": "Sylvestre MIGNOT, AIS-certified (IPSSI), secures and administers IT systems for nonprofits and SMBs, and builds their custom websites.",
     "checks": [
       "Reduced cyber risk",
       "GDPR & ANSSI best practices",
       "Tested backups & recovery",
       "Pricing tailored to nonprofits & SMBs",
-      "Source code delivered under a free licence — the site is yours"
+      "Source code delivered under a free licence: the site is yours"
     ],
     "ctaPrimary": "Get in touch",
     "ctaSecondary": "See services",
-    "logoAlt": "OPSEC-IT logo — Security & Web Innovation",
+    "logoAlt": "OPSEC-IT logo · Security & Web Innovation",
     "available": "Available",
     "availableSub": "Reply within 24 business hours",
     "stats": [
       { "value": "6 yrs", "label": "field experience" },
-      { "value": "AIS",   "label": "certified — IPSSI" },
+      { "value": "AIS",   "label": "certified at IPSSI" },
       { "value": "24h",   "label": "response time" }
     ]
   },
@@ -66,8 +66,8 @@
   "services": {
     "kicker": "Expertise & Services",
     "title": "What I bring to your organization",
-    "intro": "Services tailored to nonprofits and SMBs: pragmatic, documented, jargon-free. You don't need a full-time IT director — you need a trusted technical partner.",
-    "pricingNote": "These are quoted after a first conversation about your setup: the price depends on your estate, not on a catalogue. Free quote, no commitment — and if you need the website and the security work together, the <packs>packages</packs> cover the most common cases.",
+    "intro": "Services tailored to nonprofits and SMBs: pragmatic, documented, jargon-free. You don't need a full-time IT director: you need a trusted technical partner.",
+    "pricingNote": "These are quoted after a first conversation about your setup: the price depends on your estate, not on a catalogue. Free quote, no commitment. And if you need the website and the security work together, the <packs>packages</packs> cover the most common cases.",
     "items": [
       { "title": "Security check-up",           "description": "Review of your setup: weak points, misconfigurations and improvement areas. Clear report with prioritized recommendations.",                                  "tags": ["Analysis", "Recommendations", "Report"] },
       { "title": "Systems administration",      "description": "Management of your Linux/Windows servers, routers and firewalls. Monitoring with Zabbix, updates and rapid response.",                                       "tags": ["Linux", "Windows Server", "Zabbix"] },
@@ -81,7 +81,7 @@
   "creationWeb": {
     "kicker": "Web design",
     "title": "Your online presence, hassle-free",
-    "intro": "Modern, fast and accessible websites — built for nonprofits and SMBs that want a professional showcase without agency costs or delays.",
+    "intro": "Modern, fast and accessible websites, built for nonprofits and SMBs that want a professional showcase without agency costs or delays.",
     "items": [
       { "title": "Landing page",       "description": "A professional one-page or multi-section website. Responsive design, fast loading, contact form. Turnkey delivery.",            "tags": ["Responsive", "One-page", "Next.js"] },
       { "title": "Multi-page site",    "description": "Structured site of 3 to 5 pages, no CMS. Ideal for organizations with stable content: about, team, contact.",                  "tags": ["3–5 pages", "Static", "Responsive"] },
@@ -96,7 +96,7 @@
       "intro": "Many cheap offers are rentals: you pay every month, and the day you stop, the site disappears. Here the code is delivered to you under a free licence. You host it where you want, you hand it to whoever you want, and it keeps running even if we stop working together.",
       "points": [
         { "title": "No rental", "description": "You pay once for the build, not a subscription to stay online. Maintenance is a service, not a toll." },
-        { "title": "No mandatory provider", "description": "The code is standard and documented. Any developer can take over — me included, but not only me." },
+        { "title": "No mandatory provider", "description": "The code is standard and documented. Any developer can take over: me included, but not only me." },
         { "title": "Nothing to take on trust", "description": "The site you are reading is itself published under the AGPL-3.0 licence. You can check how it is built before trusting me with yours." }
       ],
       "clone": "git clone https://github.com/syoul46/opsec-it",
@@ -107,7 +107,7 @@
     "pricing": {
       "kicker": "Pricing",
       "title": "Clear packages",
-      "intro": "No surprises. The packages below cover the most common needs, priced in euros and Pacific francs — I work in mainland France as well as French Polynesia. Free quote for any specific project.",
+      "intro": "No surprises. The packages below cover the most common needs, priced in euros and Pacific francs. I work in mainland France as well as French Polynesia. Free quote for any specific project.",
       "fromLabel": "From",
       "ctaLabel": "Request a quote",
       "tiers": [
@@ -233,13 +233,13 @@
     ],
     "teaser": {
       "title": "Need both at once?",
-      "body": "Three packages bundle the website build and the security work into a single quote, for about 10% less than buying them separately — for nonprofits, small businesses and tourism hosts.",
+      "body": "Three packages bundle the website build and the security work into a single quote, for about 10% less than buying them separately, for nonprofits, small businesses and tourism hosts.",
       "cta": "See the packages"
     },
     "commonTitle": "In all three packages",
     "commonItems": [
       "The code is delivered to you under a free licence: host it where you want, hand it to whoever you want.",
-      "Detailed, free quote before any commitment — a package is a starting point, not a straitjacket.",
+      "Detailed, free quote before any commitment: a package is a starting point, not a straitjacket.",
       "Remote by default, in mainland France as well as French Polynesia.",
       "Reply within 24 business hours, first intervention scheduled within 48 to 72 hours."
     ],
@@ -260,12 +260,12 @@
     "testimonialsTitle": "Client testimonials",
     "certification": {
       "label": "AIS",
-      "sub": "Secure Infrastructure Administrator — IPSSI Paris, 2026"
+      "sub": "Secure Infrastructure Administrator, IPSSI Paris, 2026"
     },
     "experience": [
-      { "period": "2025 — 2026", "role": "AIS training",                          "company": "IPSSI Paris",        "description": "Secure Infrastructure Administrator — certification obtained. Focus: auditing, securing and administering infrastructures." },
-      { "period": "2018 — 2024", "role": "Network, systems & DevOps technician",  "company": "SAS ANUANUA",        "description": "Linux/Windows systems administration, network infrastructure, cloud deployments, DevOps automation. Multi-project environment." },
-      { "period": "2008 — 2017", "role": "MIDI interface technician",             "company": "Live performance",   "description": "Design and deployment of MIDI interfacing systems for live shows. Real-time reliability constraints, custom hardware, full technical autonomy." }
+      { "period": "2025 – 2026", "role": "AIS training",                          "company": "IPSSI Paris",        "description": "Secure Infrastructure Administrator, certification obtained. Focus: auditing, securing and administering infrastructures." },
+      { "period": "2018 – 2024", "role": "Network, systems & DevOps technician",  "company": "SAS ANUANUA",        "description": "Linux/Windows systems administration, network infrastructure, cloud deployments, DevOps automation. Multi-project environment." },
+      { "period": "2008 – 2017", "role": "MIDI interface technician",             "company": "Live performance",   "description": "Design and deployment of MIDI interfacing systems for live shows. Real-time reliability constraints, custom hardware, full technical autonomy." }
     ],
     "skills": [
       { "label": "Linux / Systems",         "sub": "Server administration, service management, maintenance" },
@@ -283,7 +283,7 @@
     ],
     "testimonials": [
       { "quote": "We needed a site worthy of our setting and our hospitality. Sylvestre captured the spirit of the Clos in a clear, elegant and effective website. Bookings followed very quickly, and his follow-up remains highly responsive.",     "author": "Christelle & David Bernadou", "initials": "CB", "structure": "Le Clos de Gamel",                  "url": "https://closdegamel.com", "display": "closdegamel.com" },
-      { "quote": "Sylvestre completely rebuilt our website and modernized our infrastructure. Technical rigor, attention to detail and real understanding of our challenges: a trusted long-term partner, always proactive.",                          "author": "Fred Bordier",                "initials": "FB", "structure": "Anuanua — Laser engraving & cutting", "url": "https://anuanua.fr",      "display": "anuanua.fr"      }
+      { "quote": "Sylvestre completely rebuilt our website and modernized our infrastructure. Technical rigor, attention to detail and real understanding of our challenges: a trusted long-term partner, always proactive.",                          "author": "Fred Bordier",                "initials": "FB", "structure": "Anuanua · Laser engraving & cutting", "url": "https://anuanua.fr",      "display": "anuanua.fr"      }
     ]
   },
 
@@ -291,7 +291,7 @@
     "kicker": "OPSEC Method",
     "title": "How I work",
     "intro": "A structured four-phase approach, adapted to your organization's operational reality.",
-    "callout": "Operational security is not a final state — it's an ongoing process of adapting to threats and to the evolution of your organization.",
+    "callout": "Operational security is not a final state: it's an ongoing process of adapting to threats and to the evolution of your organization.",
     "steps": [
       { "num": "01", "title": "Risk analysis",          "description": "Mapping of your setup: what's critical to your business, what's exposed, what's missing. Findings prioritized to your business.",             "tags": ["Mapping", "Prioritization"] },
       { "num": "02", "title": "Hardening",              "description": "System hardening, network segmentation, access management, encryption and update policy based on public baselines (CIS).",                  "tags": ["CIS Benchmarks", "Least privilege"] },
@@ -348,13 +348,13 @@
       "linkedinLabel": "LinkedIn",
       "linkedinName": "Sylvestre MIGNOT",
       "availableTitle": "Available",
-      "availableText": "Accepting new missions.\nReply within 24 business hours — first intervention scheduled within 48-72h."
+      "availableText": "Accepting new missions.\nReply within 24 business hours, first intervention scheduled within 48-72h."
     }
   },
 
   "legal": {
     "mentions": {
-      "metaTitle": "Legal notice — OPSEC-IT",
+      "metaTitle": "Legal notice · OPSEC-IT",
       "metaDescription": "Legal notice for opsec-it.fr: publisher, host, intellectual property and the source-code licence (AGPL-3.0).",
       "kicker": "Legal information",
       "title": "Legal notice",
@@ -363,12 +363,12 @@
           "title": "Site publisher",
           "intro": "This site <strong>opsec-it.fr</strong> is published by:",
           "items": [
-            "<strong>Sylvestre MIGNOT — EI</strong>",
-            "Sole proprietor — micro-enterprise",
+            "<strong>Sylvestre MIGNOT EI</strong>",
+            "Sole proprietor (micro-enterprise)",
             "Activity: administration and securing of IT systems, website creation",
-            "SIRET: 995 144 623 00015 — SIREN: 995 144 623",
+            "SIRET: 995 144 623 00015 · SIREN: 995 144 623",
             "Cahors Trade and Companies Register (RCS) 995 144 623",
-            "APE code: 62.03Z — Management of computer facilities",
+            "APE code: 62.03Z (management of computer facilities)",
             "Email: <a>contact@opsec-it.fr</a>"
           ],
           "note": "VAT not applicable, article 293 B of the French General Tax Code (VAT exemption scheme)."
@@ -379,11 +379,11 @@
         },
         "hosting": {
           "title": "Hosting",
-          "body": "This site is hosted by <strong>Hetzner Online GmbH</strong>, Industriestr. 25, 91710 Gunzenhausen, Germany — phone: +49 (0)9831 505-0. The servers hosting this site are located in Germany (Nuremberg)."
+          "body": "This site is hosted by <strong>Hetzner Online GmbH</strong>, Industriestr. 25, 91710 Gunzenhausen, Germany. Phone: +49 (0)9831 505-0. The servers hosting this site are located in Germany (Nuremberg)."
         },
         "ip": {
           "title": "Intellectual property",
-          "p1": "The editorial and graphic content of opsec-it.fr — text, images, photographs, illustrations, the OPSEC-IT brand and its logo — is the exclusive property of Sylvestre MIGNOT, unless otherwise stated. Any reproduction, representation, modification or exploitation, in whole or in part, is prohibited without prior written authorization.",
+          "p1": "The editorial and graphic content of opsec-it.fr (text, images, photographs, illustrations, the OPSEC-IT brand and its logo) is the exclusive property of Sylvestre MIGNOT, unless otherwise stated. Any reproduction, representation, modification or exploitation, in whole or in part, is prohibited without prior written authorization.",
           "p2": "The <repo>site's source code</repo> is an exception: it is published under the <licence>GNU AGPL-3.0 licence</licence>, which permits reading, reuse and modification under the terms it sets out. That licence covers the code alone, excluding the items listed in the previous paragraph.",
           "p3": "Client testimonials published on this site are with the explicit consent of the individuals named."
         },
@@ -403,7 +403,7 @@
       }
     },
     "privacy": {
-      "metaTitle": "Privacy policy — OPSEC-IT",
+      "metaTitle": "Privacy policy · OPSEC-IT",
       "metaDescription": "How opsec-it.fr handles personal data: what the contact form collects, why, for how long, and your GDPR rights. No tracking cookies.",
       "kicker": "GDPR",
       "title": "Privacy policy",

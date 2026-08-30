@@ -23,10 +23,14 @@ export default function Methodology() {
         sizes="100vw"
         className="object-cover object-right pointer-events-none select-none opacity-55"
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-surf via-surf/65 to-surf/25 pointer-events-none" />
+      {/* `to-surf/40` et non `/25` : les quatre cartes d'étape ont leur propre fond
+          opaque, mais le chapeau (kicker, titre, intro) et le callout sont posés à nu
+          sur la photo. À 25 % la moitié droite de l'image passait à pleine intensité
+          derrière eux. */}
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-surf via-surf/70 to-surf/40 pointer-events-none" />
       <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-surf pointer-events-none" />
       <div className="relative wrap">
-        <div className="mb-5">
+        <div className="mb-5 on-photo">
           <span className="inline-block text-amber text-sm font-semibold uppercase tracking-widest mb-3">
             {t("kicker")}
           </span>
@@ -64,7 +68,7 @@ export default function Methodology() {
           })}
         </div>
 
-        <div className="bg-blue/10 border-l-4 border-blue rounded-r-xl px-8 py-6 max-w-2xl">
+        <div className="bg-blue/10 border-l-4 border-blue rounded-r-xl px-8 py-6 max-w-2xl on-photo">
           <p className="text-ink leading-relaxed">{t("callout")}</p>
         </div>
       </div>

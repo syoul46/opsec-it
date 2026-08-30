@@ -10,7 +10,7 @@ const COPPER = "#D2742F";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "OPSEC-IT — Sylvestre MIGNOT",
+    name: "OPSEC-IT · Sylvestre MIGNOT",
     short_name: "OPSEC-IT",
     description:
       "Sécurité, administration d'infrastructures et création web pour les associations et les PME.",
