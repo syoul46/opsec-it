@@ -15,7 +15,7 @@ import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
 
-export const alt = "OPSEC-IT — Sylvestre MIGNOT, Administrateur d'Infrastructures Sécurisées";
+export const alt = "OPSEC-IT · Sylvestre MIGNOT, Administrateur d'Infrastructures Sécurisées";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

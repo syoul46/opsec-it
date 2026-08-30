@@ -26,18 +26,30 @@ export default function About() {
 
   return (
     <SectionWrapper id="parcours" className="relative pt-32 pb-28 bg-surf-mid overflow-hidden">
+      {/* Voile de lisibilité : la section la plus exposée du site.
+          Contrairement à Méthodologie, dont les quatre cartes ont leur propre fond
+          opaque, la colonne de gauche (frise + « Mon approche ») est posée à nu sur
+          la photo, en corps 12–14 px.
+          Ancien empilement (photo 60 %, dégradé 40 %, plat 35 %) : 23 % de la photo
+          brute traversait dans la bande médiane. Mesuré sur le rendu réel, les dates
+          et employeurs tombaient à 2,7:1 et les descriptions à 4,5:1, là où WCAG AA
+          demande 4,5:1.
+          Ici : 40 % × 35 % × 45 % ≈ 8 % de fuite. Le coucher de soleil reste lisible
+          comme atmosphère, mais il cesse d'être une texture derrière le texte.
+          Le contraste seul ne suffisait pas : une photo est un fond haute fréquence,
+          d'où le `.on-photo` sur la colonne de gauche. */}
       <Image
         src="/bg/about-sunset.webp"
         alt=""
         aria-hidden="true"
         fill
         sizes="100vw"
-        className="object-cover object-center pointer-events-none select-none opacity-60"
+        className="object-cover object-center pointer-events-none select-none opacity-40"
       />
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-surf-mid via-surf-mid/40 to-surf-mid pointer-events-none" />
-      <div aria-hidden="true" className="absolute inset-0 bg-surf-mid/35 pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-surf-mid via-surf-mid/65 to-surf-mid pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-0 bg-surf-mid/45 pointer-events-none" />
       <div className="relative wrap">
-        <div className="mb-14 flex items-center gap-6">
+        <div className="mb-14 flex items-center gap-6 on-photo">
           <Image
             src="/sylvestre.jpg"
             alt={t("portraitAlt")}
@@ -58,7 +70,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Timeline */}
-          <div>
+          <div className="on-photo">
             <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-8">{t("experienceTitle")}</h3>
             <ol className="space-y-0">
               {experience.map((e, i) => (
@@ -69,10 +81,18 @@ export default function About() {
                       <div className="w-0.5 bg-blue-mid flex-1 mt-1.5 mb-0" />
                     )}
                   </div>
+                  {/* `text-sand` et non `text-blue` : les deux lignes de métadonnées sont
+                      du petit texte (12 et 14 px) posé sur la photo, là où WCAG AA
+                      demande 4,5:1. Le cuivre ne peut structurellement pas y arriver —
+                      il plafonne à 4,63:1 sur `surf-mid` même sans photo, et tombait à
+                      2,7:1 sur les zones claires du coucher de soleil. Le sable donne
+                      7,98:1 sur l'aplat et 5,07:1 sur le pixel de fond le plus clair
+                      mesuré. Les pastilles et le trait de la frise restent cuivre : ce
+                      sont des repères graphiques, pas du texte. */}
                   <div className="pb-10">
-                    <p className="text-xs font-semibold text-blue uppercase tracking-wider mb-1">{e.period}</p>
+                    <p className="text-xs font-semibold text-sand uppercase tracking-wider mb-1">{e.period}</p>
                     <p className="text-base font-bold text-ink">{e.role}</p>
-                    <p className="text-sm text-blue font-medium mb-1.5">{e.company}</p>
+                    <p className="text-sm text-sand font-medium mb-1.5">{e.company}</p>
                     <p className="text-sm text-ink-soft leading-relaxed">{e.description}</p>
                   </div>
                 </li>
@@ -94,7 +114,7 @@ export default function About() {
           </div>
 
           {/* Certification + Compétences */}
-          <div>
+          <div className="on-photo">
             <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-dim mb-4">{t("certificationTitle")}</h3>
             <div className="mb-8">
               <div className="flex items-center gap-4 p-4 rounded-xl border bg-blue/10 border-blue/30 shadow-sm">
@@ -114,7 +134,7 @@ export default function About() {
                 const glyph = SKILL_ICONS[i];
                 return (
                   <div key={s.label}
-                       className="flex items-center gap-4 p-4 rounded-xl border bg-surf border-border hover:border-blue/40 hover:bg-blue/5 transition-all">
+                       className="on-photo-reset flex items-center gap-4 p-4 rounded-xl border bg-surf border-border hover:border-blue/40 hover:bg-blue/5 transition-all">
                     <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 bg-blue/10 border border-blue/25">
                       <TikiIcon name={glyph} className="w-5 h-5 text-blue" />
                     </div>
@@ -135,7 +155,7 @@ export default function About() {
               <h3 className="text-xs font-semibold uppercase tracking-widest text-blue mb-4">{t("testimonialsTitle")}</h3>
               <div className="space-y-4">
                 {testimonials.map(tm => (
-                  <div key={tm.author} className="p-6 rounded-xl border border-border bg-surf">
+                  <div key={tm.author} className="on-photo-reset p-6 rounded-xl border border-border bg-surf">
                     <div className="relative">
                       <Quote className="w-6 h-6 text-amber/40 absolute -top-1 -left-1" />
                       <blockquote className="pl-8">
@@ -149,7 +169,7 @@ export default function About() {
                           <div>
                             <p className="text-sm font-bold text-ink">{tm.author}</p>
                             <a href={tm.url} target="_blank" rel="noopener noreferrer" className="text-xs text-ink-soft hover:text-blue transition-colors">
-                              {tm.structure} — {tm.display}
+                              {tm.structure} · {tm.display}
                             </a>
                           </div>
                         </footer>

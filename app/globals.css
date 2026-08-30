@@ -80,6 +80,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Texte posé directement sur une photo de fond (Hero, Parcours, Méthodologie).
+   Les voiles de ces sections ramènent le contraste dans les clous, mais une photo
+   reste une texture haute fréquence : à luminance égale, un petit texte y est
+   moins lisible que sur un aplat. Cette ombre portée redonne au glyphe un bord
+   franc, quel que soit le pixel derrière lui.
+   `text-shadow` est hérité : on la pose sur le conteneur de la colonne, pas sur
+   chaque élément. Les encadrés qui ont leur propre fond opaque (cartes de
+   compétences, témoignages) la neutralisent avec `.on-photo-reset`.
+
+   La teinte du halo suit le thème (`--ds-text-halo`) : noire derrière du texte
+   clair, crème derrière du texte sombre. Une ombre noire sous l'encre navy du
+   thème clair ne détache rien, elle empâte le glyphe. */
+.on-photo { text-shadow: 0 1px 3px var(--ds-text-halo), 0 1px 1px var(--ds-text-halo); }
+.on-photo-reset { text-shadow: none; }
+
 /* Conteneur centré — marges latérales garanties */
 .wrap {
   width: min(72rem, calc(100% - 2rem));

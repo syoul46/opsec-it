@@ -10,7 +10,11 @@ export default function PacksTeaser() {
   const t = useTranslations("packs.teaser");
 
   return (
-    <div className="wrap">
+    // `py` explicite : ce bandeau n'est pas une `<section>` et n'hérite donc d'aucun
+    // rythme vertical. Sans lui, le `wrap` collait l'encadré à ras contre le bas de
+    // Services et contre le haut de Création web (mesuré : 0 px des deux côtés), et
+    // le changement de fond `surf-mid` → `surf` tombait pile sur son bord supérieur.
+    <div className="wrap py-16 md:py-20">
       <div className="rounded-2xl border border-amber-mid bg-amber-soft p-8 md:p-10 flex flex-col lg:flex-row lg:items-center gap-6">
         <div className="flex-1">
           <h2 className="text-xl md:text-2xl font-black text-ink mb-2 leading-tight">

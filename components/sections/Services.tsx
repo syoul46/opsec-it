@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { Link } from "@/i18n/navigation";
@@ -11,9 +10,13 @@ type Item = { title: string; description: string; tags: string[] };
 // L'ordre doit correspondre à messages.services.items
 //
 // `Art` : planche tatouage marquisienne en filigrane. Seule la tuile 2×2 en porte
-// une — c'est la seule dont le format crée un vide réel. Ailleurs le texte occupe
+// une : c'est la seule dont le format crée un vide réel. Ailleurs le texte occupe
 // déjà toute la surface, et un filigrane n'y serait pas un décor mais du bruit
 // derrière le paragraphe.
+//
+// Aucune tuile n'est cliquable : ce sont des `<div>`, et la seule cible du bloc
+// est le lien « packs » de l'intro. Le chevron ↗ au survol promettait donc une
+// navigation qui n'existe pas ; il a été retiré plutôt que rendu vrai.
 type Tile = {
   glyph: TikiIconName;
   Art?: (p: { className?: string }) => React.ReactElement;
@@ -31,9 +34,16 @@ const TILES: Tile[] = [
   {
     glyph: "security-checkup",
     Art: TileSecurity,
-    // Centrée dans le vide laissé sous le paragraphe et au-dessus des tags : c'est
-    // ce creux-là qu'elle comble. Collée dans un angle, elle ne remplissait rien.
-    artClass: "left-1/2 top-[52%] -translate-x-1/2 -translate-y-1/2 h-[22rem] text-surf/[0.13]",
+    // Ancrée dans l'angle bas-droit et débordante : `overflow-hidden` de la tuile
+    // la recadre, il n'en reste qu'un quart de bouclier qui se lit comme une
+    // texture de coin. Taille réduite hors `lg`, où la tuile retombe de 750 à
+    // 290 px : au format `lg` le motif remonterait jusque derrière le paragraphe.
+    // Centrée, elle ne marchait à aucun des deux formats de la tuile : en `lg` la
+    // tuile fait 750 px pour 300 px de contenu et le bouclier flottait seul au
+    // milieu d'un aplat cuivre (l'aspect « image cassée ») ; en une colonne la
+    // tuile retombe à 290 px alors que le motif en fait 352, et il passait
+    // par-dessus le paragraphe.
+    artClass: "-right-32 -bottom-44 h-64 lg:h-[22rem] text-surf/[0.16]",
     span: "md:col-span-2 lg:row-span-2",
     featured: true,
     iconBox: "bg-surf/15 border-surf/25",
@@ -104,7 +114,7 @@ export default function Services() {
           <p className="text-ink-soft max-w-lg leading-relaxed">{t("intro")}</p>
           {/* Le volet sécurité reste sans prix affiché : un audit dépend du parc,
               et un montant au mur devient un plafond en négociation. Le silence
-              total, en revanche, laisse croire que c'est hors de prix — d'où cette
+              total, en revanche, laisse croire que c'est hors de prix, d'où cette
               ligne, qui dit pourquoi et où trouver un tarif ferme. */}
           <p className="text-sm text-ink-dim max-w-xl leading-relaxed mt-4">
             {t.rich("pricingNote", {
@@ -130,13 +140,13 @@ export default function Services() {
                 {Art && (
                   <Art className={`pointer-events-none absolute w-auto ${tile.artClass}`} />
                 )}
-                <ArrowUpRight
-                  className={`absolute top-5 right-5 w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ${
-                    tile.featured ? "text-surf/70" : tile.icon
-                  }`}
-                />
-                {/* `relative` : repasse le contenu au-dessus du filigrane, qui est en absolute. */}
-                <div className={`relative ${tile.wide ? "lg:flex lg:items-center lg:gap-8" : "flex flex-col flex-1"}`}>
+                {/* `relative` : repasse le contenu au-dessus du filigrane, qui est en absolute.
+                    `justify-center` sur la tuile mise en avant : elle occupe deux rangées
+                    en `lg` (750 px) pour ~300 px de contenu. Avec les tags collés en bas
+                    par `mt-auto`, les 450 px restants formaient un seul bloc de vide sous
+                    le paragraphe. Centré, le même vide se répartit en haut et en bas et
+                    se lit comme une marge. */}
+                <div className={`relative ${tile.wide ? "lg:flex lg:items-center lg:gap-8" : "flex flex-col flex-1"} ${tile.featured ? "lg:justify-center" : ""}`}>
                   <div
                     className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-5 flex-shrink-0 ${tile.iconBox} ${
                       tile.wide ? "lg:mb-0" : ""
@@ -147,19 +157,19 @@ export default function Services() {
                       className={`w-6 h-6 ${tile.featured ? "text-surf" : tile.icon}`}
                     />
                   </div>
-                  <div className={tile.wide ? "lg:flex-1" : "flex flex-col flex-1"}>
+                  <div className={tile.wide ? "lg:flex-1" : `flex flex-col ${tile.featured ? "lg:flex-none flex-1" : "flex-1"}`}>
                     <h3 className={`font-bold mb-2 ${tile.featured ? "text-surf text-xl" : "text-ink text-base"}`}>
                       {s.title}
                     </h3>
                     <p
                       className={`leading-relaxed mb-5 ${
                         tile.featured ? "text-surf/85 text-base max-w-md" : "text-ink-soft text-sm"
-                      } ${tile.wide ? "lg:mb-0 lg:max-w-2xl" : "flex-1"}`}
+                      } ${tile.wide ? "lg:mb-0 lg:max-w-2xl" : tile.featured ? "lg:flex-none flex-1" : "flex-1"}`}
                     >
                       {s.description}
                     </p>
                   </div>
-                  <div className={`flex flex-wrap gap-2 ${tile.wide ? "lg:flex-col lg:items-end" : "mt-auto pt-1"}`}>
+                  <div className={`flex flex-wrap gap-2 ${tile.wide ? "lg:flex-col lg:items-end" : tile.featured ? "mt-auto lg:mt-0 pt-1" : "mt-auto pt-1"}`}>
                     {s.tags.map(tag => (
                       <span
                         key={tag}
