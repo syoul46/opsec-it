@@ -42,6 +42,28 @@ services:
       # `onboarding@resend.dev`. Procédure : README, section E-mail.
       - CONTACT_FROM=${CONTACT_FROM:-}
 
+    # Durcissement du conteneur. Le process tournait deja en non-root (USER nextjs
+    # dans le Dockerfile), mais gardait TOUTES les capacites Linux par defaut et un
+    # systeme de fichiers inscriptible. Ces quatre reglages ne coutent rien ici : le
+    # site est un serveur Next en lecture seule, il ne lie aucun port privilegie et
+    # ne change jamais d'identite.
+    #
+    # `read_only` impose les deux tmpfs qui suivent : Next ecrit dans /tmp, et
+    # `.next/cache` porte le cache d'optimisation des images de next/image. Sans
+    # eux le conteneur demarre puis echoue a la premiere image servie.
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/.next/cache
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    # Plafond de processus : borne un fork bomb ou un runaway a l'interieur du
+    # conteneur avant qu'il n'atteigne la table de processus de l'hote, partagee
+    # avec maeva-runner.
+    pids_limit: 256
+
     # La machine a 4 Go partagés avec maeva-runner. Le site tourne à ~200 Mo ;
     # cette limite est un garde-fou pour qu'une fuite côté site ne fasse pas
     # tomber le runner par OOM.
